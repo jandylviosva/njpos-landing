@@ -453,7 +453,7 @@ export default function App() {
               <div className="mockup-topbar">
                 <div className="mockup-logo">
                   <div className="mockup-logo-icon"><img src={LOGO} alt="POS Pro"/></div>
-                  <div className="mockup-store">Daly's Bakeshop<span>POS Pro</span></div>
+                  <div className="mockup-store">Daly's Foodhub<span>POS Pro</span></div>
                 </div>
                 <div className="mockup-sync"><div className="mockup-sync-dot"/><span className="mockup-sync-text">Synced</span></div>
               </div>
