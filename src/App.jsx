@@ -265,7 +265,7 @@ const LOGO = '/icons/icon-192.png';
    const MOCKUP_LOGO = '/images/clients/baga-burger-logo.png';
 */
 const MOCKUP_ACCENT = '#f90b0b';
-const MOCKUP_LOGO = '/images/clients/burger-baga-malaria-logo.jpg'; // ← replace with real logo file
+const MOCKUP_LOGO = '/images/clients/baga-burger-malaria-logo.jpg'; // ← replace with real logo file
 
 /* ── HERO MOCKUP PRODUCT DATA ──
    Real client store: Baga Burger Malaria
