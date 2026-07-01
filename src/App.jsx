@@ -675,8 +675,9 @@ export default function App() {
           <div className="footer-col">
             <h4>Contact</h4>
             <a href="mailto:support@pospro-portal.com">support@pospro-portal.com</a>
-            <a href="#">Facebook Page</a>
-            <a href="#">Messenger</a>
+            <a href="https://www.facebook.com/profile.php?id=61572325662884" target="_blank" rel="noopener noreferrer" style={{display:"flex",alignItems:"center",gap:7}}>
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M24 12.073C24 5.405 18.627 0 12 0S0 5.405 0 12.073C0 18.1 4.388 23.094 10.125 24v-8.437H7.078v-3.49h3.047V9.41c0-3.025 1.792-4.697 4.533-4.697 1.312 0 2.686.236 2.686.236v2.97h-1.513c-1.491 0-1.956.93-1.956 1.884v2.27h3.328l-.532 3.49h-2.796V24C19.612 23.094 24 18.1 24 12.073z"/></svg>
+            </a>
           </div>
         </div>
         <div className="footer-bottom">
@@ -689,6 +690,36 @@ export default function App() {
       </footer>
 
       <TrialModal open={modalOpen} onClose={() => setModalOpen(false)}/>
+
+      {/* Floating Messenger Button */}
+      <a
+        href="https://m.me/profile.php?id=61572325662884"
+        target="_blank"
+        rel="noopener noreferrer"
+        title="Chat with us on Messenger"
+        style={{
+          position:"fixed",
+          bottom:24,
+          right:24,
+          width:52,
+          height:52,
+          borderRadius:"50%",
+          background:"linear-gradient(135deg,#00B2FF 0%,#006AFF 100%)",
+          display:"flex",
+          alignItems:"center",
+          justifyContent:"center",
+          boxShadow:"0 4px 16px rgba(0,106,255,0.4)",
+          zIndex:999,
+          transition:"transform 0.2s,box-shadow 0.2s",
+          textDecoration:"none",
+        }}
+        onMouseEnter={e=>{e.currentTarget.style.transform="scale(1.1)";e.currentTarget.style.boxShadow="0 6px 20px rgba(0,106,255,0.55)";}}
+        onMouseLeave={e=>{e.currentTarget.style.transform="scale(1)";e.currentTarget.style.boxShadow="0 4px 16px rgba(0,106,255,0.4)";}}
+      >
+        <svg width="26" height="26" viewBox="0 0 36 36" fill="white" aria-label="Messenger">
+          <path d="M18 2C9.163 2 2 8.71 2 17c0 4.445 1.897 8.447 4.962 11.337V34l4.805-2.64C13.012 31.77 15.463 32 18 32c8.837 0 16-6.71 16-15S26.837 2 18 2zm1.758 20.293l-4.076-4.34-7.956 4.34 8.748-9.293 4.176 4.34 7.856-4.34-8.748 9.293z"/>
+        </svg>
+      </a>
     </>
   );
 }
