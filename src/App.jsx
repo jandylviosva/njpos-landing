@@ -137,7 +137,7 @@ const css = `
   .pill-card i{color:#f59e0b}
   .pill-qr i{color:#34d399}
   .pricing{background:var(--off);padding:80px 5vw}
-  .pricing-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:20px;max-width:860px;margin:0 auto}
+  .pricing-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:20px;max-width:1100px;margin:0 auto}
   .pricing-card{background:#fff;border-radius:18px;padding:36px 30px;border:2px solid var(--border);position:relative;transition:box-shadow .22s}
   .pricing-card:hover{box-shadow:0 20px 56px rgba(0,0,0,.08)}
   .pricing-card.featured{border-color:var(--p);box-shadow:0 20px 56px rgba(79,70,229,.18)}
@@ -588,6 +588,22 @@ export default function App() {
             </ul>
             <button className="pricing-cta filled" onClick={openTrial}>Get Started — Free Trial</button>
             <p className="pricing-cta-note"><i className="ti ti-lock" style={{fontSize:11,color:'#10b981'}}/> No credit card · cancel anytime</p>
+          </div>
+          <div className="pricing-card">
+            <div className="pricing-badge" style={{background:'#0369a1'}}>Best Value</div>
+            <div className="pricing-name">Lifetime</div>
+            <div className="pricing-amount"><sup>₱</sup>8,999</div>
+            <div className="pricing-note">One-time payment · yours forever, no renewals</div>
+            <div className="pricing-compare"><i className="ti ti-coin-peso"/>Pays for itself vs. Standard in under 2 years</div>
+            <ul className="pricing-features">
+              {['Everything in Standard, forever','No monthly fees, ever again','Unlimited products, orders & staff','Full reports + BIR VAT tab','Receipt printing (58mm & 80mm)','Owner Portal — manage remotely','Cloud backup — never lose data'].map(f => <li key={f}><i className="ti ti-check"/>{f}</li>)}
+            </ul>
+            {/* TODO: wire to the dedicated "Pay Now" flow once the GCash
+                payment modal is built — falls back to the same trial
+                flow as the other cards for now so this button isn't a
+                dead end in the meantime. */}
+            <button className="pricing-cta outline" onClick={openTrial}>Get Started — Free Trial</button>
+            <p className="pricing-cta-note">One payment, no subscription</p>
           </div>
         </div>
         <div className="pricing-addons">
