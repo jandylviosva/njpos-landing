@@ -88,7 +88,7 @@ const css = `
   .mockup-total-row{display:flex;justify-content:space-between;font-size:12px;font-weight:800;padding-top:6px;margin-top:3px;border-top:1px dashed #e5e7eb}
   .mockup-total-row span:last-child{color:var(--mockup-accent, var(--p))}
   .mockup-charge-btn{width:100%;margin-top:7px;background:var(--mockup-accent, var(--p));color:#fff;border:none;border-radius:8px;padding:9px;font-size:11px;font-weight:800;cursor:pointer}
-  .mockup-badge{position:absolute;background:#fff;border-radius:10px;padding:8px 11px;box-shadow:0 8px 24px rgba(0,0,0,.14);font-size:11px;font-weight:700;display:flex;align-items:center;gap:6px;white-space:nowrap;animation:float 5s ease-in-out infinite}
+  .mockup-badge{position:absolute;z-index:5;background:#fff;border-radius:10px;padding:8px 11px;box-shadow:0 8px 24px rgba(0,0,0,.14);font-size:11px;font-weight:700;display:flex;align-items:center;gap:6px;white-space:nowrap;animation:float 5s ease-in-out infinite}
   .mockup-badge i{font-size:14px}
   .badge-gcash{top:36px;right:-32px;color:#007bff;animation-delay:.6s}
   .badge-sync{bottom:130px;left:-44px;color:var(--green);animation-delay:1.2s}
@@ -160,6 +160,8 @@ const css = `
   .pricing-cta.filled:hover{background:var(--p-dark);transform:translateY(-1px)}
   .pricing-cta.outline{background:#fff;color:var(--p);border-color:var(--p)}
   .pricing-cta.outline:hover{background:var(--p);color:#fff}
+  .pricing-cta-secondary{display:block;width:100%;padding:9px;margin-top:8px;border-radius:8px;font-size:12px;font-weight:700;text-align:center;cursor:pointer;background:none;border:none;color:var(--gray);font-family:var(--font);text-decoration:underline;text-underline-offset:2px}
+  .pricing-cta-secondary:hover{color:var(--p)}
   .pricing-cta-note{text-align:center;font-size:11px;color:var(--gray-light);margin-top:9px}
   .pricing-addons{max-width:860px;margin:32px auto 0;background:#fff;border-radius:16px;border:1px solid var(--border);padding:26px 28px}
   .pricing-addons h3{font-size:15px;font-weight:800;margin-bottom:14px;color:var(--text)}
@@ -238,7 +240,9 @@ const css = `
     .stat:nth-last-child(-n+2){border-bottom:none}
     .footer-top{grid-template-columns:1fr 1fr}
     .footer-brand{grid-column:1/-1}
-    .badge-gcash,.badge-sync,.badge-sale{display:none}
+    .badge-gcash{top:20px;right:-8px}
+    .badge-sync{bottom:110px;left:-10px}
+    .badge-sale{bottom:24px;right:-6px}
   }
   @media(max-width:600px){
     .hero{padding:56px 5vw 52px}
@@ -587,6 +591,7 @@ export default function App() {
               {['Everything in Trial, permanently','Unlimited products, orders & staff','Full reports + BIR VAT tab','Shift management & audit logs','Receipt printing (58mm & 80mm)','SC / PWD discount support','GCash & Maya QR payments','Owner Portal — manage remotely','Cloud backup — never lose data'].map(f => <li key={f}><i className="ti ti-check"/>{f}</li>)}
             </ul>
             <button className="pricing-cta filled" onClick={openTrial}>Get Started — Free Trial</button>
+            <button className="pricing-cta-secondary" onClick={()=>window.location.href='https://client.pospro-portal.com/payment?plan=monthly'}>Already decided? Pay Now</button>
             <p className="pricing-cta-note"><i className="ti ti-lock" style={{fontSize:11,color:'#10b981'}}/> No credit card · cancel anytime</p>
           </div>
           <div className="pricing-card">
@@ -598,18 +603,15 @@ export default function App() {
             <ul className="pricing-features">
               {['Everything in Standard, forever','No monthly fees, ever again','Unlimited products, orders & staff','Full reports + BIR VAT tab','Receipt printing (58mm & 80mm)','Owner Portal — manage remotely','Cloud backup — never lose data'].map(f => <li key={f}><i className="ti ti-check"/>{f}</li>)}
             </ul>
-            {/* TODO: wire to the dedicated "Pay Now" flow once the GCash
-                payment modal is built — falls back to the same trial
-                flow as the other cards for now so this button isn't a
-                dead end in the meantime. */}
             <button className="pricing-cta outline" onClick={openTrial}>Get Started — Free Trial</button>
+            <button className="pricing-cta-secondary" onClick={()=>window.location.href='https://client.pospro-portal.com/payment?plan=lifetime'}>Already decided? Pay Now</button>
             <p className="pricing-cta-note">One payment, no subscription</p>
           </div>
         </div>
         <div className="pricing-addons">
           <h3>Optional Add-ons</h3>
           <div className="addons-grid">
-            {[['Extra Device Slot','₱149 / device / mo','Connect a 2nd or 3rd POS terminal to the same store'],['Purchase Orders Module','Ask for pricing','Manage supplier POs, deliveries & auto stock receiving'],['Invoicing Module','Ask for pricing','Create and track customer invoices with payment status'],['Kitchen Ticket Printing','Ask for pricing','Print a kitchen order ticket below each customer receipt']].map(([n,p,d]) => (
+            {[['Extra Device Slot','₱149/device/mo (or ₱149 one-time on Lifetime)','Connect a 2nd or 3rd POS terminal to the same store'],['Purchase Orders Module','₱99 one-time','Manage supplier POs, deliveries & auto stock receiving'],['Invoicing Module','₱99 one-time','Create and track customer invoices with payment status'],['Kitchen Ticket Printing','₱99 one-time','Print a kitchen order ticket below each customer receipt'],['Open Bills','₱99 one-time','Save an order as a tab and come back to pay it later']].map(([n,p,d]) => (
               <div key={n} className="addon"><div className="addon-name">{n}</div><div className="addon-price">{p}</div><div className="addon-desc">{d}</div></div>
             ))}
           </div>
