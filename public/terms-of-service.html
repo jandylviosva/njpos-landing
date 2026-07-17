@@ -6,7 +6,7 @@
   <title>Terms of Service — NJ POS</title>
   <link rel="icon" href="/favicon.ico"/>
   <link rel="preconnect" href="https://fonts.googleapis.com"/>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet"/>
+  <link href="https://fonts.googleapis.com/css2?family=Michroma&family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet"/>
   <style>
     *{box-sizing:border-box;margin:0;padding:0}
     :root{--p:#2563EB;--navy:#0f1629;--text:#111827;--gray:#6b7280;--border:#e5e7eb;--font:'Inter',sans-serif}
@@ -15,8 +15,9 @@
     a:hover{text-decoration:underline}
     nav{background:var(--navy);padding:0 5vw;height:54px;display:flex;align-items:center;justify-content:space-between;position:sticky;top:0;z-index:100}
     .nav-logo{display:flex;align-items:center;gap:10px;text-decoration:none}
+    .nav-logo:hover{text-decoration:none}
     .nav-logo-icon{width:28px;height:28px;border-radius:7px;overflow:hidden}
-    .nav-logo-icon img{width:100%;height:100%;object-fit:cover}
+    .nav-logo-icon img{width:100%;height:100%;object-fit:contain}
     .nav-logo-text{font-size:14px;font-weight:800;color:#fff}
     .nav-link{font-size:13px;color:rgba(255,255,255,0.6);text-decoration:none;transition:color .15s}
     .nav-link:hover{color:#fff;text-decoration:none}
@@ -44,7 +45,7 @@
 <nav>
   <a href="/" class="nav-logo">
     <div class="nav-logo-icon"><img src="/icons/icon-192.png" alt="NJ POS"/></div>
-    <span class="nav-logo-text">NJ POS</span>
+    <span style="font-family:'Michroma',sans-serif;font-size:12px;letter-spacing:0.5px"><span style="color:#60A5FA">NJ</span><span style="color:#fff">POS</span></span>
   </a>
   <a href="/" class="nav-link">← Back to Home</a>
 </nav>
