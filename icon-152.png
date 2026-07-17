@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Terms of Service — NJ POS</title>
+  <link rel="icon" href="/favicon.ico"/>
+  <link rel="preconnect" href="https://fonts.googleapis.com"/>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet"/>
+  <style>
+    *{box-sizing:border-box;margin:0;padding:0}
+    :root{--p:#2563EB;--navy:#0f1629;--text:#111827;--gray:#6b7280;--border:#e5e7eb;--font:'Inter',sans-serif}
+    body{font-family:var(--font);color:var(--text);background:#f5f5ff;line-height:1.7}
+    a{color:var(--p);text-decoration:none}
+    a:hover{text-decoration:underline}
+    nav{background:var(--navy);padding:0 5vw;height:54px;display:flex;align-items:center;justify-content:space-between;position:sticky;top:0;z-index:100}
+    .nav-logo{display:flex;align-items:center;gap:10px;text-decoration:none}
+    .nav-logo-icon{width:28px;height:28px;border-radius:7px;overflow:hidden}
+    .nav-logo-icon img{width:100%;height:100%;object-fit:cover}
+    .nav-logo-text{font-size:14px;font-weight:800;color:#fff}
+    .nav-link{font-size:13px;color:rgba(255,255,255,0.6);text-decoration:none;transition:color .15s}
+    .nav-link:hover{color:#fff;text-decoration:none}
+    .page-hero{background:var(--navy);color:#fff;padding:56px 5vw 48px;text-align:center}
+    .page-hero h1{font-size:clamp(24px,4vw,36px);font-weight:800;margin-bottom:10px}
+    .page-hero p{font-size:14px;color:rgba(255,255,255,0.5)}
+    .content{max-width:780px;margin:0 auto;padding:48px 5vw 80px}
+    .section{background:#fff;border-radius:14px;padding:32px 36px;margin-bottom:20px;border:1px solid var(--border)}
+    h2{font-size:17px;font-weight:800;color:var(--text);margin-bottom:14px;padding-bottom:10px;border-bottom:2px solid #f0f0ff}
+    h3{font-size:14px;font-weight:700;color:var(--text);margin:18px 0 8px}
+    p{font-size:14px;color:#374151;margin-bottom:12px}
+    ul{font-size:14px;color:#374151;padding-left:20px;margin-bottom:12px}
+    ul li{margin-bottom:6px}
+    .last-updated{font-size:12px;color:var(--gray);text-align:center;margin-bottom:32px}
+    .highlight{background:#fff7ed;border-left:3px solid #f59e0b;border-radius:0 8px 8px 0;padding:12px 16px;margin-bottom:12px;font-size:13px;color:#374151}
+    .highlight-blue{background:#f0f0ff;border-left:3px solid var(--p);border-radius:0 8px 8px 0;padding:12px 16px;margin-bottom:12px;font-size:13px;color:#374151}
+    footer{background:var(--navy);color:rgba(255,255,255,0.4);font-size:12px;text-align:center;padding:24px 5vw}
+    footer a{color:rgba(255,255,255,0.4);text-decoration:none}
+    footer a:hover{color:#fff}
+    .footer-links{display:flex;justify-content:center;gap:20px;margin-top:8px}
+  </style>
+</head>
+<body>
+
+<nav>
+  <a href="/" class="nav-logo">
+    <div class="nav-logo-icon"><img src="/icons/icon-192.png" alt="NJ POS"/></div>
+    <span class="nav-logo-text">NJ POS</span>
+  </a>
+  <a href="/" class="nav-link">← Back to Home</a>
+</nav>
+
+<div class="page-hero">
+  <h1>Terms of Service</h1>
+  <p>Please read these terms carefully before using NJ POS</p>
+</div>
+
+<div class="content">
+  <p class="last-updated">Last updated: July 1, 2026</p>
+
+  <div class="section">
+    <h2>1. Acceptance of Terms</h2>
+    <p>By activating, accessing, or using NJ POS ("the Service"), you ("the Client" or "Store Owner") agree to be bound by these Terms of Service. If you do not agree to these terms, do not use the Service.</p>
+    <p>These terms apply to all users of NJ POS, including store owners, cashiers, and any other individuals who access the Service through a registered store account.</p>
+  </div>
+
+  <div class="section">
+    <h2>2. Description of Service</h2>
+    <p>NJ POS is a cloud-synced Point of Sale software service that includes:</p>
+    <ul>
+      <li>A Progressive Web App (PWA) for use on POS devices (tablets, computers, phones)</li>
+      <li>An Owner Portal for monitoring sales, reports, and store management</li>
+      <li>Cloud synchronization of store data via Supabase</li>
+      <li>License-based device registration and access control</li>
+    </ul>
+    <p>The Service is provided on a license basis. Each license grants access for a specified number of devices as indicated at the time of purchase.</p>
+  </div>
+
+  <div class="section">
+    <h2>3. Licenses & Device Slots</h2>
+    <h3>Activation</h3>
+    <p>Each store requires a valid activation code to begin using NJ POS. Trial activation codes are provided for evaluation purposes and expire after the stated trial period.</p>
+    <h3>Device Limits</h3>
+    <p>Your license specifies the maximum number of devices that may be registered to your store simultaneously. To add additional devices beyond your plan limit, you must purchase an additional device slot license.</p>
+    <h3>License Transfer</h3>
+    <p>Licenses are non-transferable between store owners. If you wish to transfer your store to another owner, please contact support.</p>
+    <div class="highlight-blue">
+      Trial licenses are strictly for evaluation. Using a trial license for extended commercial operations beyond the trial period without upgrading to a paid plan is a violation of these Terms.
+    </div>
+  </div>
+
+  <div class="section">
+    <h2>4. Payment & Fees</h2>
+    <p>NJ POS operates on a one-time or recurring license fee model as communicated during purchase. The following applies:</p>
+    <ul>
+      <li>Fees are quoted in Philippine Peso (₱) unless otherwise stated</li>
+      <li>Payment terms are as agreed between you and NJ POS at time of purchase</li>
+      <li>Licenses are activated upon confirmed payment</li>
+      <li>We reserve the right to adjust pricing for new licenses with reasonable notice</li>
+    </ul>
+    <h3>Refunds</h3>
+    <p>Due to the digital nature of the Service, activated licenses are generally non-refundable. If you experience technical issues preventing use of the Service, contact support within 7 days of activation and we will work to resolve the issue or consider a remedy on a case-by-case basis.</p>
+  </div>
+
+  <div class="section">
+    <h2>5. Acceptable Use</h2>
+    <p>You agree to use NJ POS only for lawful business purposes. You must not:</p>
+    <ul>
+      <li>Attempt to reverse-engineer, decompile, or extract the source code of the Service</li>
+      <li>Share your activation code with other store owners not under your account</li>
+      <li>Use the Service to process fraudulent transactions or misrepresent sales data</li>
+      <li>Attempt to bypass license restrictions, device limits, or authentication mechanisms</li>
+      <li>Use automated tools to scrape, overload, or abuse the Service's APIs</li>
+      <li>Resell or sublicense access to the Service without written permission</li>
+    </ul>
+    <div class="highlight">
+      Violation of these terms may result in immediate license suspension without refund.
+    </div>
+  </div>
+
+  <div class="section">
+    <h2>6. Developer Support Access</h2>
+    <p>NJ POS may provide developer support sessions that allow authorized NJ POS staff to temporarily access your store's data for troubleshooting purposes. These sessions:</p>
+    <ul>
+      <li>Are time-limited and auto-expire after 30 minutes</li>
+      <li>Are initiated only upon your request or with your explicit consent</li>
+      <li>Are logged and traceable</li>
+      <li>Do not grant access to your login password (passwords are never visible to us)</li>
+    </ul>
+    <p>By using the Service, you consent to this support access mechanism for the purpose of resolving technical issues.</p>
+  </div>
+
+  <div class="section">
+    <h2>7. Your Data</h2>
+    <p>You retain full ownership of your business data (products, orders, customer records, etc.) stored in NJ POS. We do not claim any rights over your business data.</p>
+    <p>You are responsible for:</p>
+    <ul>
+      <li>The accuracy and legality of the data you enter into NJ POS</li>
+      <li>Compliance with applicable laws regarding the data you collect from your own customers</li>
+      <li>Maintaining backup copies of critical business records — while we sync your data to the cloud, we are not liable for data loss due to events outside our reasonable control</li>
+    </ul>
+    <p>You may export your product catalog and order history at any time from the POS app. Upon account termination, you have 30 days to export your data before it is deleted.</p>
+  </div>
+
+  <div class="section">
+    <h2>8. Availability & Support</h2>
+    <p>We aim to maintain high availability of the Service but do not guarantee uninterrupted access. Scheduled maintenance, third-party service outages (Supabase, Vercel), or unforeseen technical issues may cause temporary unavailability.</p>
+    <p>Support is provided via:</p>
+    <ul>
+      <li>Email: <a href="mailto:pos_support@nj-systems.com">pos_support@nj-systems.com</a></li>
+      <li>Facebook Messenger: <a href="https://www.facebook.com/profile.php?id=61572325662884" target="_blank" rel="noopener noreferrer">NJ POS Facebook Page</a></li>
+    </ul>
+    <p>We will make reasonable efforts to respond to support requests within 1–2 business days.</p>
+  </div>
+
+  <div class="section">
+    <h2>9. Limitation of Liability</h2>
+    <p>To the maximum extent permitted by applicable law, NJ POS and its operators shall not be liable for:</p>
+    <ul>
+      <li>Loss of revenue, profits, or business resulting from Service downtime or data issues</li>
+      <li>Indirect, incidental, or consequential damages arising from use of the Service</li>
+      <li>Data loss caused by hardware failure, user error, or third-party service outages</li>
+      <li>Actions taken by store staff using accounts registered under your store</li>
+    </ul>
+    <p>Our total liability to you for any claim arising from use of the Service shall not exceed the amount you paid for the license in the 12 months preceding the claim.</p>
+  </div>
+
+  <div class="section">
+    <h2>10. Termination</h2>
+    <p>Either party may terminate the use of the Service:</p>
+    <ul>
+      <li><strong>You</strong> may stop using the Service at any time. Unused portions of a license fee are non-refundable.</li>
+      <li><strong>We</strong> may suspend or terminate your license if you violate these Terms, fail to pay applicable fees, or engage in behavior that harms other users or the Service.</li>
+    </ul>
+    <p>Upon termination, your access to the Owner Portal and cloud sync will cease. Your data will be retained for 30 days before deletion, during which you may export it.</p>
+  </div>
+
+  <div class="section">
+    <h2>11. Changes to These Terms</h2>
+    <p>We may update these Terms of Service from time to time. When we do, we will update the "Last updated" date at the top of this page. For significant changes, we will notify active store owners via email at least 14 days before the changes take effect. Continued use of the Service after the effective date constitutes acceptance of the updated Terms.</p>
+  </div>
+
+  <div class="section">
+    <h2>12. Governing Law</h2>
+    <p>These Terms shall be governed by and construed in accordance with the laws of the Republic of the Philippines. Any disputes arising from these Terms shall be subject to the exclusive jurisdiction of the appropriate courts in the Philippines.</p>
+  </div>
+
+  <div class="section">
+    <h2>13. Contact</h2>
+    <p>For questions about these Terms of Service:</p>
+    <ul>
+      <li>Email: <a href="mailto:pos_support@nj-systems.com">pos_support@nj-systems.com</a></li>
+      <li>Facebook: <a href="https://www.facebook.com/profile.php?id=61572325662884" target="_blank" rel="noopener noreferrer">NJ POS Facebook Page</a></li>
+    </ul>
+  </div>
+</div>
+
+<footer>
+  <p>© 2026 NJ POS. All rights reserved.</p>
+  <div class="footer-links">
+    <a href="/privacy-policy">Privacy Policy</a>
+    <a href="/terms-of-service">Terms of Service</a>
+    <a href="/">Home</a>
+  </div>
+</footer>
+
+</body>
+</html>
