@@ -1,11 +1,11 @@
 {
-  "name": "POS Pro",
-  "short_name": "POS Pro",
+  "name": "NJ POS",
+  "short_name": "NJ POS",
   "description": "Affordable cloud-synced Point of Sale for Filipino stores",
   "start_url": "/",
   "display": "standalone",
   "background_color": "#0f1629",
-  "theme_color": "#4f46e5",
+  "theme_color": "#2563EB",
   "icons": [
     { "src": "assets/icons/icon-72.png",  "sizes": "72x72",   "type": "image/png" },
     { "src": "assets/icons/icon-96.png",  "sizes": "96x96",   "type": "image/png" },

@@ -1,14 +1,14 @@
 import { useState } from 'react';
 
-const P = '#4f46e5';
-const P_DARK = '#3730a3';
+const P = '#2563EB';
+const P_DARK = '#1E40AF';
 const NAVY = '#0f1629';
 
 const css = `
   *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
   :root{
-    --p:#4f46e5;--p-light:#818cf8;--p-dark:#3730a3;
-    --p-glow:rgba(79,70,229,0.35);
+    --p:#2563EB;--p-light:#60A5FA;--p-dark:#1E40AF;
+    --p-glow:rgba(37,99,235,0.35);
     --navy:#0f1629;--navy2:#141c35;
     --gold:#f59e0b;--green:#10b981;
     --white:#fff;--off:#f5f5ff;
@@ -36,10 +36,10 @@ const css = `
   .nav-cta:hover{background:var(--p-dark);transform:translateY(-1px)}
   .nav-hamburger{display:none;background:none;border:none;cursor:pointer;color:#fff;font-size:22px}
   .hero{background:var(--navy);padding:72px 5vw 80px;display:grid;grid-template-columns:1fr 1fr;gap:56px;align-items:center;min-height:calc(100vh - 100px);position:relative;overflow:hidden}
-  .hero::before{content:'';position:absolute;top:-160px;right:-160px;width:560px;height:560px;background:radial-gradient(circle,rgba(79,70,229,.2) 0%,transparent 68%);pointer-events:none}
-  .hero-eyebrow{display:inline-flex;align-items:center;gap:7px;background:rgba(79,70,229,.15);border:1px solid rgba(129,140,248,.35);border-radius:20px;padding:5px 14px;font-size:12px;font-weight:700;color:var(--p-light);margin-bottom:18px}
+  .hero::before{content:'';position:absolute;top:-160px;right:-160px;width:560px;height:560px;background:radial-gradient(circle,rgba(37,99,235,.2) 0%,transparent 68%);pointer-events:none}
+  .hero-eyebrow{display:inline-flex;align-items:center;gap:7px;background:rgba(37,99,235,.15);border:1px solid rgba(96,165,250,.35);border-radius:20px;padding:5px 14px;font-size:12px;font-weight:700;color:var(--p-light);margin-bottom:18px}
   .hero h1{font-size:clamp(30px,4.2vw,54px);font-weight:900;color:#fff;line-height:1.08;letter-spacing:-1.5px;margin-bottom:16px}
-  .hero h1 em{font-style:normal;background:linear-gradient(130deg,#a5b4fc,#818cf8,#6366f1);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text}
+  .hero h1 em{font-style:normal;background:linear-gradient(130deg,#93C5FD,#60A5FA,#3B82F6);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text}
   .hero-price-hook{display:inline-flex;align-items:center;gap:16px;background:rgba(255,255,255,.04);border:1px solid rgba(255,255,255,.1);border-radius:12px;padding:12px 18px;margin-bottom:22px;flex-wrap:wrap}
   .hero-price-main{display:flex;align-items:baseline;gap:4px}
   .hero-price-currency{font-size:18px;font-weight:800;color:rgba(255,255,255,.6)}
@@ -111,12 +111,12 @@ const css = `
   .features{background:var(--off)}
   .features-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(290px,1fr));gap:16px}
   .feature-card{background:#fff;border-radius:14px;padding:26px;border:1px solid var(--border);transition:box-shadow .22s,transform .22s,border-color .22s;cursor:default}
-  .feature-card:hover{box-shadow:0 16px 48px rgba(79,70,229,.1);transform:translateY(-4px);border-color:rgba(79,70,229,.18)}
+  .feature-card:hover{box-shadow:0 16px 48px rgba(37,99,235,.1);transform:translateY(-4px);border-color:rgba(37,99,235,.18)}
   .feature-icon{width:44px;height:44px;border-radius:11px;display:flex;align-items:center;justify-content:center;font-size:20px;margin-bottom:14px}
   .feature-card h3{font-size:15px;font-weight:800;margin-bottom:7px;color:var(--text)}
   .feature-card p{font-size:13px;color:var(--gray);line-height:1.7}
   .feature-tags{display:flex;flex-wrap:wrap;gap:5px;margin-top:12px}
-  .feature-tag{font-size:10px;font-weight:600;padding:2px 8px;border-radius:20px;background:#f5f5ff;color:#6366f1;border:1px solid #e0e7ff}
+  .feature-tag{font-size:10px;font-weight:600;padding:2px 8px;border-radius:20px;background:#f5f5ff;color:#3B82F6;border:1px solid #e0e7ff}
   .how{background:#fff}
   .how-steps{display:grid;grid-template-columns:repeat(3,1fr);gap:40px;position:relative}
   .how-steps::before{content:'';position:absolute;top:28px;left:calc(16.67% + 24px);right:calc(16.67% + 24px);height:2px;background:linear-gradient(90deg,var(--p),var(--p-light));opacity:.2}
@@ -140,7 +140,7 @@ const css = `
   .pricing-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:20px;max-width:1100px;margin:0 auto}
   .pricing-card{background:#fff;border-radius:18px;padding:36px 30px;border:2px solid var(--border);position:relative;transition:box-shadow .22s}
   .pricing-card:hover{box-shadow:0 20px 56px rgba(0,0,0,.08)}
-  .pricing-card.featured{border-color:var(--p);box-shadow:0 20px 56px rgba(79,70,229,.18)}
+  .pricing-card.featured{border-color:var(--p);box-shadow:0 20px 56px rgba(37,99,235,.18)}
   .pricing-badge{position:absolute;top:-13px;left:50%;transform:translateX(-50%);background:linear-gradient(90deg,var(--p-dark),var(--p));color:#fff;font-size:11px;font-weight:800;padding:4px 16px;border-radius:20px;white-space:nowrap}
   .pricing-urgency{display:flex;align-items:center;gap:6px;background:#fef2f2;border:1px solid #fecaca;border-radius:8px;padding:7px 12px;margin-bottom:20px;font-size:12px;font-weight:700;color:#dc2626}
   .pricing-name{font-size:12px;font-weight:800;color:var(--gray);margin-bottom:8px;text-transform:uppercase;letter-spacing:1.2px}
@@ -184,7 +184,7 @@ const css = `
   .faq{background:var(--off)}
   .faq-list{max-width:700px;margin:0 auto;display:flex;flex-direction:column;gap:4px}
   .faq-item{background:#fff;border-radius:10px;border:1px solid var(--border);overflow:hidden;transition:box-shadow .2s}
-  .faq-item.open{box-shadow:0 4px 16px rgba(79,70,229,.08);border-color:rgba(79,70,229,.2)}
+  .faq-item.open{box-shadow:0 4px 16px rgba(37,99,235,.08);border-color:rgba(37,99,235,.2)}
   .faq-q{width:100%;background:none;border:none;cursor:pointer;display:flex;justify-content:space-between;align-items:center;padding:17px 20px;font-size:14px;font-weight:700;color:var(--text);text-align:left;gap:12px;transition:background .15s;font-family:var(--font)}
   .faq-q:hover{background:#fafafe}
   .faq-q i{font-size:17px;color:var(--p);flex-shrink:0;transition:transform .25s}
@@ -220,7 +220,7 @@ const css = `
   .form-field{display:flex;flex-direction:column;gap:5px;margin-bottom:12px}
   .form-label{font-size:11px;font-weight:800;color:var(--gray);text-transform:uppercase;letter-spacing:.5px}
   .form-input{padding:10px 13px;border:1.5px solid var(--border);border-radius:9px;font-size:14px;font-family:var(--font);outline:none;transition:border-color .15s,box-shadow .15s;background:#fff;color:var(--text);width:100%}
-  .form-input:focus{border-color:var(--p);box-shadow:0 0 0 3px rgba(79,70,229,.1)}
+  .form-input:focus{border-color:var(--p);box-shadow:0 0 0 3px rgba(37,99,235,.1)}
   .modal-note{text-align:center;font-size:12px;color:var(--gray-light);margin-top:12px;display:flex;align-items:center;justify-content:center;gap:5px}
   .modal-note i{color:var(--green);font-size:13px}
   .modal-success{text-align:center;padding:10px 0}
@@ -299,8 +299,8 @@ function ProductThumb({ src, fallback }) {
 function NavLogo() {
   return (
     <a className="nav-logo" href="#">
-      <div className="nav-logo-icon"><img src={LOGO} alt="POS Pro"/></div>
-      <span className="nav-logo-text">POS Pro</span>
+      <div className="nav-logo-icon"><img src={LOGO} alt="NJ POS"/></div>
+      <span className="nav-logo-text">NJ POS</span>
     </a>
   );
 }
@@ -317,7 +317,7 @@ function TrialModal({ open, onClose }) {
     const email = e.target.email.value.trim().toLowerCase();
     setSending(true); setErr('');
     try {
-      const r = await fetch('https://client.pospro-portal.com/api/start-trial', {
+      const r = await fetch('https://owner.nj-systems.com/api/start-trial', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({ email, storeName: store, ownerName: name }),
@@ -337,7 +337,7 @@ function TrialModal({ open, onClose }) {
         <button className="modal-close-btn" onClick={close}><i className="ti ti-x"/></button>
         {!done ? (
           <>
-            <div className="modal-icon"><img src={LOGO} alt="POS Pro"/></div>
+            <div className="modal-icon"><img src={LOGO} alt="NJ POS"/></div>
             <div className="modal-title">Start Your Free Trial</div>
             <div className="modal-sub">3 days of full access — no payment required</div>
             <form onSubmit={submit}>
@@ -367,7 +367,7 @@ function TrialModal({ open, onClose }) {
             <div style={{fontSize:19,fontWeight:900,marginBottom:8}}>Trial Code Sent!</div>
             <div style={{fontSize:14,color:'#6b7280',marginBottom:16}}>Check your email for your <strong>TRIAL-XXXX-XXXX</strong> activation code.</div>
             <div style={{background:'#f5f3ff',border:'1px solid #c4b5fd',borderRadius:10,padding:'12px 16px',fontSize:13,color:'#5b21b6'}}>
-              📧 Enter the code at <a href="https://pwa.pospro-portal.com" style={{color:'#4f46e5',fontWeight:700}}>pwa.pospro-portal.com</a> to activate your store.
+              📧 Enter the code at <a href="https://pos.nj-systems.com" style={{color:'#2563EB',fontWeight:700}}>pos.nj-systems.com</a> to activate your store.
             </div>
           </div>
         )}
@@ -414,7 +414,7 @@ export default function App() {
         </div>
         <div className="nav-right">
           <span className="nav-price">from <strong>₱399/mo</strong></span>
-          <a href="https://client.pospro-portal.com" className="nav-cta">Owner Login</a>
+          <a href="https://owner.nj-systems.com" className="nav-cta">Owner Login</a>
         </div>
         <button className="nav-hamburger" onClick={() => setMenuOpen(o => !o)} aria-label="Menu">
           <i className={`ti ${menuOpen ? 'ti-x' : 'ti-menu-2'}`}/>
@@ -455,7 +455,7 @@ export default function App() {
                   <div className="mockup-logo-icon" style={{background:MOCKUP_ACCENT}}>
                     <ProductThumb src={MOCKUP_LOGO} fallback="🍔"/>
                   </div>
-                  <div className="mockup-store">BAGA BURGER MALARIA<span>POS Pro</span></div>
+                  <div className="mockup-store">BAGA BURGER MALARIA<span>NJ POS</span></div>
                 </div>
                 <div className="mockup-sync"><div className="mockup-sync-dot"/><span className="mockup-sync-text">Synced</span></div>
               </div>
@@ -521,7 +521,7 @@ export default function App() {
             {bg:'#fce7f3',c:'#be185d',icon:'ti-cloud-upload',title:'Cloud Sync & Owner Portal',desc:'Data syncs in real time. Check today\'s sales, manage products, and add staff from any device via the Owner Portal — or right from a second device running the POS app itself, set up purely for monitoring. The app keeps itself up to date automatically, so you\'re always on the latest version.',tags:['Works offline','Auto sync','Auto-updates','Multi-device']},
             {bg:'#e0f2fe',c:'#0369a1',icon:'ti-receipt',title:'Receipt Printing',desc:'Print thermal receipts on 58mm or 80mm paper. Connect a USB or Bluetooth printer directly for instant, one-tap printing with no pop-up — or use any printer through the standard print dialog. Kitchen Order Ticket available as add-on.',tags:['58mm & 80mm','Direct USB/Bluetooth print','Custom receipt logo','Kitchen tickets']},
             {bg:'#fff7ed',c:'#c2410c',icon:'ti-discount-2',title:'Discounts & VAT',desc:'Senior Citizen and PWD 20% discounts with one tap. Custom percentage discounts and per-order VAT toggle included.',tags:['SC / PWD 20%','Custom %','VAT per order','BIR-ready']},
-            {bg:'#f5f3ff',c:'#6d28d9',icon:'ti-truck',title:'Purchase Orders & Invoices',desc:'Manage supplier POs and customer invoices inside POS Pro. Receive deliveries, auto-update stock, and print official documents.',tags:['PO management','Stock receiving','Customer invoices','Print-ready docs']},
+            {bg:'#f5f3ff',c:'#6d28d9',icon:'ti-truck',title:'Purchase Orders & Invoices',desc:'Manage supplier POs and customer invoices inside NJ POS. Receive deliveries, auto-update stock, and print official documents.',tags:['PO management','Stock receiving','Customer invoices','Print-ready docs']},
           ].map(f => (
             <div key={f.title} className="feature-card">
               <div className="feature-icon" style={{background:f.bg,color:f.c}}><i className={`ti ${f.icon}`}/></div>
@@ -537,7 +537,7 @@ export default function App() {
         <div className="section-center" style={{marginBottom:56}}>
           <div className="section-eyebrow">Getting started</div>
           <h2 className="section-title">Up and running in under 10 minutes</h2>
-          <p className="section-sub">No installation, no IT setup, no training videos. If you can use a phone, you can use POS Pro.</p>
+          <p className="section-sub">No installation, no IT setup, no training videos. If you can use a phone, you can use NJ POS.</p>
         </div>
         <div className="how-steps">
           {[
@@ -593,7 +593,7 @@ export default function App() {
               {['Everything in Trial, permanently','Unlimited products, orders & staff','Full reports + BIR VAT tab','Shift management & audit logs','Receipt printing (58mm & 80mm)','SC / PWD discount support','GCash & Maya QR payments','Owner Portal — manage remotely','Cloud backup — never lose data'].map(f => <li key={f}><i className="ti ti-check"/>{f}</li>)}
             </ul>
             <button className="pricing-cta filled" onClick={openTrial}>Get Started — Free Trial</button>
-            <button className="pricing-cta-secondary" onClick={()=>window.location.href='https://client.pospro-portal.com/payment?plan=monthly'}>Already decided? Pay Now</button>
+            <button className="pricing-cta-secondary" onClick={()=>window.location.href='https://owner.nj-systems.com/payment?plan=monthly'}>Already decided? Pay Now</button>
             <p className="pricing-cta-note"><i className="ti ti-lock" style={{fontSize:11,color:'#10b981'}}/> No credit card · cancel anytime</p>
           </div>
           <div className="pricing-card">
@@ -606,7 +606,7 @@ export default function App() {
               {['Everything in Standard, forever','No monthly fees, ever again','Unlimited products, orders & staff','Full reports + BIR VAT tab','Receipt printing (58mm & 80mm)','Owner Portal — manage remotely','Cloud backup — never lose data'].map(f => <li key={f}><i className="ti ti-check"/>{f}</li>)}
             </ul>
             <button className="pricing-cta outline" onClick={openTrial}>Get Started — Free Trial</button>
-            <button className="pricing-cta-secondary" onClick={()=>window.location.href='https://client.pospro-portal.com/payment?plan=lifetime'}>Already decided? Pay Now</button>
+            <button className="pricing-cta-secondary" onClick={()=>window.location.href='https://owner.nj-systems.com/payment?plan=lifetime'}>Already decided? Pay Now</button>
             <p className="pricing-cta-note">One payment, no subscription</p>
           </div>
         </div>
@@ -627,7 +627,7 @@ export default function App() {
         </div>
         <div className="testi-grid">
           {[
-            {init:'MA',bg:P,name:'Maria A.',biz:'Carinderia · Cebu City',text:'Before POS Pro I was manually counting sales at the end of the day. Now I just open the report and everything is there — by cashier, by product, by hour. Grabe ang convenience.'},
+            {init:'MA',bg:P,name:'Maria A.',biz:'Carinderia · Cebu City',text:'Before NJ POS I was manually counting sales at the end of the day. Now I just open the report and everything is there — by cashier, by product, by hour. Grabe ang convenience.'},
             {init:'JR',bg:'#0891b2',name:'Jun R.',biz:'Sari-sari Store · Davao',text:'Hindi ako mahilig sa tech pero setup lang ng ilang minuto naka-process na kami ng orders. GCash QR works perfectly. My staff learned it in one afternoon.'},
             {init:'CL',bg:'#7c3aed',name:'Cynthia L.',biz:'Bakeshop · Butuan City',text:'The Owner Portal is my favorite — I check my store even when I\'m away. Sales, stock, who\'s on shift. ₱399 is nothing for that peace of mind.'},
           ].map(t => (
@@ -651,7 +651,7 @@ export default function App() {
         </div>
         <div className="faq-list">
           {[
-            ['Do I need internet to use POS Pro?','No. POS Pro saves data locally first so you can keep selling even without internet. Once you\'re back online, everything syncs automatically. A connection is only required for the Owner Portal and cloud features.'],
+            ['Do I need internet to use NJ POS?','No. NJ POS saves data locally first so you can keep selling even without internet. Once you\'re back online, everything syncs automatically. A connection is only required for the Owner Portal and cloud features.'],
             ['What devices does it work on?','Any modern browser — Android, iPhone, iPad, laptop, or desktop. No app download required. You can also install it as a PWA on your home screen for a full-screen app experience.'],
             ['Can I print receipts without a pop-up every time?','Yes — connect a USB or Bluetooth thermal printer directly in Settings and receipts print instantly with no pop-up, on Android tablets, Windows, or Mac using Chrome, Edge, or Brave. On iPhone/iPad, printing still works great through the standard print screen — that is an Apple restriction that applies to every app, not just ours. Either way, your receipts always print; direct connection is just a convenience upgrade where your device supports it.'],
             ['How does the free trial work?','Request a trial and we email you a TRIAL activation code. Enter it in the app to activate your store — no payment or credit card needed. After 3 days you can upgrade to keep all your data and continue selling.'],
@@ -671,7 +671,7 @@ export default function App() {
           Start free · then only <strong>₱399/month</strong> · cancel anytime
         </div>
         <br/>
-        <button className="btn-white" onClick={openTrial}><i className="ti ti-rocket"/>Try POS Pro Free for 3 Days</button>
+        <button className="btn-white" onClick={openTrial}><i className="ti ti-rocket"/>Try NJ POS Free for 3 Days</button>
         <p className="cta-guarantee"><i className="ti ti-shield-check" style={{color:'rgba(255,255,255,.4)',fontSize:13}}/> No credit card · No commitment · Setup in minutes</p>
       </div>
 
@@ -690,20 +690,20 @@ export default function App() {
           </div>
           <div className="footer-col">
             <h4>Access</h4>
-            <a href="https://client.pospro-portal.com">Owner Portal</a>
+            <a href="https://owner.nj-systems.com">Owner Portal</a>
             <a href="#" onClick={e=>{e.preventDefault();openTrial()}}>Start Free Trial</a>
           </div>
           <div className="footer-col">
             <h4>Contact</h4>
-            <a href="mailto:support@pospro-portal.com">support@pospro-portal.com</a>
+            <a href="mailto:pos_support@nj-systems.com">pos_support@nj-systems.com</a>
             <a href="https://www.facebook.com/POSProPH" target="_blank" rel="noopener noreferrer" style={{display:"flex",alignItems:"center",gap:7}}>
               <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M24 12.073C24 5.405 18.627 0 12 0S0 5.405 0 12.073C0 18.1 4.388 23.094 10.125 24v-8.437H7.078v-3.49h3.047V9.41c0-3.025 1.792-4.697 4.533-4.697 1.312 0 2.686.236 2.686.236v2.97h-1.513c-1.491 0-1.956.93-1.956 1.884v2.27h3.328l-.532 3.49h-2.796V24C19.612 23.094 24 18.1 24 12.073z"/></svg>
-              POS Pro PH
+              NJ POS PH
             </a>
           </div>
         </div>
         <div className="footer-bottom">
-          <p>© 2026 POS Pro. All rights reserved.</p>
+          <p>© 2026 NJ POS. All rights reserved.</p>
           <div className="footer-bottom-links">
             <a href="/privacy-policy">Privacy Policy</a>
             <a href="/terms-of-service">Terms of Service</a>
