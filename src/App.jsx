@@ -24,7 +24,7 @@ const css = `
   nav{position:sticky;top:0;z-index:100;background:rgba(15,22,41,.95);backdrop-filter:blur(14px);border-bottom:1px solid rgba(255,255,255,.07);padding:0 5vw;height:64px;display:flex;align-items:center;justify-content:space-between}
   .nav-logo{display:flex;align-items:center;gap:10px;text-decoration:none}
   .nav-logo-icon{width:36px;height:36px;border-radius:9px;overflow:hidden;flex-shrink:0}
-  .nav-logo-icon img{width:100%;height:100%;object-fit:cover}
+  .nav-logo-icon img{width:100%;height:100%;object-fit:contain}
   .nav-logo-text{font-size:17px;font-weight:800;color:#fff;letter-spacing:-.3px}
   .nav-links{display:flex;align-items:center;gap:28px}
   .nav-links a{color:rgba(255,255,255,.65);text-decoration:none;font-size:14px;font-weight:500;transition:color .15s}
@@ -214,7 +214,7 @@ const css = `
   .modal-box{background:#fff;border-radius:22px;padding:36px 32px;width:100%;max-width:420px;position:relative;box-shadow:0 28px 70px rgba(0,0,0,.3);animation:modalIn .2s ease}
   .modal-close-btn{position:absolute;top:14px;right:14px;background:none;border:none;cursor:pointer;color:#9ca3af;font-size:22px;line-height:1}
   .modal-icon{width:52px;height:52px;border-radius:14px;overflow:hidden;margin:0 auto 12px}
-  .modal-icon img{width:100%;height:100%;object-fit:cover}
+  .modal-icon img{width:100%;height:100%;object-fit:contain}
   .modal-title{font-size:20px;font-weight:900;color:var(--text);margin-bottom:4px;text-align:center}
   .modal-sub{font-size:14px;color:var(--gray);text-align:center;margin-bottom:22px}
   .form-field{display:flex;flex-direction:column;gap:5px;margin-bottom:12px}
@@ -300,7 +300,7 @@ function NavLogo() {
   return (
     <a className="nav-logo" href="#">
       <div className="nav-logo-icon"><img src={LOGO} alt="NJ POS"/></div>
-      <span className="nav-logo-text">NJ POS</span>
+      <span style={{fontFamily:"'Michroma',sans-serif",fontSize:15,letterSpacing:0.5}}><span style={{color:"#60A5FA"}}>NJ</span><span style={{color:"#fff"}}>POS</span></span>
     </a>
   );
 }
