@@ -616,7 +616,7 @@ export default function App() {
         <div className="pricing-addons">
           <h3>Optional Add-ons</h3>
           <div className="addons-grid">
-            {[['Extra Device Slot','₱149/device/mo (or ₱1,788/device/yr on Annual)','Connect a 2nd or 3rd POS terminal to the same store'],['Purchase Orders Module','₱99 one-time','Manage supplier POs, deliveries & auto stock receiving'],['Invoicing Module','₱99 one-time','Create and track customer invoices with payment status'],['Kitchen Ticket Printing','₱99 one-time','Print a kitchen order ticket below each customer receipt'],['Open Bills','₱99 one-time','Save an order as a tab and come back to pay it later']].map(([n,p,d]) => (
+            {[['Extra Device Slot','₱149/device/mo (or ₱1,499/device/yr on Annual)','Connect a 2nd or 3rd POS terminal to the same store'],['Purchase Orders Module','₱99 one-time','Manage supplier POs, deliveries & auto stock receiving'],['Invoicing Module','₱99 one-time','Create and track customer invoices with payment status'],['Kitchen Ticket Printing','₱99 one-time','Print a kitchen order ticket below each customer receipt'],['Open Bills','₱99 one-time','Save an order as a tab and come back to pay it later']].map(([n,p,d]) => (
               <div key={n} className="addon"><div className="addon-name">{n}</div><div className="addon-price">{p}</div><div className="addon-desc">{d}</div></div>
             ))}
           </div>
