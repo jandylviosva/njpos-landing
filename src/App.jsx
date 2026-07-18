@@ -601,22 +601,22 @@ export default function App() {
           </div>
           <div className="pricing-card">
             <div className="pricing-badge" style={{background:'#0369a1'}}>Best Value</div>
-            <div className="pricing-name">Lifetime</div>
-            <div className="pricing-amount"><sup>₱</sup>8,999</div>
-            <div className="pricing-note">One-time payment · yours forever, no renewals</div>
-            <div className="pricing-compare"><i className="ti ti-coin-peso"/>Pays for itself vs. Standard in under 2 years</div>
+            <div className="pricing-name">Annual</div>
+            <div className="pricing-amount"><sup>₱</sup>3,999<span className="mo">/yr</span></div>
+            <div className="pricing-note">Billed yearly · renews automatically</div>
+            <div className="pricing-compare"><i className="ti ti-coin-peso"/>Save ₱789/year vs. paying monthly</div>
             <ul className="pricing-features">
-              {['Everything in Standard, forever','No monthly fees, ever again','Unlimited products, orders & staff','Full reports + BIR VAT tab','Receipt printing (58mm & 80mm)','Owner Portal — manage remotely','Cloud backup — never lose data'].map(f => <li key={f}><i className="ti ti-check"/>{f}</li>)}
+              {['Everything in Standard, billed yearly','One payment, not twelve','Unlimited products, orders & staff','Full reports + BIR VAT tab','Receipt printing (58mm & 80mm)','Owner Portal — manage remotely','Cloud backup — never lose data'].map(f => <li key={f}><i className="ti ti-check"/>{f}</li>)}
             </ul>
             <button className="pricing-cta outline" onClick={openTrial}>Get Started — Free Trial</button>
-            <button className="pricing-cta-secondary" onClick={()=>window.location.href='https://owner.nj-systems.com/payment?plan=lifetime'}>Already decided? Pay Now</button>
-            <p className="pricing-cta-note">One payment, no subscription</p>
+            <button className="pricing-cta-secondary" onClick={()=>window.location.href='https://owner.nj-systems.com/payment?plan=annual'}>Already decided? Pay Now</button>
+            <p className="pricing-cta-note">Renews yearly, cancel anytime</p>
           </div>
         </div>
         <div className="pricing-addons">
           <h3>Optional Add-ons</h3>
           <div className="addons-grid">
-            {[['Extra Device Slot','₱149/device/mo (or ₱149 one-time on Lifetime)','Connect a 2nd or 3rd POS terminal to the same store'],['Purchase Orders Module','₱99 one-time','Manage supplier POs, deliveries & auto stock receiving'],['Invoicing Module','₱99 one-time','Create and track customer invoices with payment status'],['Kitchen Ticket Printing','₱99 one-time','Print a kitchen order ticket below each customer receipt'],['Open Bills','₱99 one-time','Save an order as a tab and come back to pay it later']].map(([n,p,d]) => (
+            {[['Extra Device Slot','₱149/device/mo (or ₱1,788/device/yr on Annual)','Connect a 2nd or 3rd POS terminal to the same store'],['Purchase Orders Module','₱99 one-time','Manage supplier POs, deliveries & auto stock receiving'],['Invoicing Module','₱99 one-time','Create and track customer invoices with payment status'],['Kitchen Ticket Printing','₱99 one-time','Print a kitchen order ticket below each customer receipt'],['Open Bills','₱99 one-time','Save an order as a tab and come back to pay it later']].map(([n,p,d]) => (
               <div key={n} className="addon"><div className="addon-name">{n}</div><div className="addon-price">{p}</div><div className="addon-desc">{d}</div></div>
             ))}
           </div>
