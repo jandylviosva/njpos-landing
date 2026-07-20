@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 
 const P = '#2563EB';
 const P_DARK = '#1E40AF';
@@ -121,7 +121,7 @@ const css = `
   .how-steps{display:grid;grid-template-columns:repeat(3,1fr);gap:40px;position:relative}
   .how-steps::before{content:'';position:absolute;top:28px;left:calc(16.67% + 24px);right:calc(16.67% + 24px);height:2px;background:linear-gradient(90deg,var(--p),var(--p-light));opacity:.2}
   .how-step{text-align:center}
-  .how-step-num{width:56px;height:56px;border-radius:50%;background:linear-gradient(135deg,var(--p),var(--p-dark));color:#fff;font-size:20px;font-weight:900;display:flex;align-items:center;justify-content:center;margin:0 auto 18px;box-shadow:0 8px 24px var(--p-glow)}
+  .how-step-num{width:56px;height:56px;border-radius:50%;background:linear-gradient(135deg,var(--p),var(--p-dark));color:#fff;font-size:20px;font-weight:900;display:flex;align-items:center;justify-content:center;margin:0 auto 18px;box-shadow:0 8px 24px var(--p-glow);position:relative;z-index:1}
   .how-step h3{font-size:15px;font-weight:800;margin-bottom:7px}
   .how-step p{font-size:13px;color:var(--gray);line-height:1.7}
   .payments{background:var(--navy);padding:60px 5vw;text-align:center}
@@ -171,8 +171,11 @@ const css = `
   .addon-price{font-size:13px;font-weight:800;color:var(--p);margin-bottom:3px}
   .addon-desc{font-size:11px;color:var(--gray)}
   .testimonials{background:#fff}
-  .testi-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));gap:18px}
-  .testi-card{background:var(--off);border-radius:14px;padding:24px;border:1px solid var(--border);transition:box-shadow .2s,transform .2s}
+  .testi-carousel{overflow:hidden;position:relative;margin:0 -5vw;padding:0 5vw;-webkit-mask-image:linear-gradient(90deg,transparent,#000 5%,#000 95%,transparent);mask-image:linear-gradient(90deg,transparent,#000 5%,#000 95%,transparent)}
+  .testi-track{display:flex;gap:18px;width:max-content;animation:testiScroll 46s linear infinite}
+  .testi-carousel:hover .testi-track{animation-play-state:paused}
+  @keyframes testiScroll{from{transform:translateX(0)}to{transform:translateX(-50%)}}
+  .testi-card{background:var(--off);border-radius:14px;padding:24px;border:1px solid var(--border);transition:box-shadow .2s,transform .2s;width:300px;flex-shrink:0}
   .testi-card:hover{box-shadow:0 12px 36px rgba(0,0,0,.07);transform:translateY(-3px)}
   .testi-quote{font-size:28px;color:var(--p-light);line-height:1;margin-bottom:10px;opacity:.6}
   .testi-stars{color:var(--gold);font-size:13px;margin-bottom:10px;letter-spacing:2px}
@@ -180,6 +183,10 @@ const css = `
   .testi-author{display:flex;align-items:center;gap:10px;padding-top:12px;border-top:1px solid var(--border)}
   .testi-avatar{width:34px;height:34px;border-radius:50%;display:flex;align-items:center;justify-content:center;color:#fff;font-size:12px;font-weight:800;flex-shrink:0;overflow:hidden}
   .testi-avatar img{width:100%;height:100%;object-fit:cover}
+  .testi-gallery{display:flex;gap:6px;margin-bottom:14px;flex-wrap:wrap}
+  .testi-gallery-thumb{width:52px;height:52px;border-radius:8px;overflow:hidden;background:#e5e7eb;display:flex;align-items:center;justify-content:center;color:#9ca3af;flex-shrink:0;border:none;padding:0;cursor:pointer;font:inherit;transition:opacity .15s}
+  .testi-gallery-thumb:hover{opacity:.8}
+  .testi-gallery-thumb img{width:100%;height:100%;object-fit:cover}
   .testi-name{font-size:13px;font-weight:700;color:var(--text)}
   .testi-biz{font-size:11px;color:var(--gray)}
   .faq{background:var(--off)}
@@ -210,6 +217,14 @@ const css = `
   .footer-bottom-links a{font-size:12px;color:rgba(255,255,255,.25);text-decoration:none;transition:color .15s}
   .footer-bottom-links a:hover{color:rgba(255,255,255,.55)}
   .modal-overlay{display:none;position:fixed;inset:0;background:rgba(0,0,0,.65);z-index:200;align-items:center;justify-content:center;padding:20px;backdrop-filter:blur(4px)}
+  .lightbox-overlay{position:fixed;inset:0;background:rgba(0,0,0,.85);z-index:300;display:flex;align-items:center;justify-content:center;padding:20px}
+  .lightbox-img{max-width:min(600px,90vw);max-height:80vh;border-radius:12px;object-fit:contain;background:#111}
+  .lightbox-btn{position:absolute;background:rgba(255,255,255,.12);border:none;border-radius:50%;width:44px;height:44px;display:flex;align-items:center;justify-content:center;cursor:pointer;color:#fff;font-size:20px;transition:background .15s}
+  .lightbox-btn:hover{background:rgba(255,255,255,.22)}
+  .lightbox-close{top:16px;right:16px}
+  .lightbox-prev{left:16px;top:50%;transform:translateY(-50%)}
+  .lightbox-next{right:16px;top:50%;transform:translateY(-50%)}
+  .lightbox-count{position:absolute;bottom:16px;left:50%;transform:translateX(-50%);color:rgba(255,255,255,.6);font-size:13px;font-weight:600}
   .modal-overlay.open{display:flex}
   @keyframes modalIn{from{opacity:0;transform:scale(.95)}to{opacity:1;transform:scale(1)}}
   .modal-box{background:#fff;border-radius:22px;padding:36px 32px;width:100%;max-width:420px;position:relative;box-shadow:0 28px 70px rgba(0,0,0,.3);animation:modalIn .2s ease}
@@ -280,6 +295,29 @@ function ProductThumb({ src, fallback }) {
   const [errored, setErrored] = useState(false);
   if (errored || !src) return <span>{fallback}</span>;
   return <img src={src} alt="" onError={() => setErrored(true)}/>;
+}
+
+// Same idea as ProductThumb, for customer review photos — falls back to
+// a generic user icon if the file is missing/fails to load, so a review
+// can be added to this array before its actual photo files exist in the
+// repo without ever showing a broken-image icon on the live site.
+function ReviewThumb({ src, iconClass }) {
+  const [errored, setErrored] = useState(false);
+  if (errored || !src) return <i className={`ti ${iconClass}`} aria-hidden="true"/>;
+  return <img src={src} alt="" onError={() => setErrored(true)}/>;
+}
+
+// The avatar's fallback is initials on a colored circle (not a generic
+// icon) so an avatarUrl that 404s looks identical to never having set
+// one at all, rather than looking like a different, broken state.
+function ReviewAvatar({ url, initials, bg }) {
+  const [errored, setErrored] = useState(false);
+  const showImage = url && !errored;
+  return (
+    <div className="testi-avatar" style={{background: showImage ? undefined : bg}}>
+      {showImage ? <img src={url} alt="" onError={() => setErrored(true)}/> : initials}
+    </div>
+  );
 }
 
 function NavLogo() {
@@ -374,9 +412,58 @@ function FaqItem({ q, a }) {
   );
 }
 
+function Lightbox({ state, onClose, onNav }) {
+  useEffect(() => {
+    if (!state) return;
+    const onKey = (e) => {
+      if (e.key === 'Escape') onClose();
+      if (e.key === 'ArrowLeft') onNav(-1);
+      if (e.key === 'ArrowRight') onNav(1);
+    };
+    window.addEventListener('keydown', onKey);
+    return () => window.removeEventListener('keydown', onKey);
+  }, [state, onClose, onNav]);
+
+  if (!state) return null;
+  const { images, index } = state;
+  const hasMultiple = images.length > 1;
+  return (
+    <div className="lightbox-overlay" onClick={e => e.target === e.currentTarget && onClose()}>
+      <img className="lightbox-img" src={images[index]} alt=""/>
+      <button className="lightbox-btn lightbox-close" onClick={onClose} aria-label="Close"><i className="ti ti-x"/></button>
+      {hasMultiple && (
+        <>
+          <button className="lightbox-btn lightbox-prev" onClick={() => onNav(-1)} aria-label="Previous photo"><i className="ti ti-chevron-left"/></button>
+          <button className="lightbox-btn lightbox-next" onClick={() => onNav(1)} aria-label="Next photo"><i className="ti ti-chevron-right"/></button>
+          <div className="lightbox-count">{index+1} / {images.length}</div>
+        </>
+      )}
+    </div>
+  );
+}
+
+// Once real customer photos exist, add avatarUrl/images fields back to
+// any entry — e.g. avatarUrl:'/images/reviews/maria-avatar.jpg',
+// images:['/images/reviews/maria-1.jpg', ...] — ReviewAvatar/ReviewThumb
+// already handle the fallback gracefully either way, nothing else in
+// the carousel/lightbox code needs to change when photos are added.
+const TESTIMONIALS = [
+  {init:'MA',bg:P,name:'Maria A.',biz:'Carinderia · Cebu City',rating:5,
+   text:'Before NJ POS I was manually counting sales at the end of the day. Now I just open the report and everything is there — by cashier, by product, by hour. Grabe ang convenience.'},
+  {init:'JR',bg:'#0891b2',name:'Jun R.',biz:'Sari-sari Store · Davao',rating:5,
+   text:'Hindi ako mahilig sa tech pero setup lang ng ilang minuto naka-process na kami ng orders. GCash QR works perfectly. My staff learned it in one afternoon.'},
+  {init:'CL',bg:'#7c3aed',name:'Cynthia L.',biz:'Bakeshop · Butuan City',rating:4,
+   text:'The Owner Portal is my favorite — I check my store even when I\'m away. Sales, stock, who\'s on shift. ₱399 is nothing for that peace of mind.'},
+  {init:'RP',bg:'#dc2626',name:'Rico P.',biz:'Auto Parts Shop · Iloilo City',rating:5,
+   text:'Switched from a notebook and calculator. The reports alone paid for the subscription in the first week.'},
+  {init:'AT',bg:'#059669',name:'Angel T.',biz:'Coffee Shop · Quezon City',rating:5,
+   text:'Staff learned it in an afternoon. The receipt printer setup was the easiest part of the whole thing.'},
+];
+
 export default function App() {
   const [modalOpen, setModalOpen] = useState(false);
   const [menuOpen, setMenuOpen] = useState(false);
+  const [lightbox, setLightbox] = useState(null); // {images, index} | null
 
   const openTrial = () => setModalOpen(true);
 
@@ -614,24 +701,29 @@ export default function App() {
           <div className="section-eyebrow">Store owners say</div>
           <h2 className="section-title">Trusted by stores like yours</h2>
         </div>
-        <div className="testi-grid">
-          {[
-            {init:'MA',bg:P,name:'Maria A.',biz:'Carinderia · Cebu City',text:'Before NJ POS I was manually counting sales at the end of the day. Now I just open the report and everything is there — by cashier, by product, by hour. Grabe ang convenience.'},
-            {init:'JR',bg:'#0891b2',name:'Jun R.',biz:'Sari-sari Store · Davao',text:'Hindi ako mahilig sa tech pero setup lang ng ilang minuto naka-process na kami ng orders. GCash QR works perfectly. My staff learned it in one afternoon.'},
-            {init:'CL',bg:'#7c3aed',name:'Cynthia L.',biz:'Bakeshop · Butuan City',text:'The Owner Portal is my favorite — I check my store even when I\'m away. Sales, stock, who\'s on shift. ₱399 is nothing for that peace of mind.'},
-          ].map(t => (
-            <div key={t.name} className="testi-card">
-              <div className="testi-quote">"</div>
-              <div className="testi-stars">★★★★★</div>
-              <p className="testi-text">{t.text}</p>
-              <div className="testi-author">
-                <div className="testi-avatar" style={{background:t.avatarUrl?undefined:t.bg}}>
-                  {t.avatarUrl ? <img src={t.avatarUrl} alt=""/> : t.init}
+        <div className="testi-carousel">
+          <div className="testi-track">
+            {[...TESTIMONIALS, ...TESTIMONIALS].map((t,idx) => (
+              <div key={`${t.name}-${idx}`} className="testi-card">
+                <div className="testi-quote">"</div>
+                <div className="testi-stars">{'★'.repeat(t.rating)}{'☆'.repeat(5-t.rating)}</div>
+                <p className="testi-text">{t.text}</p>
+                {t.images && t.images.length>0 && (
+                  <div className="testi-gallery">
+                    {t.images.map((src,i) => (
+                      <button key={i} type="button" className="testi-gallery-thumb" onClick={() => setLightbox({images:t.images, index:i})} aria-label={`View photo ${i+1} from ${t.name}`}>
+                        <ReviewThumb src={src} iconClass="ti-photo"/>
+                      </button>
+                    ))}
+                  </div>
+                )}
+                <div className="testi-author">
+                  <ReviewAvatar url={t.avatarUrl} initials={t.init} bg={t.bg}/>
+                  <div><div className="testi-name">{t.name}</div><div className="testi-biz">{t.biz}</div></div>
                 </div>
-                <div><div className="testi-name">{t.name}</div><div className="testi-biz">{t.biz}</div></div>
               </div>
-            </div>
-          ))}
+            ))}
+          </div>
         </div>
       </section>
 
@@ -704,6 +796,11 @@ export default function App() {
       </footer>
 
       <TrialModal open={modalOpen} onClose={() => setModalOpen(false)}/>
+      <Lightbox
+        state={lightbox}
+        onClose={() => setLightbox(null)}
+        onNav={(delta) => setLightbox(prev => prev && ({...prev, index: (prev.index + delta + prev.images.length) % prev.images.length}))}
+      />
 
       {/* Floating Messenger Button */}
       <a
