@@ -251,7 +251,8 @@ const css = `
     .hero-price-divider{display:none}
     .stats{grid-template-columns:1fr 1fr;padding:0 5vw}
     .stat{padding:22px 10px}
-    .footer-top{grid-template-columns:1fr}
+    .footer-top{grid-template-columns:1fr 1fr}
+    .footer-col:last-child{grid-column:1/-1}
     .footer-bottom{flex-direction:column;text-align:center}
     .modal-box{padding:28px 22px}
     .value-strip{gap:12px;padding:14px 5vw}
@@ -522,7 +523,7 @@ export default function App() {
             {bg:'#fef3c7',c:'#b45309',icon:'ti-clock',title:'Shift Management',desc:'Staff open and close shifts with cash counts, and every register runs its own independent shift — so two cashiers on two devices work fully in parallel, no waiting on each other. A shift survives an app crash or accidental refresh, and handing a register to a different cashier mid-shift takes one tap. Owners can also restrict which staff can log in on which device.',tags:['Multi-register support','Opening cash','Per-shift reports','Staff handoff','Device access control']},
             {bg:'#f0fdf4',c:'#15803d',icon:'ti-users',title:'Staff & Roles',desc:'Owner, Manager, and Staff roles with fine-grained permissions. Control who can void orders, edit prices, or view reports.',tags:['Multiple accounts','Role permissions','Activity logs','Secure login']},
             {bg:'#fce7f3',c:'#be185d',icon:'ti-cloud-upload',title:'Cloud Sync & Owner Portal',desc:'Data syncs in real time. Check today\'s sales, manage products, and add staff from any device via the Owner Portal — or right from a second device running the POS app itself, set up purely for monitoring. The app keeps itself up to date automatically, so you\'re always on the latest version.',tags:['Works offline','Auto sync','Auto-updates','Multi-device']},
-            {bg:'#e0f2fe',c:'#0369a1',icon:'ti-receipt',title:'Receipt Printing',desc:'Print thermal receipts on 58mm or 80mm paper. Connect a USB or Bluetooth printer directly for instant, one-tap printing with no pop-up — or use any printer through the standard print dialog. Kitchen Order Ticket available as add-on.',tags:['58mm & 80mm','Direct USB/Bluetooth print','Custom receipt logo','Kitchen tickets']},
+            {bg:'#e0f2fe',c:'#0369a1',icon:'ti-receipt',title:'Receipt Printing',desc:'Print thermal receipts on 58mm or 80mm paper. Connect a USB or Bluetooth printer directly for instant, one-tap printing with no pop-up — or use any printer through the standard print dialog. Kitchen Order Ticket available as add-on — print it together with the receipt on one slip, or as its own separate ticket, whichever fits your kitchen setup.',tags:['58mm & 80mm','Direct USB/Bluetooth print','Custom receipt logo','Kitchen tickets — together or separate']},
             {bg:'#fff7ed',c:'#c2410c',icon:'ti-discount-2',title:'Discounts & VAT',desc:'Senior Citizen and PWD 20% discounts with one tap. Custom percentage discounts and per-order VAT toggle included.',tags:['SC / PWD 20%','Custom %','VAT per order','BIR-ready']},
             {bg:'#f5f3ff',c:'#6d28d9',icon:'ti-truck',title:'Purchase Orders & Invoices',desc:'Manage supplier POs and customer invoices inside NJ POS. Receive deliveries — including product variants, tracked down to the specific size or flavor received — and stock updates automatically. Print official, ready-to-send documents.',tags:['PO management','Variant-aware receiving','Customer invoices','Print-ready docs']},
           ].map(f => (
