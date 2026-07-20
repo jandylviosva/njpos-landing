@@ -283,8 +283,8 @@ const MOCKUP_LOGO = '/images/clients/baga-burger-malaria-logo.jpg'; // ← repla
    (handled by the ProductThumb component below via onError).
 */
 const MOCKUP_PRODUCTS = [
-  { img: '/images/products/beefy-baga.jpg',        name: 'Beefy Baga',         price: '₱45',  stock: 89,  active: true  },
-  { img: '/images/products/cheesy-bacon-baga.jpg', name: 'Cheesy Bacon Baga',  price: '₱87',  stock: 89,  active: false },
+  { img: '/images/products/beefy-baga.jpg',        name: 'Beefy Burger',         price: '₱45',  stock: 89,  active: true  },
+  { img: '/images/products/cheesy-bacon-baga.jpg', name: 'Cheesy Bacon Burger',  price: '₱87',  stock: 89,  active: false },
   { img: '/images/products/chicken-crunch.jpg',    name: 'Chicken Crunch',     price: '₱50',  stock: 48,  active: true  },
   { img: '/images/products/hotdog-sandwich.jpg',   name: 'Hotdog Sandwich',    price: '₱45',  stock: 50,  active: false },
   { img: '/images/products/longganiza-burger.jpg', name: 'Longganiza Burger',  price: '₱45',  stock: 75,  active: false },
@@ -456,7 +456,7 @@ export default function App() {
                   <div className="mockup-logo-icon" style={{background:MOCKUP_ACCENT}}>
                     <ProductThumb src={MOCKUP_LOGO} fallback="🍔"/>
                   </div>
-                  <div className="mockup-store">BAGA BURGER MALARIA<span>NJ POS</span></div>
+                  <div className="mockup-store">BURGER<span>NJ POS</span></div>
                 </div>
                 <div className="mockup-sync"><div className="mockup-sync-dot"/><span className="mockup-sync-text">Synced</span></div>
               </div>
@@ -479,7 +479,7 @@ export default function App() {
                 <div className="mockup-cart-header">
                   <div className="mockup-cart-title">Order <span className="mockup-cart-badge">2</span></div>
                 </div>
-                <div className="mockup-cart-item"><span>Beefy Baga ×1</span><span style={{fontWeight:800}}>₱45</span></div>
+                <div className="mockup-cart-item"><span>Beefy Burger ×1</span><span style={{fontWeight:800}}>₱45</span></div>
                 <div className="mockup-cart-item"><span>Chicken Crunch ×2</span><span style={{fontWeight:800}}>₱100</span></div>
                 <div className="mockup-total-row"><span>Total</span><span>₱145.00</span></div>
                 <button className="mockup-charge-btn">Charge ₱145.00</button>
