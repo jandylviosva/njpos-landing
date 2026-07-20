@@ -6,3 +6,5 @@ import ReviewForm from './ReviewForm.jsx';
 const isReviewPage = window.location.pathname.replace(/\/$/, '') === '/leave-a-review';
 
 createRoot(document.getElementById('root')).render(isReviewPage ? <ReviewForm/> : <App/>);
+
+
