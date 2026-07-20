@@ -176,24 +176,28 @@ export default function ReviewForm() {
               <form onSubmit={submit}>
                 {/* Profile photo — optional, purely a visual touch on the
                     testimonial card. Falls back to initials on a colored
-                    circle if never set, same as the existing cards. */}
-                <div style={{ display: 'flex', justifyContent: 'center', marginBottom: 18 }}>
+                    circle if never set, same as the existing cards.
+                    Solid border, not dashed — a dashed border on a true
+                    circle renders as a jagged/scalloped ring instead of a
+                    clean dashed line, since each dash segment is straight
+                    while the path it's following is curved. */}
+                <div style={{ display: 'flex', justifyContent: 'center', marginBottom: 16 }}>
                   <label style={{ position: 'relative', cursor: avatarBusy ? 'not-allowed' : 'pointer', display: 'block' }}>
-                    <div style={{ width: 76, height: 76, borderRadius: '50%', background: avatar ? 'transparent' : '#2563EB', display: 'flex', alignItems: 'center', justifyContent: 'center', overflow: 'hidden', border: '2px dashed #d1d5db' }}>
+                    <div style={{ width: 64, height: 64, borderRadius: '50%', background: avatar ? 'transparent' : '#2563EB', display: 'flex', alignItems: 'center', justifyContent: 'center', overflow: 'hidden', border: '2px solid #e5e7eb' }}>
                       {avatar ? (
                         <img src={avatar.dataUrl} alt="" style={{ width: '100%', height: '100%', objectFit: 'cover' }} />
                       ) : (
-                        <span style={{ color: '#fff', fontSize: 22, fontWeight: 800 }}>{initials}</span>
+                        <span style={{ color: '#fff', fontSize: 20, fontWeight: 800 }}>{initials}</span>
                       )}
                     </div>
-                    <div style={{ position: 'absolute', bottom: -2, right: -2, width: 26, height: 26, borderRadius: '50%', background: '#2563EB', border: '2px solid #fff', display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
-                      <i className="ti ti-camera" style={{ fontSize: 12, color: '#fff' }} aria-hidden="true"/>
+                    <div style={{ position: 'absolute', bottom: -2, right: -2, width: 22, height: 22, borderRadius: '50%', background: '#2563EB', border: '2px solid #fff', display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
+                      <i className="ti ti-camera" style={{ fontSize: 11, color: '#fff' }} aria-hidden="true"/>
                     </div>
                     <input type="file" accept="image/*" disabled={avatarBusy} onChange={e => { pickAvatar(e.target.files[0]); e.target.value = ''; }} style={{ display: 'none' }} />
                   </label>
                 </div>
                 {avatar && (
-                  <div style={{ textAlign: 'center', marginBottom: 14 }}>
+                  <div style={{ textAlign: 'center', marginBottom: 16 }}>
                     <button type="button" onClick={() => setAvatar(null)} style={{ background: 'none', border: 'none', color: '#9ca3af', fontSize: 11, cursor: 'pointer', textDecoration: 'underline' }}>Remove photo</button>
                   </div>
                 )}
@@ -205,12 +209,12 @@ export default function ReviewForm() {
                   </div>
                 </div>
 
-                <div style={{ marginBottom: 14 }}>
+                <div style={{ marginBottom: 16 }}>
                   <label style={labelStyle}>Your name</label>
                   <input value={name} onChange={e => setName(e.target.value)} placeholder="e.g. Maria A." style={inputStyle} />
                 </div>
 
-                <div className="rf-field-row" style={{ marginBottom: 14 }}>
+                <div className="rf-field-row" style={{ marginBottom: 16 }}>
                   <div style={{ flex: 1, minWidth: 0 }}>
                     <label style={labelStyle}>Business type</label>
                     <input value={businessType} onChange={e => setBusinessType(e.target.value)} placeholder="e.g. Sari-sari Store" style={inputStyle} />
@@ -221,12 +225,12 @@ export default function ReviewForm() {
                   </div>
                 </div>
 
-                <div style={{ marginBottom: 14 }}>
+                <div style={{ marginBottom: 16 }}>
                   <label style={labelStyle}>Your review</label>
                   <textarea value={reviewText} onChange={e => setReviewText(e.target.value)} placeholder="What's it been like using NJ POS for your business?" rows={4} style={{ ...inputStyle, resize: 'vertical', fontFamily: 'inherit' }} />
                 </div>
 
-                <div style={{ marginBottom: 14 }}>
+                <div style={{ marginBottom: 16 }}>
                   <label style={labelStyle}>Photos <span style={{ fontWeight: 400, color: '#9ca3af' }}>(optional, up to {MAX_IMAGES})</span></label>
                   {images.length > 0 && (
                     <div style={{ display: 'flex', gap: 8, flexWrap: 'wrap', marginBottom: 8 }}>
@@ -247,7 +251,7 @@ export default function ReviewForm() {
                   )}
                 </div>
 
-                <div style={{ marginBottom: 20 }}>
+                <div style={{ marginBottom: 18 }}>
                   <label style={labelStyle}>Email <span style={{ fontWeight: 400, color: '#9ca3af' }}>(optional — for our records only, never shown publicly)</span></label>
                   <input type="email" value={email} onChange={e => setEmail(e.target.value)} placeholder="you@example.com" style={inputStyle} />
                 </div>
