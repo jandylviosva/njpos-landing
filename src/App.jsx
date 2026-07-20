@@ -178,7 +178,8 @@ const css = `
   .testi-stars{color:var(--gold);font-size:13px;margin-bottom:10px;letter-spacing:2px}
   .testi-text{font-size:13px;line-height:1.75;color:#374151;margin-bottom:14px}
   .testi-author{display:flex;align-items:center;gap:10px;padding-top:12px;border-top:1px solid var(--border)}
-  .testi-avatar{width:34px;height:34px;border-radius:50%;display:flex;align-items:center;justify-content:center;color:#fff;font-size:12px;font-weight:800;flex-shrink:0}
+  .testi-avatar{width:34px;height:34px;border-radius:50%;display:flex;align-items:center;justify-content:center;color:#fff;font-size:12px;font-weight:800;flex-shrink:0;overflow:hidden}
+  .testi-avatar img{width:100%;height:100%;object-fit:cover}
   .testi-name{font-size:13px;font-weight:700;color:var(--text)}
   .testi-biz{font-size:11px;color:var(--gray)}
   .faq{background:var(--off)}
@@ -263,25 +264,9 @@ const css = `
 
 const LOGO = '/icons/icon-192.png';
 
-/* ── CLIENT MOCKUP BRANDING ──
-   Baga Burger Malaria uses red (#f90b0b) as their POS theme color.
-   This only affects the hero mockup phone — not the rest of the landing page.
-   Replace MOCKUP_LOGO with their real logo once uploaded, e.g.:
-   const MOCKUP_LOGO = '/images/clients/baga-burger-logo.png';
-*/
 const MOCKUP_ACCENT = '#f90b0b';
-const MOCKUP_LOGO = '/images/clients/baga-burger-malaria-logo.jpg'; // ← replace with real logo file
+const MOCKUP_LOGO = '/images/clients/baga-burger-malaria-logo.jpg';
 
-/* ── HERO MOCKUP PRODUCT DATA ──
-   Real client store: Baga Burger Malaria
-   Placeholder images below — replace src paths with real product photos.
-   1. Drop real images into the repo at: public/images/products/
-   2. Use these exact filenames (or update the paths below to match yours):
-      beefy-baga.jpg, cheesy-bacon-baga.jpg, chicken-crunch.jpg,
-      hotdog-sandwich.jpg, longganiza-burger.jpg, coke.jpg
-   Until those files exist, each thumbnail safely falls back to a 🍔 emoji
-   (handled by the ProductThumb component below via onError).
-*/
 const MOCKUP_PRODUCTS = [
   { img: '/images/products/beefy-baga.jpg',        name: 'Beefy Burger',         price: '₱45',  stock: 89,  active: true  },
   { img: '/images/products/cheesy-bacon-baga.jpg', name: 'Cheesy Bacon Burger',  price: '₱87',  stock: 89,  active: false },
@@ -299,7 +284,7 @@ function ProductThumb({ src, fallback }) {
 
 function NavLogo() {
   return (
-    <a className="nav-logo" href="#">
+    <a className="nav-logo" href="/">
       <div className="nav-logo-icon"><img src={LOGO} alt="NJ POS"/></div>
       <span style={{fontFamily:"'Michroma',sans-serif",fontSize:15,letterSpacing:0.5}}><span style={{color:"#60A5FA"}}>NJ</span><span style={{color:"#fff"}}>POS</span></span>
     </a>
@@ -640,7 +625,9 @@ export default function App() {
               <div className="testi-stars">★★★★★</div>
               <p className="testi-text">{t.text}</p>
               <div className="testi-author">
-                <div className="testi-avatar" style={{background:t.bg}}>{t.init}</div>
+                <div className="testi-avatar" style={{background:t.avatarUrl?undefined:t.bg}}>
+                  {t.avatarUrl ? <img src={t.avatarUrl} alt=""/> : t.init}
+                </div>
                 <div><div className="testi-name">{t.name}</div><div className="testi-biz">{t.biz}</div></div>
               </div>
             </div>
@@ -750,6 +737,3 @@ export default function App() {
     </>
   );
 }
-
-
-
