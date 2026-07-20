@@ -4,6 +4,20 @@ const LOGO = '/icons/icon-192.png';
 const API_BASE = 'https://owner.nj-systems.com';
 const MAX_IMAGES = 5;
 
+// Mobile-specific overrides via a real media query — inline styles alone
+// can't express "only when the screen is this narrow", so this mirrors
+// the same <style> tag pattern the main landing page already uses.
+const css = `
+  .rf-card{padding:32px}
+  .rf-field-row{display:flex;gap:10px}
+  @media(max-width:420px){
+    .rf-card{padding:22px 18px}
+    .rf-field-row{flex-direction:column;gap:14px}
+    .rf-title{font-size:17px!important}
+    .rf-stars button{font-size:26px!important}
+  }
+`;
+
 // Downscales and re-encodes a photo before it ever leaves the browser —
 // a typical modern phone photo is 3-8MB, which would make 5 of them
 // together a genuinely risky request size. Resizing to a sensible max
@@ -37,7 +51,7 @@ function compressImage(file, maxDim = 1280, quality = 0.8) {
 
 function Stars({ value, onChange }) {
   return (
-    <div style={{ display: 'flex', gap: 6 }}>
+    <div className="rf-stars" style={{ display: 'flex', gap: 6 }}>
       {[1, 2, 3, 4, 5].map(n => (
         <button
           key={n}
@@ -58,12 +72,30 @@ export default function ReviewForm() {
   const [rating, setRating] = useState(5);
   const [reviewText, setReviewText] = useState('');
   const [email, setEmail] = useState('');
+  const [avatar, setAvatar] = useState(null); // {dataUrl} or null
+  const [avatarBusy, setAvatarBusy] = useState(false);
   const [images, setImages] = useState([]); // array of {dataUrl, name}
   const [imagesBusy, setImagesBusy] = useState(false);
   const [hp, setHp] = useState(''); // honeypot — real users never see this field
   const [submitting, setSubmitting] = useState(false);
   const [done, setDone] = useState(false);
   const [error, setError] = useState('');
+
+  const initials = (name.trim().split(/\s+/).map(w => w[0]).join('').slice(0, 2) || '?').toUpperCase();
+
+  const pickAvatar = async (file) => {
+    if (!file || !file.type.startsWith('image/')) return;
+    setError('');
+    setAvatarBusy(true);
+    try {
+      const dataUrl = await compressImage(file, 400, 0.85); // a profile photo doesn't need to be as large as a gallery photo
+      setAvatar({ dataUrl });
+    } catch {
+      setError('Could not process that photo — try a different one');
+    } finally {
+      setAvatarBusy(false);
+    }
+  };
 
   const addImages = async (fileList) => {
     const files = Array.from(fileList || []).filter(f => f.type.startsWith('image/'));
@@ -101,6 +133,7 @@ export default function ReviewForm() {
           rating,
           reviewText: reviewText.trim(),
           email: email.trim(),
+          avatarImage: avatar ? avatar.dataUrl : null,
           images: images.map(img => img.dataUrl),
           hp,
         }),
@@ -119,15 +152,16 @@ export default function ReviewForm() {
 
   return (
     <div style={{ minHeight: '100vh', background: '#f5f6fa', display: 'flex', alignItems: 'center', justifyContent: 'center', padding: '32px 16px', fontFamily: "'Inter',system-ui,sans-serif" }}>
+      <style>{css}</style>
       <div style={{ width: '100%', maxWidth: 440 }}>
-        <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'center', gap: 8, marginBottom: 24 }}>
+        <a href="/" style={{ display: 'flex', alignItems: 'center', justifyContent: 'center', gap: 8, marginBottom: 24, textDecoration: 'none' }}>
           <img src={LOGO} alt="NJ POS" style={{ width: 32, height: 32, borderRadius: 8 }} />
           <span style={{ fontFamily: "'Michroma',sans-serif", fontSize: 16, letterSpacing: 0.5 }}>
             <span style={{ color: '#2563EB' }}>NJ</span><span style={{ color: '#111' }}>POS</span>
           </span>
-        </div>
+        </a>
 
-        <div style={{ background: '#fff', borderRadius: 16, padding: 32, boxShadow: '0 4px 24px rgba(0,0,0,0.06)' }}>
+        <div className="rf-card" style={{ background: '#fff', borderRadius: 16, boxShadow: '0 4px 24px rgba(0,0,0,0.06)' }}>
           {done ? (
             <div style={{ textAlign: 'center', padding: '20px 0' }}>
               <div style={{ fontSize: 40, marginBottom: 12 }}>🙏</div>
@@ -136,10 +170,34 @@ export default function ReviewForm() {
             </div>
           ) : (
             <>
-              <div style={{ fontWeight: 800, fontSize: 19, marginBottom: 4, textAlign: 'center' }}>Share Your Experience</div>
-              <div style={{ fontSize: 13, color: '#9ca3af', marginBottom: 22, textAlign: 'center' }}>Tell other store owners what using NJ POS has been like for your business.</div>
+              <div className="rf-title" style={{ fontWeight: 800, fontSize: 19, marginBottom: 4, textAlign: 'center' }}>Share Your Experience</div>
+              <div style={{ fontSize: 13, color: '#9ca3af', marginBottom: 20, textAlign: 'center' }}>Tell other store owners what using NJ POS has been like for your business.</div>
 
               <form onSubmit={submit}>
+                {/* Profile photo — optional, purely a visual touch on the
+                    testimonial card. Falls back to initials on a colored
+                    circle if never set, same as the existing cards. */}
+                <div style={{ display: 'flex', justifyContent: 'center', marginBottom: 18 }}>
+                  <label style={{ position: 'relative', cursor: avatarBusy ? 'not-allowed' : 'pointer', display: 'block' }}>
+                    <div style={{ width: 76, height: 76, borderRadius: '50%', background: avatar ? 'transparent' : '#2563EB', display: 'flex', alignItems: 'center', justifyContent: 'center', overflow: 'hidden', border: '2px dashed #d1d5db' }}>
+                      {avatar ? (
+                        <img src={avatar.dataUrl} alt="" style={{ width: '100%', height: '100%', objectFit: 'cover' }} />
+                      ) : (
+                        <span style={{ color: '#fff', fontSize: 22, fontWeight: 800 }}>{initials}</span>
+                      )}
+                    </div>
+                    <div style={{ position: 'absolute', bottom: -2, right: -2, width: 26, height: 26, borderRadius: '50%', background: '#2563EB', border: '2px solid #fff', display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
+                      <i className="ti ti-camera" style={{ fontSize: 12, color: '#fff' }} aria-hidden="true"/>
+                    </div>
+                    <input type="file" accept="image/*" disabled={avatarBusy} onChange={e => { pickAvatar(e.target.files[0]); e.target.value = ''; }} style={{ display: 'none' }} />
+                  </label>
+                </div>
+                {avatar && (
+                  <div style={{ textAlign: 'center', marginBottom: 14 }}>
+                    <button type="button" onClick={() => setAvatar(null)} style={{ background: 'none', border: 'none', color: '#9ca3af', fontSize: 11, cursor: 'pointer', textDecoration: 'underline' }}>Remove photo</button>
+                  </div>
+                )}
+
                 <div style={{ marginBottom: 16, textAlign: 'center' }}>
                   <label style={{ ...labelStyle, textAlign: 'center' }}>Your rating</label>
                   <div style={{ display: 'flex', justifyContent: 'center' }}>
@@ -152,12 +210,12 @@ export default function ReviewForm() {
                   <input value={name} onChange={e => setName(e.target.value)} placeholder="e.g. Maria A." style={inputStyle} />
                 </div>
 
-                <div style={{ display: 'flex', gap: 10, marginBottom: 14 }}>
-                  <div style={{ flex: 1 }}>
+                <div className="rf-field-row" style={{ marginBottom: 14 }}>
+                  <div style={{ flex: 1, minWidth: 0 }}>
                     <label style={labelStyle}>Business type</label>
                     <input value={businessType} onChange={e => setBusinessType(e.target.value)} placeholder="e.g. Sari-sari Store" style={inputStyle} />
                   </div>
-                  <div style={{ flex: 1 }}>
+                  <div style={{ flex: 1, minWidth: 0 }}>
                     <label style={labelStyle}>City</label>
                     <input value={city} onChange={e => setCity(e.target.value)} placeholder="e.g. Cebu City" style={inputStyle} />
                   </div>
