@@ -8,6 +8,7 @@ const MAX_IMAGES = 5;
 // can't express "only when the screen is this narrow", so this mirrors
 // the same <style> tag pattern the main landing page already uses.
 const css = `
+  *,*::before,*::after{box-sizing:border-box}
   .rf-card{padding:32px}
   .rf-field-row{display:flex;gap:10px}
   @media(max-width:420px){
@@ -193,7 +194,7 @@ export default function ReviewForm() {
                     <div style={{ position: 'absolute', bottom: -2, right: -2, width: 22, height: 22, borderRadius: '50%', background: '#2563EB', border: '2px solid #fff', display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
                       <i className="ti ti-camera" style={{ fontSize: 11, color: '#fff' }} aria-hidden="true"/>
                     </div>
-                    <input type="file" accept="image/*" disabled={avatarBusy} onChange={e => { pickAvatar(e.target.files[0]); e.target.value = ''; }} style={{ display: 'none' }} />
+                    <input id="rf-avatar" name="avatar" type="file" accept="image/*" disabled={avatarBusy} onChange={e => { pickAvatar(e.target.files[0]); e.target.value = ''; }} style={{ display: 'none' }} />
                   </label>
                 </div>
                 {avatar && (
@@ -210,28 +211,28 @@ export default function ReviewForm() {
                 </div>
 
                 <div style={{ marginBottom: 16 }}>
-                  <label style={labelStyle}>Your name</label>
-                  <input value={name} onChange={e => setName(e.target.value)} placeholder="e.g. Maria A." style={inputStyle} />
+                  <label style={labelStyle} htmlFor="rf-name">Your name</label>
+                  <input id="rf-name" name="name" autoComplete="name" value={name} onChange={e => setName(e.target.value)} placeholder="e.g. Maria A." style={inputStyle} />
                 </div>
 
                 <div className="rf-field-row" style={{ marginBottom: 16 }}>
                   <div style={{ flex: 1, minWidth: 0 }}>
-                    <label style={labelStyle}>Business type</label>
-                    <input value={businessType} onChange={e => setBusinessType(e.target.value)} placeholder="e.g. Sari-sari Store" style={inputStyle} />
+                    <label style={labelStyle} htmlFor="rf-business-type">Business type</label>
+                    <input id="rf-business-type" name="businessType" autoComplete="organization" value={businessType} onChange={e => setBusinessType(e.target.value)} placeholder="e.g. Sari-sari Store" style={inputStyle} />
                   </div>
                   <div style={{ flex: 1, minWidth: 0 }}>
-                    <label style={labelStyle}>City</label>
-                    <input value={city} onChange={e => setCity(e.target.value)} placeholder="e.g. Cebu City" style={inputStyle} />
+                    <label style={labelStyle} htmlFor="rf-city">City</label>
+                    <input id="rf-city" name="city" autoComplete="address-level2" value={city} onChange={e => setCity(e.target.value)} placeholder="e.g. Cebu City" style={inputStyle} />
                   </div>
                 </div>
 
                 <div style={{ marginBottom: 16 }}>
-                  <label style={labelStyle}>Your review</label>
-                  <textarea value={reviewText} onChange={e => setReviewText(e.target.value)} placeholder="What's it been like using NJ POS for your business?" rows={4} style={{ ...inputStyle, resize: 'vertical', fontFamily: 'inherit' }} />
+                  <label style={labelStyle} htmlFor="rf-review">Your review</label>
+                  <textarea id="rf-review" name="reviewText" value={reviewText} onChange={e => setReviewText(e.target.value)} placeholder="What's it been like using NJ POS for your business?" rows={4} style={{ ...inputStyle, resize: 'vertical', fontFamily: 'inherit' }} />
                 </div>
 
                 <div style={{ marginBottom: 16 }}>
-                  <label style={labelStyle}>Photos <span style={{ fontWeight: 400, color: '#9ca3af' }}>(optional, up to {MAX_IMAGES})</span></label>
+                  <div style={labelStyle}>Photos <span style={{ fontWeight: 400, color: '#9ca3af' }}>(optional, up to {MAX_IMAGES})</span></div>
                   {images.length > 0 && (
                     <div style={{ display: 'flex', gap: 8, flexWrap: 'wrap', marginBottom: 8 }}>
                       {images.map((img, i) => (
@@ -246,20 +247,22 @@ export default function ReviewForm() {
                     <label style={{ display: 'flex', alignItems: 'center', justifyContent: 'center', gap: 6, padding: '10px 14px', borderRadius: 10, border: '1.5px dashed #d1d5db', cursor: imagesBusy ? 'not-allowed' : 'pointer', fontSize: 12.5, color: '#6b7280', fontWeight: 600 }}>
                       <i className="ti ti-camera-plus" aria-hidden="true"/>
                       {imagesBusy ? 'Processing…' : `Add photo${images.length ? 's' : ''} (${images.length}/${MAX_IMAGES})`}
-                      <input type="file" accept="image/*" multiple disabled={imagesBusy} onChange={e => { addImages(e.target.files); e.target.value = ''; }} style={{ display: 'none' }} />
+                      <input id="rf-photos" name="photos" type="file" accept="image/*" multiple disabled={imagesBusy} onChange={e => { addImages(e.target.files); e.target.value = ''; }} style={{ display: 'none' }} />
                     </label>
                   )}
                 </div>
 
                 <div style={{ marginBottom: 18 }}>
-                  <label style={labelStyle}>Email <span style={{ fontWeight: 400, color: '#9ca3af' }}>(optional — for our records only, never shown publicly)</span></label>
-                  <input type="email" value={email} onChange={e => setEmail(e.target.value)} placeholder="you@example.com" style={inputStyle} />
+                  <label style={labelStyle} htmlFor="rf-email">Email <span style={{ fontWeight: 400, color: '#9ca3af' }}>(optional — for our records only, never shown publicly)</span></label>
+                  <input id="rf-email" name="email" type="email" autoComplete="email" value={email} onChange={e => setEmail(e.target.value)} placeholder="you@example.com" style={inputStyle} />
                 </div>
 
                 {/* Honeypot — hidden from real users via off-screen positioning
                     (not display:none, which some bots skip filling anyway,
                     but this keeps a real screen reader from announcing it too). */}
                 <input
+                  id="rf-hp"
+                  name="website"
                   type="text"
                   value={hp}
                   onChange={e => setHp(e.target.value)}
