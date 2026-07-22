@@ -506,7 +506,7 @@ export default function App() {
             </div>
             <div className="hero-price-divider"/>
             <div className="hero-price-perks">
-              <div className="hero-price-perk"><i className="ti ti-check"/>All features included</div>
+              <div className="hero-price-perk"><i className="ti ti-check"/>All core features included</div>
               <div className="hero-price-perk"><i className="ti ti-check"/>Cancel anytime</div>
               <div className="hero-price-perk"><i className="ti ti-check"/>3-day free trial</div>
             </div>
@@ -562,7 +562,7 @@ export default function App() {
       </section>
 
       <div className="stats">
-        {[{n:'₱399',a:'',l:'Per month · all features'},{n:'3',a:'-day',l:'Free trial · no card needed'},{n:'5',a:'+',l:'Payment methods accepted'},{n:'',a:'∞',l:'Products, orders & staff'}].map((s,i) => (
+        {[{n:'₱399',a:'',l:'Per month · all core features'},{n:'3',a:'-day',l:'Free trial · no card needed'},{n:'5',a:'+',l:'Payment methods accepted'},{n:'',a:'∞',l:'Products, orders & staff'}].map((s,i) => (
           <div key={i} className="stat">
             <div className="stat-num">{s.n && !s.a.startsWith('-') && <span className="accent">{i===0?'₱':''}</span>}{i===0?'399':s.n}<span className="accent">{s.a}</span></div>
             <div className="stat-label">{s.l}</div>
@@ -643,8 +643,8 @@ export default function App() {
       <section className="pricing" id="pricing">
         <div className="section-center" style={{marginBottom:44}}>
           <div className="section-eyebrow">Simple pricing</div>
-          <h2 className="section-title">One plan. Everything included.</h2>
-          <p className="section-sub">No hidden charges, no feature unlocks, no surprises. Start free, pay only when you're ready.</p>
+          <h2 className="section-title">One simple plan. All the essentials.</h2>
+          <p className="section-sub">₱399/month gets you the complete POS — no per-feature paywalls on the core tools. A few optional add-ons are there if you need them. Start free, pay only when you're ready.</p>
         </div>
         <div className="pricing-grid">
           <div className="pricing-card">
@@ -688,6 +688,7 @@ export default function App() {
         </div>
         <div className="pricing-addons">
           <h3>Optional Add-ons</h3>
+          <p style={{textAlign:'center',color:'#6b7280',fontSize:14,marginTop:-6,marginBottom:18}}>Only pay for these if your business needs them — your ₱399/month plan works fully without any of them.</p>
           <div className="addons-grid">
             {[['Extra Device Slot','₱149/device/mo (or ₱1,499/device/yr on Annual)','Connect a 2nd or 3rd POS terminal to the same store'],['Purchase Orders Module','₱99 one-time','Manage supplier POs, deliveries & auto stock receiving'],['Invoicing Module','₱99 one-time','Create and track customer invoices with payment status'],['Kitchen Ticket Printing','₱99 one-time','Print a kitchen order ticket below each customer receipt'],['Open Bills','₱99 one-time','Save an order as a tab and come back to pay it later']].map(([n,p,d]) => (
               <div key={n} className="addon"><div className="addon-name">{n}</div><div className="addon-price">{p}</div><div className="addon-desc">{d}</div></div>
