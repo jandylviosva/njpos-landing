@@ -850,7 +850,6 @@ export default function App() {
               Start a Conversation
             </a>
           </div>
-        </div>
       </div>
 
       {/* Floating Messenger Button */}
