@@ -461,6 +461,7 @@ const TESTIMONIALS = [
 ];
 
 export default function App() {
+  const [messengerOpen, setMessengerOpen] = useState(false);
   const [modalOpen, setModalOpen] = useState(false);
   const [menuOpen, setMenuOpen] = useState(false);
   const [lightbox, setLightbox] = useState(null); // {images, index} | null
@@ -806,11 +807,48 @@ export default function App() {
         onNav={(delta) => setLightbox(prev => prev && ({...prev, index: (prev.index + delta + prev.images.length) % prev.images.length}))}
       />
 
+      {/* Floating Messenger Chat Widget */}
+      {messengerOpen&&(
+        <div style={{position:"fixed",bottom:90,right:24,width:300,background:"#fff",borderRadius:16,boxShadow:"0 8px 32px rgba(0,0,0,0.18)",zIndex:1000,overflow:"hidden",animation:"fadeInUp 0.2s ease"}}>
+          <style>{`@keyframes fadeInUp{from{opacity:0;transform:translateY(12px)}to{opacity:1;transform:translateY(0)}}`}</style>
+          {/* Header */}
+          <div style={{background:"linear-gradient(135deg,#00B2FF 0%,#006AFF 100%)",padding:"16px 16px 20px",position:"relative"}}>
+            <button onClick={()=>setMessengerOpen(false)} style={{position:"absolute",top:10,right:12,background:"none",border:"none",color:"rgba(255,255,255,0.8)",fontSize:18,cursor:"pointer",lineHeight:1}}>×</button>
+            <div style={{display:"flex",alignItems:"center",gap:10}}>
+              <div style={{width:44,height:44,borderRadius:"50%",background:"#fff",display:"flex",alignItems:"center",justifyContent:"center",boxShadow:"0 2px 8px rgba(0,0,0,0.15)"}}>
+                <span style={{fontFamily:"'Michroma',sans-serif",fontSize:13,fontWeight:900,color:"#2563EB"}}>NJ</span>
+              </div>
+              <div>
+                <div style={{color:"#fff",fontWeight:800,fontSize:14}}>NJ Systems</div>
+                <div style={{color:"rgba(255,255,255,0.8)",fontSize:11}}>Typically replies within a day</div>
+              </div>
+            </div>
+          </div>
+          {/* Chat bubble */}
+          <div style={{padding:"16px 16px 8px",background:"#f0f2f5"}}>
+            <div style={{display:"flex",gap:8,alignItems:"flex-start"}}>
+              <div style={{width:28,height:28,borderRadius:"50%",background:"linear-gradient(135deg,#00B2FF,#006AFF)",display:"flex",alignItems:"center",justifyContent:"center",flexShrink:0}}>
+                <span style={{color:"#fff",fontSize:11,fontWeight:900}}>NJ</span>
+              </div>
+              <div style={{background:"#fff",borderRadius:"0 12px 12px 12px",padding:"10px 14px",fontSize:13,color:"#050505",boxShadow:"0 1px 2px rgba(0,0,0,0.08)",maxWidth:210,lineHeight:1.45}}>
+                Hi there! 👋
+                <br/><br/>
+                Thanks for reaching out to NJ Systems. What can we help you with today?
+              </div>
+            </div>
+          </div>
+          {/* Start button */}
+          <div style={{padding:"10px 16px 16px",background:"#f0f2f5"}}>
+            <a href="https://m.me/NJPOS" target="_blank" rel="noopener noreferrer" style={{display:"block",background:"linear-gradient(135deg,#00B2FF 0%,#006AFF 100%)",color:"#fff",textAlign:"center",padding:"11px 0",borderRadius:24,fontWeight:800,fontSize:13,textDecoration:"none",letterSpacing:0.2}}>
+              Start a Conversation
+            </a>
+          </div>
+        </div>
+      )}
+
       {/* Floating Messenger Button */}
-      <a
-        href="https://m.me/NJPOS"
-        target="_blank"
-        rel="noopener noreferrer"
+      <button
+        onClick={()=>setMessengerOpen(o=>!o)}
         title="Chat with us on Messenger"
         style={{
           position:"fixed",
@@ -820,21 +858,23 @@ export default function App() {
           height:52,
           borderRadius:"50%",
           background:"linear-gradient(135deg,#00B2FF 0%,#006AFF 100%)",
+          border:"none",
           display:"flex",
           alignItems:"center",
           justifyContent:"center",
           boxShadow:"0 4px 16px rgba(0,106,255,0.4)",
-          zIndex:999,
+          zIndex:1001,
+          cursor:"pointer",
           transition:"transform 0.2s,box-shadow 0.2s",
-          textDecoration:"none",
         }}
         onMouseEnter={e=>{e.currentTarget.style.transform="scale(1.1)";e.currentTarget.style.boxShadow="0 6px 20px rgba(0,106,255,0.55)";}}
         onMouseLeave={e=>{e.currentTarget.style.transform="scale(1)";e.currentTarget.style.boxShadow="0 4px 16px rgba(0,106,255,0.4)";}}
       >
-        <svg width="26" height="26" viewBox="0 0 36 36" fill="white" aria-label="Messenger">
-          <path d="M18 2C9.163 2 2 8.71 2 17c0 4.445 1.897 8.447 4.962 11.337V34l4.805-2.64C13.012 31.77 15.463 32 18 32c8.837 0 16-6.71 16-15S26.837 2 18 2zm1.758 20.293l-4.076-4.34-7.956 4.34 8.748-9.293 4.176 4.34 7.856-4.34-8.748 9.293z"/>
-        </svg>
-      </a> 
+        {messengerOpen
+          ? <svg width="22" height="22" viewBox="0 0 24 24" fill="white"><path d="M19 6.41L17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+          : <svg width="26" height="26" viewBox="0 0 36 36" fill="white" aria-label="Messenger"><path d="M18 2C9.163 2 2 8.71 2 17c0 4.445 1.897 8.447 4.962 11.337V34l4.805-2.64C13.012 31.77 15.463 32 18 32c8.837 0 16-6.71 16-15S26.837 2 18 2zm1.758 20.293l-4.076-4.34-7.956 4.34 8.748-9.293 4.176 4.34 7.856-4.34-8.748 9.293z"/></svg>
+        }
+      </button>
     </>
   );
 }
