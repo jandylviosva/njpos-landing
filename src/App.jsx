@@ -815,8 +815,8 @@ export default function App() {
           <div style={{background:"linear-gradient(135deg,#00B2FF 0%,#006AFF 100%)",padding:"16px 16px 20px",position:"relative"}}>
             <button onClick={()=>setMessengerOpen(false)} style={{position:"absolute",top:10,right:12,background:"none",border:"none",color:"rgba(255,255,255,0.8)",fontSize:18,cursor:"pointer",lineHeight:1}}>×</button>
             <div style={{display:"flex",alignItems:"center",gap:10}}>
-              <div style={{width:44,height:44,borderRadius:"50%",background:"#fff",display:"flex",alignItems:"center",justifyContent:"center",boxShadow:"0 2px 8px rgba(0,0,0,0.15)"}}>
-                <span style={{fontFamily:"'Michroma',sans-serif",fontSize:13,fontWeight:900,color:"#2563EB"}}>NJ</span>
+              <div style={{width:44,height:44,borderRadius:"50%",background:"#fff",display:"flex",alignItems:"center",justifyContent:"center",boxShadow:"0 2px 8px rgba(0,0,0,0.15)",overflow:"hidden"}}>
+                <img src="/icons/icon-192.png" alt="NJ POS" style={{width:36,height:36,objectFit:"cover"}}/>
               </div>
               <div>
                 <div style={{color:"#fff",fontWeight:800,fontSize:14}}>NJ Systems</div>
@@ -827,8 +827,8 @@ export default function App() {
           {/* Chat bubble */}
           <div style={{padding:"16px 16px 8px",background:"#f0f2f5"}}>
             <div style={{display:"flex",gap:8,alignItems:"flex-start"}}>
-              <div style={{width:28,height:28,borderRadius:"50%",background:"linear-gradient(135deg,#00B2FF,#006AFF)",display:"flex",alignItems:"center",justifyContent:"center",flexShrink:0}}>
-                <span style={{color:"#fff",fontSize:11,fontWeight:900}}>NJ</span>
+              <div style={{width:28,height:28,borderRadius:"50%",overflow:"hidden",flexShrink:0}}>
+                <img src="/icons/icon-192.png" alt="NJ POS" style={{width:"100%",height:"100%",objectFit:"cover"}}/>
               </div>
               <div style={{background:"#fff",borderRadius:"0 12px 12px 12px",padding:"10px 14px",fontSize:13,color:"#050505",boxShadow:"0 1px 2px rgba(0,0,0,0.08)",maxWidth:210,lineHeight:1.45}}>
                 Hi there! 👋
