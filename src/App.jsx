@@ -808,9 +808,16 @@ export default function App() {
       />
 
       {/* Floating Messenger Chat Widget */}
-      {messengerOpen&&(
-        <div style={{position:"fixed",bottom:90,right:24,width:300,background:"#fff",borderRadius:16,boxShadow:"0 8px 32px rgba(0,0,0,0.18)",zIndex:1000,overflow:"hidden",animation:"fadeInUp 0.2s ease"}}>
-          <style>{`@keyframes fadeInUp{from{opacity:0;transform:translateY(12px)}to{opacity:1;transform:translateY(0)}}`}</style>
+      <div style={{
+        position:"fixed",bottom:90,right:24,width:300,
+        zIndex:1000,
+        transformOrigin:"bottom right",
+        transform:messengerOpen?"scale(1) translateY(0)":"scale(0.85) translateY(16px)",
+        opacity:messengerOpen?1:0,
+        pointerEvents:messengerOpen?"all":"none",
+        transition:"transform 0.22s cubic-bezier(0.34,1.56,0.64,1), opacity 0.18s ease",
+        background:"#fff",borderRadius:16,boxShadow:"0 8px 32px rgba(0,0,0,0.18)",overflow:"hidden",
+      }}>
           {/* Header */}
           <div style={{background:"linear-gradient(135deg,#00B2FF 0%,#006AFF 100%)",padding:"16px 16px 20px",position:"relative"}}>
             <button onClick={()=>setMessengerOpen(false)} style={{position:"absolute",top:10,right:12,background:"none",border:"none",color:"rgba(255,255,255,0.8)",fontSize:18,cursor:"pointer",lineHeight:1}}>×</button>
@@ -844,7 +851,7 @@ export default function App() {
             </a>
           </div>
         </div>
-      )}
+      </div>
 
       {/* Floating Messenger Button */}
       <button
