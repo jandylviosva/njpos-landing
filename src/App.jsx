@@ -189,6 +189,22 @@ const css = `
   .testi-gallery-thumb img{width:100%;height:100%;object-fit:cover}
   .testi-name{font-size:13px;font-weight:700;color:var(--text)}
   .testi-biz{font-size:11px;color:var(--gray)}
+  .hardware{background:#fff}
+  .hardware-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:20px}
+  .hw-card{border-radius:16px;border:1.5px solid var(--border);overflow:hidden;transition:box-shadow .22s,transform .22s}
+  .hw-card:hover{box-shadow:0 16px 48px rgba(37,99,235,.1);transform:translateY(-4px)}
+  .hw-img{width:100%;height:190px;object-fit:contain;background:#f8f9fa;padding:16px}
+  .hw-body{padding:18px 20px 20px}
+  .hw-tested{display:inline-flex;align-items:center;gap:5px;background:#f0fdf4;border:1px solid #bbf7d0;border-radius:20px;padding:2px 10px;font-size:10px;font-weight:800;color:#15803d;margin-bottom:10px}
+  .hw-tested i{font-size:11px}
+  .hw-name{font-size:15px;font-weight:800;color:var(--text);margin-bottom:4px}
+  .hw-model{font-size:11px;color:var(--gray-light);margin-bottom:8px;font-style:italic}
+  .hw-desc{font-size:12px;color:var(--gray);line-height:1.7;margin-bottom:12px}
+  .hw-tags{display:flex;flex-wrap:wrap;gap:4px}
+  .hw-tag{font-size:10px;font-weight:600;padding:2px 8px;border-radius:20px;background:#f0f4ff;color:#3B82F6;border:1px solid #e0e7ff}
+  .hw-note{background:#fffbeb;border:1px solid #fde68a;border-radius:8px;padding:8px 12px;font-size:11px;color:#92400e;margin-top:10px;display:flex;gap:6px;align-items:flex-start;line-height:1.5}
+  .hw-note i{font-size:13px;flex-shrink:0;margin-top:1px}
+  @media(max-width:600px){.hw-img{height:150px}}
   .faq{background:var(--off)}
   .faq-list{max-width:700px;margin:0 auto;display:flex;flex-direction:column;gap:4px}
   .faq-item{background:#fff;border-radius:10px;border:1px solid var(--border);overflow:hidden;transition:box-shadow .2s}
@@ -482,6 +498,7 @@ export default function App() {
         <NavLogo/>
         <div className="nav-links" style={menuOpen ? {display:'flex',flexDirection:'column',position:'fixed',top:64,left:0,right:0,background:'rgba(15,22,41,.98)',padding:'20px 5vw 24px',gap:18,zIndex:99,borderBottom:'1px solid rgba(255,255,255,.07)'} : {}}>
           <a href="#features" onClick={() => setMenuOpen(false)}>Features</a>
+          <a href="#hardware" onClick={() => setMenuOpen(false)}>Hardware</a>
           <a href="#how" onClick={() => setMenuOpen(false)}>How It Works</a>
           <a href="#pricing" onClick={() => setMenuOpen(false)}>Pricing</a>
           <a href="#faq" onClick={() => setMenuOpen(false)}>FAQ</a>
@@ -596,15 +613,77 @@ export default function App() {
             {bg:'#fef3c7',c:'#b45309',icon:'ti-clock',title:'Shift Management',desc:'Staff open and close shifts with cash counts, and every register runs its own independent shift — so two cashiers on two devices work fully in parallel, no waiting on each other. A shift survives an app crash or accidental refresh, and handing a register to a different cashier mid-shift takes one tap. Owners can also restrict which staff can log in on which device.',tags:['Multi-register support','Opening cash','Per-shift reports','Staff handoff','Device access control']},
             {bg:'#f0fdf4',c:'#15803d',icon:'ti-users',title:'Staff & Custom Roles',desc:'Start with ready-made Owner, Manager, and Staff roles — or create your own. Owners can build custom roles and choose exactly what each one can do: void orders, edit prices, manage inventory, view reports, and more. Adjust permissions anytime as your team grows.',tags:['Create custom roles','Fine-grained permissions','Activity logs','Secure login']},
             {bg:'#fce7f3',c:'#be185d',icon:'ti-cloud-upload',title:'Cloud Sync & Owner Portal',desc:'Data syncs in real time. Check today\'s sales, manage products, and add staff from any device via the Owner Portal — or right from a second device running the POS app itself, set up purely for monitoring. The app keeps itself up to date automatically, so you\'re always on the latest version.',tags:['Works offline','Auto sync','Auto-updates','Multi-device']},
-            {bg:'#e0f2fe',c:'#0369a1',icon:'ti-receipt',title:'Receipt Printing',desc:'Print thermal receipts on 58mm or 80mm paper. Connect a USB or Bluetooth printer directly for instant, one-tap printing with no pop-up — or use any printer through the standard print dialog. Kitchen Order Ticket available as add-on — print it together with the receipt on one slip, or as its own separate ticket, whichever fits your kitchen setup.',tags:['58mm & 80mm','Direct USB/Bluetooth print','Custom receipt logo','Kitchen tickets — together or separate']},
+            {bg:'#e0f2fe',c:'#0369a1',icon:'ti-receipt',title:'Receipt & Kitchen Printing',desc:'Print thermal receipts on 58mm or 80mm paper, or dot-matrix on 76mm (Epson TM-U220B tested). Connect a USB or Bluetooth printer directly for instant, one-tap printing with no pop-up dialog — or use any printer through the standard print dialog. Cash drawer auto-opens on cash payments via the printer\'s RJ11 port, with a setting to open before or after printing. Kitchen Order Ticket prints together with the receipt or as its own separate ticket.',tags:['58mm, 76mm & 80mm paper','Direct USB/Bluetooth','Cash drawer auto-open','KOT — together or separate','Dot matrix support']},
             {bg:'#fff7ed',c:'#c2410c',icon:'ti-discount-2',title:'Discounts & VAT',desc:'Senior Citizen and PWD 20% discounts with one tap. Custom percentage discounts and per-order VAT toggle included.',tags:['SC / PWD 20%','Custom %','VAT per order','BIR-ready']},
             {bg:'#f5f3ff',c:'#6d28d9',icon:'ti-truck',title:'Purchase Orders & Invoices',desc:'Manage supplier POs and customer invoices inside NJ POS. Customer invoices support split delivery — confirm an order to reserve stock, then record deliveries in batches as items arrive, with the remaining balance tracked automatically. Each invoice and PO has a full payment records tab showing every payment made: amount, method, reference number, collector, and proof image. Stock only deducts at delivery, not at payment — so your inventory stays accurate even for partial fulfillments.',tags:['Split-delivery invoices','Reservation hold','Payment records','PO management','Variant-aware receiving','Print-ready docs']},
+            {bg:'#ecfdf5',c:'#059669',icon:'ti-file-invoice',title:'Open Bills / Tabs',desc:'Save an order as an open bill and come back to it later — perfect for restaurants where a table runs a tab, or any store that collects payment at the end. Multiple open bills can run at the same time, and a cashier can add items to a bill at any point before closing it out. Each bill shows the running total and time opened.',tags:['Multiple open bills','Add items anytime','Table or customer name','Quick close-out']},
+            {bg:'#fef9c3',c:'#a16207',icon:'ti-tools-kitchen-2',title:'Kitchen Order Tickets',desc:'Keep the kitchen in the loop without shouting across the counter. Print a Kitchen Order Ticket automatically with every sale — either stapled to the bottom of the customer receipt on one slip, or as a completely separate ticket on a second printer. Each ticket shows only what the kitchen needs: item names, quantities, order type, and table or customer number.',tags:['Auto-print on every order','Shared or separate printer','Order type on ticket','Table & customer number']},
           ].map(f => (
             <div key={f.title} className="feature-card">
               <div className="feature-icon" style={{background:f.bg,color:f.c}}><i className={`ti ${f.icon}`}/></div>
               <h3>{f.title}</h3>
               <p>{f.desc}</p>
               <div className="feature-tags">{f.tags.map(t => <span key={t} className="feature-tag">{t}</span>)}</div>
+            </div>
+          ))}
+        </div>
+      </section>
+
+      <section className="hardware" id="hardware">
+        <div className="section-center" style={{marginBottom:44}}>
+          <div className="section-eyebrow">Tested & compatible</div>
+          <h2 className="section-title">Works with real hardware</h2>
+          <p className="section-sub">Every device listed here has been tested and confirmed working with NJ POS. No drivers to install, no special software — just plug in and go.</p>
+        </div>
+        <div className="hardware-grid">
+          {[
+            {
+              img:'/images/hardware/barcode-scanner.jpg',
+              name:'Barcode Scanner',
+              model:'Wired USB & 2.4GHz Wireless',
+              tested:'Plug & play — no setup',
+              desc:'Works with any USB or wireless barcode scanner that uses a USB dongle receiver. Plug into any device and it reads instantly in the POS search bar — no pairing, no driver install. The camera scanner built into the app is a free alternative if you\'re just starting out.',
+              tags:['USB wired','2.4GHz wireless dongle','No driver needed','Works on Android, iOS & PC'],
+              note:null,
+            },
+            {
+              img:'/images/hardware/cash-drawer.jpg',
+              name:'Cash Drawer',
+              model:'Standard RJ11/RJ12 interface',
+              tested:'Auto-open on cash sales',
+              desc:'Connect any standard cash drawer to your thermal printer via the RJ11 port. NJ POS sends an ESC/POS pulse command automatically after each cash or split payment — drawer opens without any cashier action. Set it to open before or after the receipt prints, whichever fits your workflow.',
+              tags:['RJ11/RJ12 to printer','Auto-open on cash & split','Before or after print','No extra wiring'],
+              note:'Requires a direct-connected thermal printer. Cash drawer cannot auto-open in print dialog mode.',
+            },
+            {
+              img:'/images/hardware/thermal-printer.jpg',
+              name:'Thermal Receipt Printer',
+              model:'RP21UB — 58mm · Bluetooth & USB',
+              tested:'Direct print — no dialog',
+              desc:'Connect via Bluetooth or USB for one-tap, instant receipts with no print dialog pop-up. Supports 58mm paper rolls. Cash drawer port included on most models — so you can run printer and drawer from a single connection. Works with ESC/POS command set.',
+              tags:['58mm paper','Bluetooth + USB','ESC/POS','Cash drawer port','Auto-cut supported'],
+              note:null,
+            },
+            {
+              img:'/images/hardware/epson-dotmatrix.jpg',
+              name:'Dot Matrix Printer',
+              model:'Epson TM-U220B — 76mm · USB',
+              tested:'Wired direct print confirmed',
+              desc:'The Epson TM-U220B is a workhorse dot-matrix receipt printer that prints in duplicate on 76mm carbon paper — common in restaurants for kitchen copies and BIR-compliant receipts. Tested on NJ POS via direct USB connection with full ESC/POS support.',
+              tags:['76mm paper','USB wired','Duplicate copy','ESC/POS','BIR-style receipts'],
+              note:'Dot matrix printing is slower than thermal. Best suited for kitchen copies or formal duplicate receipts.',
+            },
+          ].map(hw => (
+            <div key={hw.name} className="hw-card">
+              <img src={hw.img} alt={hw.name} className="hw-img"/>
+              <div className="hw-body">
+                <div className="hw-tested"><i className="ti ti-circle-check-filled"/>{hw.tested}</div>
+                <div className="hw-name">{hw.name}</div>
+                <div className="hw-model">{hw.model}</div>
+                <div className="hw-desc">{hw.desc}</div>
+                <div className="hw-tags">{hw.tags.map(t=><span key={t} className="hw-tag">{t}</span>)}</div>
+                {hw.note&&<div className="hw-note"><i className="ti ti-info-circle"/>{hw.note}</div>}
+              </div>
             </div>
           ))}
         </div>
