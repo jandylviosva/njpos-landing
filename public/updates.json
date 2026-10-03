@@ -1,5 +1,13 @@
 [
  {
+  "build": "2026-10-03.14",
+  "date": "2026-10-03",
+  "title": "Daily report to several emails",
+  "items": [
+   "The scheduled daily report can be sent to up to 5 email addresses. Add them in Settings, Order Settings, Scheduled Daily Report."
+  ]
+ },
+ {
   "build": "2026-10-03.13",
   "date": "2026-10-03",
   "title": "Update details on the website",
