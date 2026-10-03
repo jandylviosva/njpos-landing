@@ -1,5 +1,14 @@
 [
  {
+  "build": "2026-10-03.15",
+  "date": "2026-10-03",
+  "title": "Select products on purchase orders",
+  "items": [
+   "New Select products button on a purchase order opens the supplier's price list (or your inventory) with checkboxes and quantities, so several items can be added at once.",
+   "The list has a search box and a fixed-size window: the header and the confirm button stay in place while the items scroll."
+  ]
+ },
+ {
   "build": "2026-10-03.14",
   "date": "2026-10-03",
   "title": "Daily report to several emails",
