@@ -1,5 +1,15 @@
 [
  {
+  "app": "warehouse",
+  "build": "2026-10-03.27",
+  "date": "2026-10-03",
+  "title": "Activity log",
+  "items": [
+   "New Activity log screen shows who did what: sign-ins, orders, payments, item and stock changes, customers, staff, devices and settings. Filter by type, search, or pick dates.",
+   "Only the owner sees it by default. The owner can allow it for a staff member with the new \"See the activity log\" permission in Settings, Staff & roles."
+  ]
+ },
+ {
   "app": "pos",
   "build": "2026-10-03.20",
   "date": "2026-10-03",
