@@ -136,6 +136,17 @@ const css = `
   .pill-maya i{color:#a78bfa}
   .pill-card i{color:#f59e0b}
   .pill-qr i{color:#34d399}
+  .warehouse{background:var(--navy);padding:80px 5vw}
+  .warehouse .section-eyebrow{color:#93c5fd}
+  .warehouse .section-title{color:#fff}
+  .warehouse .section-sub{color:rgba(255,255,255,.6)}
+  .wh-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:14px;max-width:1100px;margin:0 auto 44px}
+  .wh-card{background:rgba(255,255,255,.05);border:1px solid rgba(255,255,255,.1);border-radius:14px;padding:22px}
+  .wh-card .feature-icon{margin-bottom:12px}
+  .wh-card h3{font-size:15px;font-weight:800;color:#fff;margin-bottom:6px}
+  .wh-card p{font-size:13px;color:rgba(255,255,255,.6);line-height:1.65}
+  .wh-pricing{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:18px;max-width:720px;margin:0 auto}
+  .wh-pricing .pricing-card{background:#fff}
   .pricing{background:var(--off);padding:80px 5vw}
   .pricing-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:20px;max-width:1100px;margin:0 auto}
   .pricing-card{background:#fff;border-radius:18px;padding:36px 30px;border:2px solid var(--border);position:relative;transition:box-shadow .22s}
@@ -501,6 +512,7 @@ export default function App() {
           <a href="#hardware" onClick={() => setMenuOpen(false)}>Hardware</a>
           <a href="#how" onClick={() => setMenuOpen(false)}>How It Works</a>
           <a href="#pricing" onClick={() => setMenuOpen(false)}>Pricing</a>
+          <a href="#warehouse" onClick={() => setMenuOpen(false)}>Warehouse</a>
           <a href="#faq" onClick={() => setMenuOpen(false)}>FAQ</a>
         </div>
         <div className="nav-right">
@@ -777,6 +789,55 @@ export default function App() {
         </div>
       </section>
 
+      <section className="warehouse" id="warehouse">
+        <div className="section-center" style={{marginBottom:44}}>
+          <div className="section-eyebrow">NJ Warehouse</div>
+          <h2 className="section-title">Supply your stores, not spreadsheets</h2>
+          <p className="section-sub">NJ Warehouse is the supplier side of NJ POS. Keep your price list and stock in one place, let your stores order straight from their POS, and track every order, invoice and payment.</p>
+        </div>
+        <div className="wh-grid">
+          {[
+            {bg:'#dbeafe',c:'#1d4ed8',icon:'ti-list-details',title:'Price List & Catalog',desc:'Keep your products, units, prices and photos in one list. Stores only see and order what you put on it, at the prices you set. Bulk edit many items at once.'},
+            {bg:'#ede9fe',c:'#7c3aed',icon:'ti-plug-connected',title:'Connected NJ POS Stores',desc:'A store connects to your warehouse with your warehouse code. From then on its purchase orders go straight to you, and it can only receive the goods once you mark the order fulfilled.'},
+            {bg:'#dcfce7',c:'#16a34a',icon:'ti-checklist',title:'Order Approvals That Stay Accurate',desc:'Approve, reject or fulfil orders from any device. If two people act on the same order, only one decision counts, and stock is never deducted twice.'},
+            {bg:'#fef3c7',c:'#b45309',icon:'ti-box',title:'Stock & Low-Stock Alerts',desc:'Stock goes down when an order is fulfilled and every change is recorded. Get a daily email of items running low, sent to up to five addresses you choose.'},
+            {bg:'#fce7f3',c:'#be185d',icon:'ti-users',title:'Customers & Wholesale',desc:'Create orders for walk-in or wholesale customers, with saved customer details, their order history and what each customer still owes.'},
+            {bg:'#e0f2fe',c:'#0369a1',icon:'ti-file-invoice',title:'Invoices, Discounts & Payments',desc:'Print an invoice or save it as a PDF with your logo, TIN, footer message and signature lines. Add a discount, record partial payments and see the balance at a glance.'},
+            {bg:'#f0fdf4',c:'#15803d',icon:'ti-shield-lock',title:'Staff, Roles & Devices',desc:'Give each person a role with only the access they need. Each warehouse signs in with a registration code, and you control how many devices can use it.'},
+            {bg:'#fff7ed',c:'#c2410c',icon:'ti-mail',title:'Email Notifications with PDF',desc:'New stock requests and fulfilled orders are emailed with the first items listed and the full order attached as a PDF.'},
+          ].map(f => (
+            <div key={f.title} className="wh-card">
+              <div className="feature-icon" style={{background:f.bg,color:f.c}}><i className={`ti ${f.icon}`}/></div>
+              <h3>{f.title}</h3>
+              <p>{f.desc}</p>
+            </div>
+          ))}
+        </div>
+        <div className="wh-pricing">
+          <div className="pricing-card featured">
+            <div className="pricing-badge">NJ Warehouse</div>
+            <div className="pricing-name">Warehouse plan</div>
+            <div className="pricing-amount"><sup>₱</sup>199<span className="mo">/mo</span></div>
+            <div className="pricing-note">1 device included · billed monthly</div>
+            <ul className="pricing-features" style={{marginTop:16}}>
+              {['Price list, products and stock','Connected NJ POS stores and order approvals','Customers, invoices and payments','Staff accounts and roles','Low-stock email alerts','Order emails with PDF'].map(f => <li key={f}><i className="ti ti-check"/>{f}</li>)}
+            </ul>
+            <a className="pricing-cta filled" href="mailto:pos_support@nj-systems.com?subject=NJ%20Warehouse%20registration%20code&body=Hi%2C%20I%27d%20like%20to%20get%20an%20NJ%20Warehouse%20registration%20code.%0A%0ABusiness%20name%3A%20%0ADevices%20needed%3A%20" style={{textDecoration:'none'}}>Get a registration code</a>
+            <a className="pricing-cta-secondary" href="https://warehouse.nj-systems.com" style={{textDecoration:'none'}}>Already have a code? Open NJ Warehouse</a>
+          </div>
+          <div className="pricing-card">
+            <div className="pricing-name">Extra devices</div>
+            <div className="pricing-amount"><sup>₱</sup>99<span className="mo">/device/mo</span></div>
+            <div className="pricing-note">for each additional device</div>
+            <div className="pricing-compare"><i className="ti ti-device-desktop"/>3 devices = ₱199 + 2 × ₱99 = ₱397/mo</div>
+            <ul className="pricing-features">
+              {['Use the same warehouse on a phone, tablet or computer','Everyone signs in with the same registration code','Ask us to add more devices any time'].map(f => <li key={f}><i className="ti ti-check"/>{f}</li>)}
+            </ul>
+            <p className="pricing-cta-note">Each code allows a set number of devices. Need more? Just ask and we add them.</p>
+          </div>
+        </div>
+      </section>
+
       <section className="testimonials" id="testimonials">
         <div className="section-center" style={{marginBottom:44}}>
           <div className="section-eyebrow">Store owners say</div>
@@ -854,6 +915,7 @@ export default function App() {
             <a href="#pricing">Pricing</a>
             <a href="#how">How It Works</a>
             <a href="#faq">FAQ</a>
+            <a href="#warehouse">NJ Warehouse</a>
           </div>
           <div className="footer-col">
             <h4>Access</h4>
