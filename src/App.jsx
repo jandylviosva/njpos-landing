@@ -873,6 +873,7 @@ export default function App() {
           <p>© 2026 NJ POS. All rights reserved.</p>
           <div className="footer-bottom-links">
             <a href="/leave-a-review">Leave a Review</a>
+            <a href="/updates">Updates</a>
             <a href="/privacy-policy">Privacy Policy</a>
             <a href="/terms-of-service">Terms of Service</a>
           </div>
