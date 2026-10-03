@@ -38,6 +38,9 @@
     .card h2{font-size:16px;margin:8px 0 4px}
     .card ul{padding-left:20px;font-size:14px;line-height:1.7;color:#374151}
     .muted{color:var(--gray);font-size:14px}
+    .filter{display:flex;align-items:center;gap:10px;margin-bottom:16px;flex-wrap:wrap}
+    .filter label{font-size:13px;font-weight:600;color:#374151}
+    .filter select{padding:8px 12px;border:1px solid var(--border);border-radius:8px;font-size:13px;font-family:inherit;background:#fff;color:var(--text);min-width:180px}
     footer{background:var(--navy);color:rgba(255,255,255,0.4);font-size:12px;text-align:center;padding:24px 5vw}
     footer a{color:rgba(255,255,255,0.4);text-decoration:none}
     footer a:hover{color:#fff}
@@ -58,7 +61,9 @@
   <p>Update records, newest first, grouped by build. Your POS installs updates by itself when it is idle.</p>
 </div>
 
-<div class="wrap"><div id="list"><p class="muted">Loading…</p></div></div>
+<div class="wrap">
+  <div class="filter" id="filter" hidden><label for="dateSel">Show</label><select id="dateSel"></select></div>
+  <div id="list"><p class="muted">Loading…</p></div></div>
 
 <footer>
   <p>© 2026 NJ POS. All rights reserved.</p>
@@ -75,12 +80,28 @@
   function cmp(a,b){var x=String(a).split("."),y=String(b).split(".");if(x[0]!==y[0])return x[0]<y[0]?-1:1;return parseInt(x[1]||0,10)-parseInt(y[1]||0,10);}
   var from=new URLSearchParams(location.search).get("from")||"";
   function esc(s){return String(s).replace(/[&<>"]/g,function(c){return {"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;"}[c];});}
-  fetch("/updates.json",{cache:"no-store"}).then(function(r){return r.json();}).then(function(list){
-    list.sort(function(a,b){return cmp(b.build,a.build);});
+  var all=[];
+  function fmtDate(d){var t=new Date(d+"T00:00:00");return isNaN(t)?d:t.toLocaleDateString("en-PH",{year:"numeric",month:"long",day:"numeric"});}
+  function render(){
+    var sel=document.getElementById("dateSel").value;
+    var list=sel==="all"?all:all.filter(function(u){return u.date===sel;});
     document.getElementById("list").innerHTML=list.map(function(u){
       var isNew=from&&cmp(u.build,from)>0;
       return '<div class="card'+(isNew?' new':'')+'" id="b-'+esc(u.build)+'"><div class="row"><span class="build">Build '+esc(u.build)+'</span><span class="date">'+esc(u.date)+'</span>'+(isNew?'<span class="badge">New for you</span>':'')+'</div><h2>'+esc(u.title)+'</h2><ul>'+u.items.map(function(i){return '<li>'+esc(i)+'</li>';}).join("")+'</ul></div>';
     }).join("");
+  }
+  fetch("/updates.json",{cache:"no-store"}).then(function(r){return r.json();}).then(function(list){
+    list.sort(function(a,b){return cmp(b.build,a.build);});
+    all=list;
+    // only dates that actually have updates are offered
+    var dates=[],counts={};
+    list.forEach(function(u){if(!counts[u.date]){counts[u.date]=0;dates.push(u.date);}counts[u.date]++;});
+    dates.sort().reverse();
+    var sel=document.getElementById("dateSel");
+    sel.innerHTML='<option value="all">All updates ('+list.length+')</option>'+dates.map(function(d){return '<option value="'+esc(d)+'">'+esc(fmtDate(d))+' ('+counts[d]+')</option>';}).join("");
+    document.getElementById("filter").hidden=false;
+    sel.addEventListener("change",render);
+    render();
   }).catch(function(){document.getElementById("list").innerHTML='<p class="muted">Could not load the update records. Please try again.</p>';});
 </script>
 </body>
