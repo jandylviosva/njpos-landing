@@ -427,6 +427,84 @@ function TrialModal({ open, onClose }) {
   );
 }
 
+function WarehouseModal({ open, onClose }) {
+  const [step, setStep] = useState('choose');   // choose | trial | sent
+  const [sending, setSending] = useState(false);
+  const [err, setErr] = useState('');
+
+  const close = () => { onClose(); setStep('choose'); setErr(''); };
+  const submit = async (e) => {
+    e.preventDefault();
+    const ownerName = e.target.name.value.trim();
+    const businessName = e.target.biz.value.trim();
+    const email = e.target.email.value.trim().toLowerCase();
+    setSending(true); setErr('');
+    try {
+      const r = await fetch('https://owner.nj-systems.com/api/start-warehouse-trial', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ email, businessName, ownerName }),
+      });
+      const data = await r.json().catch(() => ({}));
+      if (r.ok) setStep('sent'); else setErr(data.error || 'Something went wrong.');
+    } catch { setErr('Network error. Check your connection.'); }
+    setSending(false);
+  };
+
+  const choice = { display:'flex', alignItems:'flex-start', gap:12, width:'100%', textAlign:'left', padding:'14px 16px', borderRadius:12, border:'1.5px solid #e5e7eb', background:'#fff', cursor:'pointer', fontFamily:'inherit', marginBottom:10 };
+
+  return (
+    <div className={`modal-overlay${open ? ' open' : ''}`} onClick={e => e.target === e.currentTarget && close()}>
+      <div className="modal-box">
+        <button className="modal-close-btn" onClick={close}><i className="ti ti-x"/></button>
+        {step === 'choose' && (
+          <>
+            <div className="modal-icon"><img src={LOGO} alt="NJ Warehouse"/></div>
+            <div className="modal-title">Get NJ Warehouse</div>
+            <div className="modal-sub">Choose how you want to start</div>
+            <button style={choice} onClick={() => setStep('trial')}>
+              <i className="ti ti-rocket" style={{fontSize:24,color:'#2563EB',marginTop:2}}/>
+              <span><b style={{display:'block',fontSize:15,color:'#111827'}}>Free 3-day trial</b><span style={{fontSize:13,color:'#6b7280'}}>Full access for 3 days with 1 device. No payment. We email your trial code.</span></span>
+            </button>
+            <button style={choice} onClick={() => { window.location.href = 'https://owner.nj-systems.com/warehouse-payment'; }}>
+              <i className="ti ti-credit-card" style={{fontSize:24,color:'#16a34a',marginTop:2}}/>
+              <span><b style={{display:'block',fontSize:15,color:'#111827'}}>Buy a registration code</b><span style={{fontSize:13,color:'#6b7280'}}>₱199/month with 1 device, ₱99 for each extra device. Pay with GCash and we email your code.</span></span>
+            </button>
+            <div className="modal-note"><i className="ti ti-shield-check"/> Already have a code? <a href="https://warehouse.nj-systems.com" style={{color:'#2563EB',fontWeight:700}}>Open NJ Warehouse</a></div>
+          </>
+        )}
+        {step === 'trial' && (
+          <>
+            <div className="modal-icon"><img src={LOGO} alt="NJ Warehouse"/></div>
+            <div className="modal-title">Start Your Free Trial</div>
+            <div className="modal-sub">3 days of full access. Your days start when you register.</div>
+            <form onSubmit={submit}>
+              <div className="form-field"><label className="form-label">Full Name</label><input name="name" className="form-input" type="text" placeholder="e.g. Maria Santos" required/></div>
+              <div className="form-field"><label className="form-label">Business Name</label><input name="biz" className="form-input" type="text" placeholder="e.g. Santos Trading" required/></div>
+              <div className="form-field"><label className="form-label">Email Address</label><input name="email" className="form-input" type="email" placeholder="your@email.com" required/></div>
+              {err && <div style={{padding:'8px 12px',background:'#fef2f2',border:'1px solid #fecaca',borderRadius:8,fontSize:13,color:'#991b1b',marginBottom:10}}>{err}</div>}
+              <button type="submit" className="btn-primary" disabled={sending} style={{width:'100%',justifyContent:'center',marginTop:4}}>
+                <i className={`ti ${sending ? 'ti-loader-2' : 'ti-rocket'}`}/>{sending ? 'Sending…' : 'Email me my trial code'}
+              </button>
+            </form>
+            <div className="modal-note"><button onClick={() => { setStep('choose'); setErr(''); }} style={{background:'none',border:'none',color:'#2563EB',fontWeight:700,cursor:'pointer',fontFamily:'inherit',fontSize:'inherit'}}>← Back</button> · No card needed</div>
+          </>
+        )}
+        {step === 'sent' && (
+          <div className="modal-success">
+            <div style={{fontSize:44,marginBottom:12}}>✅</div>
+            <div style={{fontSize:19,fontWeight:900,marginBottom:8}}>Trial Code Sent!</div>
+            <div style={{fontSize:14,color:'#6b7280',marginBottom:16}}>Check your email for your <strong>TRIAL-XXXX-XXXX</strong> registration code.</div>
+            <div style={{background:'#eff6ff',border:'1px solid #bfdbfe',borderRadius:10,padding:'12px 16px',fontSize:13,color:'#1e40af'}}>
+              📧 Open <a href="https://warehouse.nj-systems.com" style={{color:'#2563EB',fontWeight:700}}>warehouse.nj-systems.com</a>, choose Register and enter the code.
+            </div>
+          </div>
+        )}
+      </div>
+    </div>
+  );
+}
+
 function FaqItem({ q, a }) {
   const [open, setOpen] = useState(false);
   return (
@@ -494,6 +572,7 @@ export default function App() {
   const [lightbox, setLightbox] = useState(null); // {images, index} | null
 
   const openTrial = () => setModalOpen(true);
+  const [whOpen, setWhOpen] = useState(false);
 
   return (
     <>
@@ -822,7 +901,7 @@ export default function App() {
             <ul className="pricing-features" style={{marginTop:16}}>
               {['Price list, products and stock','Connected NJ POS stores and order approvals','Customers, invoices and payments','Staff accounts and roles','Low-stock email alerts','Order emails with PDF'].map(f => <li key={f}><i className="ti ti-check"/>{f}</li>)}
             </ul>
-            <a className="pricing-cta filled" href="mailto:pos_support@nj-systems.com?subject=NJ%20Warehouse%20registration%20code&body=Hi%2C%20I%27d%20like%20to%20get%20an%20NJ%20Warehouse%20registration%20code.%0A%0ABusiness%20name%3A%20%0ADevices%20needed%3A%20" style={{textDecoration:'none'}}>Get a registration code</a>
+            <button className="pricing-cta filled" onClick={() => setWhOpen(true)}>Get NJ Warehouse</button>
             <a className="pricing-cta-secondary" href="https://warehouse.nj-systems.com" style={{textDecoration:'none'}}>Already have a code? Open NJ Warehouse</a>
           </div>
           <div className="pricing-card">
@@ -943,6 +1022,7 @@ export default function App() {
       </footer>
 
       <TrialModal open={modalOpen} onClose={() => setModalOpen(false)}/>
+      <WarehouseModal open={whOpen} onClose={() => setWhOpen(false)}/>
       <Lightbox
         state={lightbox}
         onClose={() => setLightbox(null)}
