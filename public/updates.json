@@ -1,5 +1,14 @@
 [
  {
+  "app": "pos",
+  "build": "2026-10-03.20",
+  "date": "2026-10-03",
+  "title": "New app icon",
+  "items": [
+   "NJ POS has a refreshed app icon. If you installed the app, the new icon appears after the update (on some phones you may need to reinstall it to see it on the home screen)."
+  ]
+ },
+ {
   "app": "warehouse",
   "build": "2026-10-03.25",
   "date": "2026-10-03",
