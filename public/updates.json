@@ -1,11 +1,133 @@
 [
  {
+  "app": "pos",
+  "build": "2026-10-03.20",
+  "date": "2026-10-03",
+  "title": "New app icon",
+  "items": [
+   "NJ POS has a refreshed app icon. If you installed the app, the new icon appears after the update (on some phones you may need to reinstall it to see it on the home screen)."
+  ]
+ },
+ {
+  "app": "warehouse",
+  "build": "2026-10-03.25",
+  "date": "2026-10-03",
+  "title": "Installable app and a clearer update notice",
+  "items": [
+   "NJ Warehouse can now be installed like an app (Install button on Chrome and Edge, Add to Home Screen on iPhone and iPad).",
+   "The \"Update now\" notice is a floating box at the top right, stays until you press Update now, and links to these update records."
+  ]
+ },
+ {
+  "app": "warehouse",
+  "build": "2026-10-03.24",
+  "date": "2026-10-03",
+  "title": "Set up devices with an emailed code, and faster sync",
+  "items": [
+   "Adding a device now works like NJ POS: enter the owner's email, see the allowed and active devices, then Set up here, Restore as this device or Remove Device with a 6-digit code sent to the owner's email.",
+   "Devices notice each other's work within a few seconds (approvals, stock, payments) instead of waiting for the next refresh."
+  ]
+ },
+ {
+  "app": "warehouse",
+  "build": "2026-10-03.23",
+  "date": "2026-10-03",
+  "title": "Free 3-day trial",
+  "items": [
+   "Get a free 3-day trial code from nj-systems.com. The 3 days start when you register, and the trial includes 1 device."
+  ]
+ },
+ {
+  "app": "warehouse",
+  "build": "2026-10-03.22",
+  "date": "2026-10-03",
+  "title": "Order emails with a PDF",
+  "items": [
+   "New stock request and fulfilled order emails list the first 10 items and attach a PDF with the full order.",
+   "Amounts in the emails now show thousands separators."
+  ]
+ },
+ {
+  "app": "warehouse",
+  "build": "2026-10-03.21",
+  "date": "2026-10-03",
+  "title": "Plain money boxes",
+  "items": [
+   "Payment, discount and price boxes no longer have up and down arrows."
+  ]
+ },
+ {
+  "app": "warehouse",
+  "build": "2026-10-03.20",
+  "date": "2026-10-03",
+  "title": "Instant discounts",
+  "items": [
+   "Adding or removing a discount on an order shows right away, without a \"saved\" popup."
+  ]
+ },
+ {
+  "app": "warehouse",
+  "build": "2026-10-03.19",
+  "date": "2026-10-03",
+  "title": "Order window, invoice footer and signers",
+  "items": [
+   "The order window keeps a fixed size and only the items scroll, and it shows Subtotal, Discount and Total clearly.",
+   "Invoices can have your own footer message (or none) and up to 4 signature lines, set in Settings, Billing & printing."
+  ]
+ },
+ {
+  "app": "warehouse",
+  "build": "2026-10-03.18",
+  "date": "2026-10-03",
+  "title": "Select products on new orders",
+  "items": [
+   "New orders are built with a Select products window with checkboxes, quantities and search."
+  ]
+ },
+ {
+  "app": "warehouse",
+  "build": "2026-10-03.16",
+  "date": "2026-10-03",
+  "title": "Stock alert emails",
+  "items": [
+   "Turn the daily low-stock email on or off and choose up to 5 addresses, in Settings, Stock alerts."
+  ]
+ },
+ {
+  "app": "warehouse",
+  "build": "2026-10-03.15",
+  "date": "2026-10-03",
+  "title": "NJ Warehouse emails",
+  "items": [
+   "Warehouse emails use the NJ WAREHOUSE header and an NJ Systems footer."
+  ]
+ },
+ {
+  "app": "warehouse",
+  "build": "2026-10-03.4",
+  "date": "2026-10-02",
+  "title": "Customers, discounts and invoices",
+  "items": [
+   "Customers with balances, discounts, payment types, invoice printing settings and a store price list."
+  ]
+ },
+ {
+  "app": "warehouse",
+  "build": "2026-10-03.6",
+  "date": "2026-10-02",
+  "title": "Bulk edit",
+  "items": [
+   "Select items in Inventory and edit many of them at once in a spreadsheet-style window."
+  ]
+ },
+ {
   "build": "2026-10-03.19",
   "date": "2026-10-03",
   "title": "Receiving waits for the warehouse",
   "items": [
    "A purchase order sent to your connected warehouse can only be received after the warehouse marks it fulfilled. Until then the Receiving tab shows \"Waiting for the warehouse to fulfil this order\" instead of the Receive button."
-  ]
+  ],
+  "app": "pos"
  },
  {
   "build": "2026-10-03.18",
@@ -15,7 +137,8 @@
    "The Payments tab of Purchase Orders and Invoices now lists each document with total, paid, balance and status, with a Pay button.",
    "Filter by Unpaid & partial (the default), Unpaid, Partially paid, Fully paid or All. The old list of payment records is under Payment history.",
    "Payment amount boxes are plain text boxes without the up/down arrows."
-  ]
+  ],
+  "app": "pos"
  },
  {
   "build": "2026-10-03.16",
@@ -24,7 +147,8 @@
   "items": [
    "Items on a purchase order are now added only with Select products; the line-by-line search and Add Item button are gone.",
    "After choosing, the button reads Update Selected Products so the selection can be changed."
-  ]
+  ],
+  "app": "pos"
  },
  {
   "build": "2026-10-03.15",
@@ -33,7 +157,8 @@
   "items": [
    "New Select products button on a purchase order opens the supplier's price list (or your inventory) with checkboxes and quantities, so several items can be added at once.",
    "The list has a search box and a fixed-size window: the header and the confirm button stay in place while the items scroll."
-  ]
+  ],
+  "app": "pos"
  },
  {
   "build": "2026-10-03.14",
@@ -41,7 +166,8 @@
   "title": "Daily report to several emails",
   "items": [
    "The scheduled daily report can be sent to up to 5 email addresses. Add them in Settings, Order Settings, Scheduled Daily Report."
-  ]
+  ],
+  "app": "pos"
  },
  {
   "build": "2026-10-03.13",
@@ -49,7 +175,8 @@
   "title": "Update details on the website",
   "items": [
    "\"Click here to view the details\" now opens the update records on nj-systems.com."
-  ]
+  ],
+  "app": "pos"
  },
  {
   "build": "2026-10-03.12",
@@ -58,7 +185,8 @@
   "items": [
    "The update box no longer has a close button: it stays on screen until Update now is pressed.",
    "After the app updates, a short \"NJ POS was updated\" notice links to what changed."
-  ]
+  ],
+  "app": "pos"
  },
  {
   "build": "2026-10-03.11",
@@ -67,7 +195,8 @@
   "items": [
    "The \"new version\" notice is now a small floating box at the top right, so it no longer sits behind other banners.",
    "Closing the notice does not stop the update: it still installs by itself when the device is idle."
-  ]
+  ],
+  "app": "pos"
  },
  {
   "build": "2026-10-03.10",
@@ -76,7 +205,8 @@
   "items": [
    "Developer support sessions use their own temporary device, so a real device of your store is never renamed or removed.",
    "Update checks now compare build numbers correctly (build 10 is newer than build 9)."
-  ]
+  ],
+  "app": "pos"
  },
  {
   "build": "2026-10-03.9",
@@ -84,7 +214,8 @@
   "title": "Developer access: View and Support",
   "items": [
    "Read-only View and full Support are separate options, and View can show the app as a chosen device and its signed-in user without changing anything."
-  ]
+  ],
+  "app": "pos"
  },
  {
   "build": "2026-10-03.8",
@@ -92,7 +223,8 @@
   "title": "Developer access banner",
   "items": [
    "Developer access shows a floating banner with the store, end time and an Exit button."
-  ]
+  ],
+  "app": "pos"
  },
  {
   "build": "2026-10-03.7",
@@ -101,7 +233,8 @@
   "items": [
    "If a shift from an earlier day is still open, a popup shows when it started and lets you continue it or end it.",
    "The shift popup also appears after a restored login."
-  ]
+  ],
+  "app": "pos"
  },
  {
   "build": "2026-10-03.6",
@@ -109,7 +242,8 @@
   "title": "Portrait reports",
   "items": [
    "Report PDFs from the POS are always portrait."
-  ]
+  ],
+  "app": "pos"
  },
  {
   "build": "2026-10-03.5",
@@ -117,7 +251,8 @@
   "title": "Supplier printing",
   "items": [
    "Printing moved into the supplier catalog views; a warehouse catalog prints its own products."
-  ]
+  ],
+  "app": "pos"
  },
  {
   "build": "2026-10-03.4",
@@ -125,7 +260,8 @@
   "title": "Purchase orders",
   "items": [
    "A supplier with a price list only offers the items on that list."
-  ]
+  ],
+  "app": "pos"
  },
  {
   "build": "2026-10-03.3",
@@ -133,7 +269,8 @@
   "title": "Purchase orders to a connected warehouse",
   "items": [
    "Items must be picked from the warehouse price list, at the warehouse's prices."
-  ]
+  ],
+  "app": "pos"
  },
  {
   "build": "2026-10-03.2",
@@ -141,7 +278,8 @@
   "title": "Warehouse connection",
   "items": [
    "Connecting falls back to the company name when needed."
-  ]
+  ],
+  "app": "pos"
  },
  {
   "build": "2026-10-03.1",
@@ -150,7 +288,8 @@
   "items": [
    "Warehouse orders show status badges and refresh by themselves.",
    "Mark Sent sends first and shows clear errors if it fails."
-  ]
+  ],
+  "app": "pos"
  },
  {
   "build": "2026-10-02.9",
@@ -158,7 +297,8 @@
   "title": "Automatic updates",
   "items": [
    "Idle devices install a waiting update by themselves, never during an open sale."
-  ]
+  ],
+  "app": "pos"
  },
  {
   "build": "2026-10-02.5",
@@ -167,6 +307,7 @@
   "items": [
    "End of shift has an \"Email me\" button that sends the shift report with a PDF copy to the account email.",
    "The shift report lists products sold."
-  ]
+  ],
+  "app": "pos"
  }
 ]
