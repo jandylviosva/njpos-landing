@@ -1,5 +1,14 @@
 [
  {
+  "build": "2026-10-03.16",
+  "date": "2026-10-03",
+  "title": "Purchase orders: items come from Select products",
+  "items": [
+   "Items on a purchase order are now added only with Select products; the line-by-line search and Add Item button are gone.",
+   "After choosing, the button reads Update Selected Products so the selection can be changed."
+  ]
+ },
+ {
   "build": "2026-10-03.15",
   "date": "2026-10-03",
   "title": "Select products on purchase orders",
