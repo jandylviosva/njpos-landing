@@ -1,5 +1,13 @@
 [
  {
+  "build": "2026-10-03.19",
+  "date": "2026-10-03",
+  "title": "Receiving waits for the warehouse",
+  "items": [
+   "A purchase order sent to your connected warehouse can only be received after the warehouse marks it fulfilled. Until then the Receiving tab shows \"Waiting for the warehouse to fulfil this order\" instead of the Receive button."
+  ]
+ },
+ {
   "build": "2026-10-03.18",
   "date": "2026-10-03",
   "title": "Payments tabs: pay from the list",
