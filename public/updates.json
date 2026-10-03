@@ -1,5 +1,16 @@
 [
  {
+  "build": "2026-10-03.21",
+  "date": "2026-10-03",
+  "title": "Smarter receiving",
+  "items": [
+   "Receiving a purchase order matches each item to your inventory by SKU, then name. Confirm the match, find another, or mark it as not in inventory.",
+   "Optionally use the supplier or warehouse SKU on a matched product, and create missing products with your store's own SKU and the warehouse price as cost and retail.",
+   "Receiving also updates the cost price of matched products."
+  ],
+  "app": "pos"
+ },
+ {
   "app": "warehouse",
   "build": "2026-10-03.27",
   "date": "2026-10-03",
