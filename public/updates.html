@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Updates — NJ POS</title>
+  <link rel="icon" href="/favicon.ico"/>
+  <link rel="preconnect" href="https://fonts.googleapis.com"/>
+  <link href="https://fonts.googleapis.com/css2?family=Michroma&family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet"/>
+  <style>
+    *{box-sizing:border-box;margin:0;padding:0}
+    :root{--p:#2563EB;--navy:#0f1629;--text:#111827;--gray:#6b7280;--border:#e5e7eb;--font:'Inter',sans-serif}
+    body{font-family:var(--font);color:var(--text);background:#f5f5ff;line-height:1.7}
+    a{color:var(--p);text-decoration:none}
+    a:hover{text-decoration:underline}
+
+    /* NAV */
+    nav{background:var(--navy);padding:0 5vw;height:54px;display:flex;align-items:center;justify-content:space-between;position:sticky;top:0;z-index:100}
+    .nav-logo{display:flex;align-items:center;gap:10px;text-decoration:none}
+    .nav-logo:hover{text-decoration:none}
+    .nav-logo-icon{width:28px;height:28px;border-radius:7px;overflow:hidden}
+    .nav-logo-icon img{width:100%;height:100%;object-fit:contain}
+    .nav-logo-text{font-size:14px;font-weight:800;color:#fff}
+    .nav-link{font-size:13px;color:rgba(255,255,255,0.6);text-decoration:none;transition:color .15s}
+    .nav-link:hover{color:#fff;text-decoration:none}
+
+    /* PAGE */
+    .page-hero{background:var(--navy);color:#fff;padding:56px 5vw 48px;text-align:center}
+    .page-hero h1{font-size:clamp(24px,4vw,36px);font-weight:800;margin-bottom:10px}
+    .page-hero p{font-size:14px;color:rgba(255,255,255,0.5)}
+    .wrap{max-width:720px;margin:0 auto;padding:32px 5vw 56px}
+    .card{background:#fff;border:1px solid var(--border);border-radius:14px;padding:16px 18px;margin-bottom:14px}
+    .card.new{border-color:var(--p);box-shadow:0 0 0 3px rgba(37,99,235,.12)}
+    .row{display:flex;gap:10px;align-items:center;flex-wrap:wrap}
+    .build{font-family:ui-monospace,Menlo,Consolas,monospace;font-weight:700;font-size:13px;color:var(--p)}
+    .date{color:var(--gray);font-size:12px}
+    .badge{background:var(--p);color:#fff;border-radius:99px;font-size:11px;font-weight:700;padding:2px 9px}
+    .card h2{font-size:16px;margin:8px 0 4px}
+    .card ul{padding-left:20px;font-size:14px;line-height:1.7;color:#374151}
+    .muted{color:var(--gray);font-size:14px}
+    footer{background:var(--navy);color:rgba(255,255,255,0.4);font-size:12px;text-align:center;padding:24px 5vw}
+    footer a{color:rgba(255,255,255,0.4);text-decoration:none}
+    footer a:hover{color:#fff}
+    .footer-links{display:flex;justify-content:center;gap:20px;margin-top:8px}
+  </style>
+</head>
+<body>
+
+<nav>
+  <a href="/" class="nav-logo">
+    <div class="nav-logo-icon"><img src="/icons/icon-192.png" alt="NJ POS"/></div>
+    <span style="font-family:'Michroma',sans-serif;font-size:12px;letter-spacing:0.5px"><span style="color:#60A5FA">NJ</span><span style="color:#fff">POS</span></span>
+  </a>
+  <a href="/" class="nav-link">← Back to Home</a>
+</nav>
+<div class="page-hero">
+  <h1>What's new in NJ POS</h1>
+  <p>Update records, newest first, grouped by build. Your POS installs updates by itself when it is idle.</p>
+</div>
+
+<div class="wrap"><div id="list"><p class="muted">Loading…</p></div></div>
+
+<footer>
+  <p>© 2026 NJ POS. All rights reserved.</p>
+  <div class="footer-links">
+    <a href="/updates">Updates</a>
+    <a href="/privacy-policy">Privacy Policy</a>
+    <a href="/terms-of-service">Terms of Service</a>
+    <a href="/">Home</a>
+  </div>
+</footer>
+<script>
+  // "2026-10-03.11": compare the date as text and the counter as a number.
+  function cmp(a,b){var x=String(a).split("."),y=String(b).split(".");if(x[0]!==y[0])return x[0]<y[0]?-1:1;return parseInt(x[1]||0,10)-parseInt(y[1]||0,10);}
+  var from=new URLSearchParams(location.search).get("from")||"";
+  function esc(s){return String(s).replace(/[&<>"]/g,function(c){return {"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;"}[c];});}
+  fetch("/updates.json",{cache:"no-store"}).then(function(r){return r.json();}).then(function(list){
+    list.sort(function(a,b){return cmp(b.build,a.build);});
+    document.getElementById("list").innerHTML=list.map(function(u){
+      var isNew=from&&cmp(u.build,from)>0;
+      return '<div class="card'+(isNew?' new':'')+'" id="b-'+esc(u.build)+'"><div class="row"><span class="build">Build '+esc(u.build)+'</span><span class="date">'+esc(u.date)+'</span>'+(isNew?'<span class="badge">New for you</span>':'')+'</div><h2>'+esc(u.title)+'</h2><ul>'+u.items.map(function(i){return '<li>'+esc(i)+'</li>';}).join("")+'</ul></div>';
+    }).join("");
+  }).catch(function(){document.getElementById("list").innerHTML='<p class="muted">Could not load the update records. Please try again.</p>';});
+</script>
+</body>
+</html>
