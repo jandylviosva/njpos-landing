@@ -1,5 +1,17 @@
 [
  {
+  "build": "2026-10-04.3",
+  "date": "2026-10-04",
+  "title": "Promo vouchers and member points",
+  "items": [
+   "New Vouchers tab in Loyalty: create promo vouchers with a code, fixed or percent discount, optional cap and minimum purchase, valid dates, and limits on total uses and uses per member. See where each one was used.",
+   "Add or remove a member's points by hand, with a required reason and a history on the member.",
+   "The birthday discount is now announced when the member is picked, shown in the cart, and applied by default.",
+   "Voucher and birthday discount lines always stay on one line on thermal receipts."
+  ],
+  "app": "pos"
+ },
+ {
   "build": "2026-10-04.1",
   "date": "2026-10-04",
   "title": "Loyalty program update",
