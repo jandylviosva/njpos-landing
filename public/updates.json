@@ -1,5 +1,68 @@
 [
  {
+  "build": "2026-10-04.14",
+  "date": "2026-10-04",
+  "title": "Loyalty for every store, grouped permissions",
+  "items": [
+   "The loyalty program is now included for every store and is no longer an add-on.",
+   "Role permissions are grouped into dropdowns with a count for each group, and a search box to find one quickly.",
+   "Role cards show one chip per group instead of a long row of tags."
+  ],
+  "app": "pos"
+ },
+ {
+  "build": "2026-10-04.13",
+  "date": "2026-10-04",
+  "title": "Easier member sign-up",
+  "items": [
+   "Only the first and last name are needed to add a member. Phone, email and birthday are optional.",
+   "View Transactions on a member shows their purchase history and redemption history in one window."
+  ],
+  "app": "pos"
+ },
+ {
+  "build": "2026-10-04.11",
+  "date": "2026-10-04",
+  "title": "Separate customer lists and one discount per sale",
+  "items": [
+   "Invoice customers and loyalty members are now separate lists. Checkout only offers members, and invoices only offer invoice customers.",
+   "Deleting an invoice customer or a loyalty member asks for a reason and is logged.",
+   "Only one discount applies to a sale: a cart discount, a voucher or the birthday discount.",
+   "At checkout, the search box shows the newest members when you click it."
+  ],
+  "app": "pos"
+ },
+ {
+  "build": "2026-10-04.10",
+  "date": "2026-10-04",
+  "title": "Select products on invoices",
+  "items": [
+   "New invoices have a Select products window like the purchase order one. It only lists products that are visible in the POS and in stock, and quantities can't go above the stock."
+  ],
+  "app": "pos"
+ },
+ {
+  "build": "2026-10-04.9",
+  "date": "2026-10-04",
+  "title": "Price adjustments by order type, and in reports",
+  "items": [
+   "Order types you add can change prices (auto markup or custom price) like order sources. When both are set, the order source is used.",
+   "Reports and shift reports show price adjustments per order source and order type. Receipts never show them."
+  ],
+  "app": "pos"
+ },
+ {
+  "build": "2026-10-04.6",
+  "date": "2026-10-04",
+  "title": "Discounts in reports",
+  "items": [
+   "The dashboard and Reports show discounts given, split into Senior, PWD, manual, voucher and birthday, with a list by cashier and every discounted order.",
+   "Shift reports, end-of-shift, the BIR tab, the sales report (print, email and PDF) include discounts. Gross profit and product sales are after discounts.",
+   "The daily summary email and its PDF list discounts too."
+  ],
+  "app": "pos"
+ },
+ {
   "build": "2026-10-04.3",
   "date": "2026-10-04",
   "title": "Promo vouchers and member points",
