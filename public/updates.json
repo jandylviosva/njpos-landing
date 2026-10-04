@@ -1,5 +1,18 @@
 [
  {
+  "build": "2026-10-04.1",
+  "date": "2026-10-04",
+  "title": "Loyalty program update",
+  "items": [
+   "Loyalty now has Members, Redeem, Rewards and Setup screens, each with its own role permission.",
+   "Every member gets a member ID that can be scanned at checkout to pick the customer.",
+   "Members have a first name, last name, optional name extension, phone and email. Possible duplicates are flagged.",
+   "Fixed: points on preorders are now credited when the balance is collected, and a voucher used on a preorder can no longer be used twice.",
+   "Redeeming is refused if the member's points changed on another device."
+  ],
+  "app": "pos"
+ },
+ {
   "build": "2026-10-03.21",
   "date": "2026-10-03",
   "title": "Smarter receiving",
