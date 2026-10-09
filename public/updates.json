@@ -1,5 +1,35 @@
 [
  {
+  "build": "2026-10-09.1",
+  "date": "2026-10-09",
+  "title": "Easier category management",
+  "items": [
+   "Manage Categories has a search box that stays at the top while you scroll the list.",
+   "The + New button opens a small window to type the new category name."
+  ],
+  "app": "pos"
+ },
+ {
+  "build": "2026-10-05.1",
+  "date": "2026-10-05",
+  "title": "Inventory header fits small screens",
+  "items": [
+   "On phones, the Inventory tabs and the Print and Import / Export buttons now wrap onto extra lines instead of being cut off."
+  ],
+  "app": "pos"
+ },
+ {
+  "build": "2026-10-05.1",
+  "date": "2026-10-05",
+  "title": "Better phone layout",
+  "items": [
+   "The bottom menu is gone on phones. Everything, including Sign Out, is in the side menu.",
+   "The dashboard fits the screen, with stat cards in two columns and a table you can swipe sideways.",
+   "The side menu and pop-up windows scroll by touch, and search boxes fill the row."
+  ],
+  "app": "warehouse"
+ },
+ {
   "build": "2026-10-04.14",
   "date": "2026-10-04",
   "title": "Loyalty for every store, grouped permissions",
