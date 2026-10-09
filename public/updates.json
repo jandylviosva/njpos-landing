@@ -1,5 +1,14 @@
 [
  {
+  "build": "2026-10-09.2",
+  "date": "2026-10-09",
+  "title": "Steady category window",
+  "items": [
+   "The Manage Categories window keeps the same size while you search, so it no longer jumps around as the list gets shorter."
+  ],
+  "app": "pos"
+ },
+ {
   "build": "2026-10-09.1",
   "date": "2026-10-09",
   "title": "Easier category management",
