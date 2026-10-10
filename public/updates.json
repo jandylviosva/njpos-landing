@@ -1,5 +1,16 @@
 [
  {
+  "build": "2026-10-10.1",
+  "date": "2026-10-10",
+  "title": "Categories no longer hide products",
+  "items": [
+   "Categories now match even when the capital letters or spacing differ, so a category such as AIR FILTER and air filter is treated as one.",
+   "Categories that only products use now appear in the category search and the category list, so they can be selected and managed.",
+   "The same fix applies to the owner portal inventory and to CSV imports."
+  ],
+  "app": "pos"
+ },
+ {
   "build": "2026-10-09.2",
   "date": "2026-10-09",
   "title": "Steady category window",
