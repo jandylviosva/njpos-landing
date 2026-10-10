@@ -1,5 +1,15 @@
 [
  {
+  "build": "2026-10-10.3",
+  "date": "2026-10-10",
+  "title": "Category picker no longer cut off",
+  "items": [
+   "The category dropdown in the product windows (Add Product, Update > Category) is no longer clipped at the edge of the window. It opens over the page, and upward when there is no room below.",
+   "The dropdown keeps the same height whether there are few or many categories, and the list scrolls inside it."
+  ],
+  "app": "pos"
+ },
+ {
   "build": "2026-10-10.1",
   "date": "2026-10-10",
   "title": "Categories no longer hide products",
