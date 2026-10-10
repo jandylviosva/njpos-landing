@@ -1,5 +1,14 @@
 [
  {
+  "build": "2026-10-10.5",
+  "date": "2026-10-10",
+  "title": "Clear warning when a change is not sent",
+  "items": [
+   "If a change could not be sent to the cloud (for example a weak connection), the POS now says so and keeps retrying, instead of looking like it was saved."
+  ],
+  "app": "pos"
+ },
+ {
   "build": "2026-10-10.4",
   "date": "2026-10-10",
   "title": "Settings changes no longer lost on refresh",
