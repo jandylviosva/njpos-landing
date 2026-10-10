@@ -1,5 +1,15 @@
 [
  {
+  "build": "2026-10-10.10",
+  "date": "2026-10-10",
+  "title": "Force Sync reads everything",
+  "items": [
+   "The Force Sync button on the dashboard now sends anything waiting and also reads new orders and stock changes from your other devices, on stores that sync item by item. It used to refresh only the settings.",
+   "The button now shows Synced when it finishes, or Could not sync if the device is offline."
+  ],
+  "app": "pos"
+ },
+ {
   "build": "2026-10-10.9",
   "date": "2026-10-10",
   "title": "Bestsellers and Monitored products",
