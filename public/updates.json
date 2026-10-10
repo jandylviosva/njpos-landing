@@ -1,5 +1,15 @@
 [
  {
+  "build": "2026-10-10.4",
+  "date": "2026-10-10",
+  "title": "Settings changes no longer lost on refresh",
+  "items": [
+   "A change made in Settings, Users or Inventory is sent to the cloud within a few seconds, even on stores using item-by-item sync (it used to wait up to 30 seconds).",
+   "If the page is refreshed before a change was sent, the change is kept and sent after the reload instead of being replaced by the older cloud copy."
+  ],
+  "app": "pos"
+ },
+ {
   "build": "2026-10-10.3",
   "date": "2026-10-10",
   "title": "Category picker no longer cut off",
