@@ -1,5 +1,14 @@
 [
  {
+  "build": "2026-10-10.6",
+  "date": "2026-10-10",
+  "title": "Support edits save on item-by-item stores",
+  "items": [
+   "When support opens a store that syncs item by item, the session now switches to it automatically, so settings changes made during support are saved to the cloud instead of being refused."
+  ],
+  "app": "pos"
+ },
+ {
   "build": "2026-10-10.5",
   "date": "2026-10-10",
   "title": "Clear warning when a change is not sent",
