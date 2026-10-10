@@ -1,5 +1,15 @@
 [
  {
+  "build": "2026-10-10.7",
+  "date": "2026-10-10",
+  "title": "Faster category management",
+  "items": [
+   "Typing in Manage Categories (search, rename and the new category name) no longer lags on stores with hundreds of categories and thousands of products.",
+   "Long category lists load in pages, with a Show more button, and the search finds any category."
+  ],
+  "app": "pos"
+ },
+ {
   "build": "2026-10-10.6",
   "date": "2026-10-10",
   "title": "Support edits save on item-by-item stores",
