@@ -1,5 +1,36 @@
 [
  {
+  "build": "2026-10-10.9",
+  "date": "2026-10-10",
+  "title": "Bestsellers and Monitored products",
+  "items": [
+   "The dashboard has a new Bestsellers card that fills in by itself from your sales: the products that sold the most today, this week or this month. Only products that were actually sold appear.",
+   "The starred products are now called Monitored: products that sell out quickly, shown on the dashboard with their stock. Tap the star in Inventory to monitor a product.",
+   "The daily report email and PDF now show Bestsellers (the top sold products of that day) and your Monitored products. The owner portal dashboard has both too."
+  ],
+  "app": "pos"
+ },
+ {
+  "build": "2026-10-10.8",
+  "date": "2026-10-10",
+  "title": "Faster search and lists",
+  "items": [
+   "Searching and scrolling no longer lag on stores with thousands of products, members, orders or invoices.",
+   "Long lists load as you scroll instead of all at once."
+  ],
+  "app": "pos"
+ },
+ {
+  "build": "2026-10-10.7",
+  "date": "2026-10-10",
+  "title": "Faster category management",
+  "items": [
+   "Typing in Manage Categories (search, rename and the new category name) no longer lags on stores with hundreds of categories and thousands of products.",
+   "Long category lists load in pages, with a Show more button, and the search finds any category."
+  ],
+  "app": "pos"
+ },
+ {
   "build": "2026-10-10.6",
   "date": "2026-10-10",
   "title": "Support edits save on item-by-item stores",
