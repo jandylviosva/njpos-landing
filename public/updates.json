@@ -1,5 +1,15 @@
 [
  {
+  "build": "2026-10-12.1",
+  "date": "2026-10-12",
+  "title": "Receipt preview shows your own products",
+  "items": [
+   "In Settings, Receipt, the preview and the test print now use your first 3 products (the first variant only for a product with variants), so the sample looks like a real receipt of your store.",
+   "With Show customer name on, the preview shows your first member, or a sample name if you have none yet."
+  ],
+  "app": "pos"
+ },
+ {
   "build": "2026-10-10.10",
   "date": "2026-10-10",
   "title": "Force Sync reads everything",
