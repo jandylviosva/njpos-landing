@@ -1,5 +1,14 @@
 [
  {
+  "build": "2026-10-12.2",
+  "date": "2026-10-12",
+  "title": "Neater receipt preview",
+  "items": [
+   "In Settings, Receipt, the live preview now has a slim, slightly see-through scrollbar, and a long receipt scrolls up and down only, with no sideways scrollbar."
+  ],
+  "app": "pos"
+ },
+ {
   "build": "2026-10-12.1",
   "date": "2026-10-12",
   "title": "Receipt preview shows your own products",
