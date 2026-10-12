@@ -1,5 +1,14 @@
 [
  {
+  "build": "2026-10-12.4",
+  "date": "2026-10-12",
+  "title": "Remove a store from the Switch Store list",
+  "items": [
+   "Each store in the Switch Store list now has a Remove button. It asks first, and only removes the store from the list on that device. The store and its data are not deleted, and you can add it again with its email."
+  ],
+  "app": "pos"
+ },
+ {
   "build": "2026-10-12.3",
   "date": "2026-10-12",
   "title": "Device numbers",
