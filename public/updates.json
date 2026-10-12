@@ -1,5 +1,16 @@
 [
  {
+  "build": "2026-10-12.3",
+  "date": "2026-10-12",
+  "title": "Device numbers",
+  "items": [
+   "Every device of a store now has a short number: 0001, 0002 and so on, given automatically when the device is set up. If you add a device later it takes the next free number, and a removed device's number is free again.",
+   "The device number shows on the login screen and on the receipt as Device No., and the receipt preview in Settings shows the number of the device you are using.",
+   "Settings, Users, Devices and the device list when activating also show each device's number."
+  ],
+  "app": "pos"
+ },
+ {
   "build": "2026-10-12.2",
   "date": "2026-10-12",
   "title": "Neater receipt preview",
