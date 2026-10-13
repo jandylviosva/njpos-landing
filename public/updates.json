@@ -1,5 +1,14 @@
 [
  {
+  "build": "2026-10-13.3",
+  "date": "2026-10-13",
+  "title": "Cleaner store switching",
+  "items": [
+   "Switching to another store now covers the screen right away and fully reloads, so the previous store's products no longer flash for a moment in the new store's Inventory."
+  ],
+  "app": "pos"
+ },
+ {
   "build": "2026-10-13.2",
   "date": "2026-10-13",
   "title": "Rename a device",
