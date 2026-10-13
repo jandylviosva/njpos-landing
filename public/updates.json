@@ -1,5 +1,16 @@
 [
  {
+  "build": "2026-10-13.1",
+  "date": "2026-10-13",
+  "title": "SKUs that never clash between devices",
+  "items": [
+   "New automatic SKUs are now the prefix, the device number (3 digits), the product number (6 digits) and the optional suffix, for example SW001000001. Each device counts its own products, so several devices adding products at the same time can no longer create the same SKU.",
+   "Saving a product checks that its SKU is not already used. An automatic SKU moves to the next free number, and a typed or scanned SKU that already exists is refused.",
+   "CSV import and receiving a purchase order use the same numbering. Existing products keep the SKUs they have."
+  ],
+  "app": "pos"
+ },
+ {
   "build": "2026-10-12.4",
   "date": "2026-10-12",
   "title": "Remove a store from the Switch Store list",
