@@ -1,5 +1,14 @@
 [
  {
+  "build": "2026-10-13.4",
+  "date": "2026-10-13",
+  "title": "Variant SKUs on CSV import",
+  "items": [
+   "When a CSV import has variants with a blank SKU, each variant now gets one automatically: the product SKU plus a short code from the option name, for example SW001000005-S and SW001000005-M."
+  ],
+  "app": "pos"
+ },
+ {
   "build": "2026-10-13.3",
   "date": "2026-10-13",
   "title": "Cleaner store switching",
