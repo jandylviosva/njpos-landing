@@ -1,5 +1,34 @@
 [
  {
+  "build": "2026-10-13.3",
+  "date": "2026-10-13",
+  "title": "Cleaner store switching",
+  "items": [
+   "Switching to another store now covers the screen right away and fully reloads, so the previous store's products no longer flash for a moment in the new store's Inventory."
+  ],
+  "app": "pos"
+ },
+ {
+  "build": "2026-10-13.2",
+  "date": "2026-10-13",
+  "title": "Rename a device",
+  "items": [
+   "The owner can now rename a device in Users, Devices with the new Rename button. Names have to be unique, and the other devices pick up the new name on their next sync."
+  ],
+  "app": "pos"
+ },
+ {
+  "build": "2026-10-13.1",
+  "date": "2026-10-13",
+  "title": "SKUs that never clash between devices",
+  "items": [
+   "New automatic SKUs are now the prefix, the device number (3 digits), the product number (6 digits) and the optional suffix, for example SW001000001. Each device counts its own products, so several devices adding products at the same time can no longer create the same SKU.",
+   "Saving a product checks that its SKU is not already used. An automatic SKU moves to the next free number, and a typed or scanned SKU that already exists is refused.",
+   "CSV import and receiving a purchase order use the same numbering. Existing products keep the SKUs they have."
+  ],
+  "app": "pos"
+ },
+ {
   "build": "2026-10-12.4",
   "date": "2026-10-12",
   "title": "Remove a store from the Switch Store list",
