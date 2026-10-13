@@ -1,5 +1,14 @@
 [
  {
+  "build": "2026-10-13.5",
+  "date": "2026-10-13",
+  "title": "Updated sample import file",
+  "items": [
+   "The sample inventory CSV now leaves most SKUs blank on purpose and explains that they are generated automatically, including the variant SKUs."
+  ],
+  "app": "pos"
+ },
+ {
   "build": "2026-10-13.4",
   "date": "2026-10-13",
   "title": "Variant SKUs on CSV import",
