@@ -1,5 +1,14 @@
 [
  {
+  "build": "2026-10-13.2",
+  "date": "2026-10-13",
+  "title": "Rename a device",
+  "items": [
+   "The owner can now rename a device in Users, Devices with the new Rename button. Names have to be unique, and the other devices pick up the new name on their next sync."
+  ],
+  "app": "pos"
+ },
+ {
   "build": "2026-10-13.1",
   "date": "2026-10-13",
   "title": "SKUs that never clash between devices",
