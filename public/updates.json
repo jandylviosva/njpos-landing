@@ -1,5 +1,14 @@
 [
  {
+  "build": "2026-10-15.2",
+  "date": "2026-10-15",
+  "title": "Product count per category",
+  "items": [
+   "The category filter in Inventory now shows how many products each category has, for example Handle switch (12), and the same count appears on the button once a category is chosen."
+  ],
+  "app": "pos"
+ },
+ {
   "build": "2026-10-15.1",
   "date": "2026-10-15",
   "title": "Inventory list loads fully after filtering",
