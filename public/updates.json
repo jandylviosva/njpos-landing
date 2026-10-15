@@ -1,5 +1,14 @@
 [
  {
+  "build": "2026-10-15.1",
+  "date": "2026-10-15",
+  "title": "Inventory list loads fully after filtering",
+  "items": [
+   "After choosing a category and a sort order in Inventory, the list stopped at the first 80 products and would not scroll to show the rest. It now keeps loading as you scroll, whatever category, sort or search you pick."
+  ],
+  "app": "pos"
+ },
+ {
   "build": "2026-10-13.5",
   "date": "2026-10-13",
   "title": "Updated sample import file",
