@@ -1,5 +1,14 @@
 [
  {
+  "build": "2026-10-17.2",
+  "date": "2026-10-17",
+  "title": "Faster-feeling category remove and rename",
+  "items": [
+   "Removing or renaming a category now reacts at once: the row shows Removing… or Saving… while the products are updated, instead of seeming to do nothing and needing several clicks on a store with many products."
+  ],
+  "app": "pos"
+ },
+ {
   "build": "2026-10-17.1",
   "date": "2026-10-17",
   "title": "Remove a category that still has products",
