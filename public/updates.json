@@ -1,5 +1,14 @@
 [
  {
+  "build": "2026-10-17.1",
+  "date": "2026-10-17",
+  "title": "Remove a category that still has products",
+  "items": [
+   "A category can now be removed even when products still use it. Its products are moved to Others (or to General when Others itself is removed), and the Remove screen tells you how many will move before you confirm."
+  ],
+  "app": "pos"
+ },
+ {
   "build": "2026-10-15.2",
   "date": "2026-10-15",
   "title": "Product count per category",
