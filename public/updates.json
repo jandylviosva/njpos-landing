@@ -1,5 +1,15 @@
 [
  {
+  "build": "2026-10-17.1",
+  "date": "2026-10-17",
+  "title": "Remove a category that still has products",
+  "items": [
+   "A category can now be removed even when products still use it. The Remove screen tells you how many products are affected before you confirm.",
+   "Those products are not lost and no extra category is created: they simply become uncategorized. They still show under All, and an Uncategorized entry appears in the Inventory category filter (with its count) so you can find them and give them a new category."
+  ],
+  "app": "pos"
+ },
+ {
   "build": "2026-10-15.2",
   "date": "2026-10-15",
   "title": "Product count per category",
