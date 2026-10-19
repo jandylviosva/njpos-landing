@@ -1,5 +1,14 @@
 [
  {
+  "build": "2026-10-19.1",
+  "date": "2026-10-19",
+  "title": "Test Print fixed",
+  "items": [
+   "Fixed the \"sampleReceiptOrder is not defined\" error when pressing Test Print in Settings, Printer. The test receipt now prints, for the owner and for staff who only have Scanner and Printer access."
+  ],
+  "app": "pos"
+ },
+ {
   "build": "2026-10-17.2",
   "date": "2026-10-17",
   "title": "Faster-feeling category remove and rename",
