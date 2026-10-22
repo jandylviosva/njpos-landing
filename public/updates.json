@@ -1,5 +1,15 @@
 [
  {
+  "build": "2026-10-23.3",
+  "date": "2026-10-23",
+  "title": "Review and approve a closed shift",
+  "items": [
+   "Every closed shift in Reports, Shifts now has a Review button (for accounts with the Shifts tab permission). When an order from that shift was voided after it closed, the shift shows NEEDS REVIEW, and the review window lists those voids with the sales and expected cash worked out without them. This is shown as an adjustment for the reviewer; the saved figures are not changed automatically.",
+   "The reviewer can correct the shift's end cash once, add a note, and press Approve Shift. The shift then shows who approved it and when, in Shifts and in the shift report. A new void after an approval flags the shift for review again."
+  ],
+  "app": "pos"
+ },
+ {
   "build": "2026-10-23.2",
   "date": "2026-10-23",
   "title": "Request to void an order",
