@@ -1,5 +1,14 @@
 [
  {
+  "build": "2026-10-22.16",
+  "date": "2026-10-22",
+  "title": "Login page preview in Display settings",
+  "items": [
+   "Settings, Display now shows a live preview of the login page next to the login page options. It follows every change (background, blur, overlay, card, colours, buttons) before you press Save. On narrow screens the preview appears above the options."
+  ],
+  "app": "pos"
+ },
+ {
   "build": "2026-10-22.15",
   "date": "2026-10-22",
   "title": "Store time zone and clock warning",
