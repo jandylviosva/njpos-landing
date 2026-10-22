@@ -1,5 +1,15 @@
 [
  {
+  "build": "2026-10-22.1",
+  "date": "2026-10-22",
+  "title": "Safer recovery when a screen misbehaves",
+  "items": [
+   "If a screen ever crashes, the POS now shows a short message with a Reload app button instead of going blank.",
+   "Each device now keeps a small record of recent errors, screen freezes and clicks that did not reach a button, and reports it to support with its other device details, so a problem like buttons that will not respond can be traced without a remote session."
+  ],
+  "app": "pos"
+ },
+ {
   "build": "2026-10-19.1",
   "date": "2026-10-19",
   "title": "Test Print fixed",
