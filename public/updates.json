@@ -1,5 +1,14 @@
 [
  {
+  "build": "2026-10-22.11",
+  "date": "2026-10-22",
+  "title": "Seconds on the shift clock",
+  "items": [
+   "The clock shown in the POS while a shift is open now includes seconds, so it is easier to compare with the real time."
+  ],
+  "app": "pos"
+ },
+ {
   "build": "2026-10-22.10",
   "date": "2026-10-22",
   "title": "Shift review shows how expected cash is worked out",
