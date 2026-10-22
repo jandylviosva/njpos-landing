@@ -1,5 +1,14 @@
 [
  {
+  "build": "2026-10-22.4",
+  "date": "2026-10-22",
+  "title": "Seller's role on every sale",
+  "items": [
+   "Every new sale now records the role of whoever made it (Owner, Manager, Cashier…) next to their name. It shows in the Orders list and order details, in the printed orders list, and in the shift report's order list, so it is clear when a manager or owner sells during a cashier's shift. Older orders show the account's current role. Receipts are unchanged."
+  ],
+  "app": "pos"
+ },
+ {
   "build": "2026-10-22.3",
   "date": "2026-10-22",
   "title": "Shift sales stay with their shift",
