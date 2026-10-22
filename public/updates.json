@@ -1,11 +1,12 @@
 [
  {
-  "build": "2026-10-22.12",
+  "build": "2026-10-22.13",
   "date": "2026-10-22",
   "title": "Warning when the computer's clock is wrong",
   "items": [
    "The POS now checks the computer's clock against the real time. If it is 2 or more minutes off, or the computer is not set to Philippine Time, a notice appears with how to fix it (Windows: turn on Set time automatically and choose the Manila time zone), because sales and shifts are recorded with the computer's time.",
-   "A cashier cannot start a new shift while the clock is 10 or more minutes off. Login and selling are never blocked, and nothing is shown when the check cannot be made (for example offline)."
+   "A cashier cannot start a new shift while the clock is 10 or more minutes off. Login and selling are never blocked, and nothing is shown when the check cannot be made (for example offline).",
+   "The clock is re-checked when the app is reopened, when you return to it, and at the moment a shift is started, so a clock changed a moment ago is noticed straight away."
   ],
   "app": "pos"
  },
