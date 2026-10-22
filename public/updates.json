@@ -1,5 +1,36 @@
 [
  {
+  "build": "2026-10-22.18",
+  "date": "2026-10-22",
+  "title": "Login page preview in Display settings",
+  "items": [
+   "Settings, Display now shows a large, landscape live preview of the login page next to the login page options, drawn like a desktop screen. It follows every change (background, blur, overlay, card, colours, buttons) before you press Save. On narrow screens the preview appears above the options.",
+   "The login background now shows just the picture's file name, with the Change and Remove buttons side by side, and the blur, overlay opacity and overlay colour sit to the right of it, so the options take less space."
+  ],
+  "app": "pos"
+ },
+ {
+  "build": "2026-10-22.15",
+  "date": "2026-10-22",
+  "title": "Store time zone and clock warning",
+  "items": [
+   "New Store Time Zone setting (Settings, Orders), Philippine Time by default. Sales, shifts and reports use each computer's own clock, so every computer should be on the store's time zone.",
+   "A computer on another time zone, or with its clock 2 or more minutes off the real time, now shows a notice explaining how to fix it in Windows. A cashier cannot start a shift on such a computer (time zone different, or clock 10 or more minutes off). Login and selling are never blocked, and nothing is shown when the clock check cannot be made (for example offline).",
+   "New shifts also save their start and end as exact UTC times, so how long a shift has been running and the review of voids after closing no longer change if a computer's time zone is changed.",
+   "The clock is re-checked when the app is reopened, when you return to it, and at the moment a shift is started."
+  ],
+  "app": "pos"
+ },
+ {
+  "build": "2026-10-22.11",
+  "date": "2026-10-22",
+  "title": "Seconds on the shift clock",
+  "items": [
+   "The clock shown in the POS while a shift is open now includes seconds, so it is easier to compare with the real time."
+  ],
+  "app": "pos"
+ },
+ {
   "build": "2026-10-22.10",
   "date": "2026-10-22",
   "title": "Shift review shows how expected cash is worked out",
