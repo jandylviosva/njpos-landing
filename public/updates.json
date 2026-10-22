@@ -1,5 +1,44 @@
 [
  {
+  "build": "2026-10-22.10",
+  "date": "2026-10-22",
+  "title": "Shift review shows how expected cash is worked out",
+  "items": [
+   "The Review Shift window now lists the opening cash, total sales, cash sales and expenses above the expected cash (opening cash + cash sales − expenses), so the reviewer can check the figures before approving."
+  ],
+  "app": "pos"
+ },
+ {
+  "build": "2026-10-22.9",
+  "date": "2026-10-22",
+  "title": "Approved shifts no longer show Review",
+  "items": [
+   "Once a shift has been approved, its Review button is hidden and only the APPROVED tag with the approver's name remains. The button comes back if an order from that shift is voided afterwards."
+  ],
+  "app": "pos"
+ },
+ {
+  "build": "2026-10-22.8",
+  "date": "2026-10-22",
+  "title": "Review and approve a closed shift",
+  "items": [
+   "Every closed shift in Reports, Shifts now has a Review button (for accounts with the Shifts tab permission). When an order from that shift was voided after it closed, the shift shows NEEDS REVIEW, and the review window lists those voids with the sales and expected cash worked out without them. This is shown as an adjustment for the reviewer; the saved figures are not changed automatically.",
+   "The reviewer can correct the shift's end cash once, add a note, and press Approve Shift. The shift then shows who approved it and when, in Shifts and in the shift report. A new void after an approval flags the shift for review again."
+  ],
+  "app": "pos"
+ },
+ {
+  "build": "2026-10-22.7",
+  "date": "2026-10-22",
+  "title": "Request to void an order",
+  "items": [
+   "Staff who cannot void orders can now press Request to Void Order on a paid order. They choose a manager or owner from a dropdown (the window keeps its size however many there are) and that person types their password; if it is right, the normal void window opens (reason, restore stock or keep it) and the void is saved as approved by them. The order shows who requested and who approved it, and the log records both.",
+   "After 5 wrong passwords the request is locked for a minute.",
+   "A new permission, Orders - Request a void, controls who gets the button. It is off by default and hidden while Void orders is ticked for the same role. Receipts are unchanged."
+  ],
+  "app": "pos"
+ },
+ {
   "build": "2026-10-22.5",
   "date": "2026-10-22",
   "title": "Shift report: sales by seller",
