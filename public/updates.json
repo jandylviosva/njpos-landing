@@ -1,5 +1,15 @@
 [
  {
+  "build": "2026-10-22.2",
+  "date": "2026-10-22",
+  "title": "Shift report covers the whole shift",
+  "items": [
+   "The shift report (PDF, email and screen) now lists and totals every sale made between the shift's start and end time, including sales by a manager whose role has no shift. Sales that belong to another cashier's shift are still kept out, so nothing is counted twice.",
+   "If the totals saved when a shift was closed do not match the orders listed, the report now says so instead of showing two different numbers without explanation."
+  ],
+  "app": "pos"
+ },
+ {
   "build": "2026-10-22.1",
   "date": "2026-10-22",
   "title": "Safer recovery when a screen misbehaves",
