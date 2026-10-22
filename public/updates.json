@@ -1,5 +1,14 @@
 [
  {
+  "build": "2026-10-22.10",
+  "date": "2026-10-22",
+  "title": "Shift review shows how expected cash is worked out",
+  "items": [
+   "The Review Shift window now lists the opening cash, total sales, cash sales and expenses above the expected cash (opening cash + cash sales − expenses), so the reviewer can check the figures before approving."
+  ],
+  "app": "pos"
+ },
+ {
   "build": "2026-10-22.9",
   "date": "2026-10-22",
   "title": "Approved shifts no longer show Review",
