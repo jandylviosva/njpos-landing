@@ -1,5 +1,16 @@
 [
  {
+  "build": "2026-10-23.1",
+  "date": "2026-10-23",
+  "title": "Request to void an order",
+  "items": [
+   "Staff who cannot void orders can now press Request to Void Order on a paid order. They pick a manager or owner and that person types their password; if it is right, the normal void window opens (reason, restore stock or keep it) and the void is saved as approved by them. The order shows who requested and who approved it, and the log records both.",
+   "After 5 wrong passwords the request is locked for a minute.",
+   "A new permission, Orders - Request a void, controls who gets the button. It is off by default and hidden while Void orders is ticked for the same role. Receipts are unchanged."
+  ],
+  "app": "pos"
+ },
+ {
   "build": "2026-10-22.5",
   "date": "2026-10-22",
   "title": "Shift report: sales by seller",
