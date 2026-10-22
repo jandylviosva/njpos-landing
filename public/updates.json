@@ -1,7 +1,7 @@
 [
  {
-  "build": "2026-10-23.3",
-  "date": "2026-10-23",
+  "build": "2026-10-22.8",
+  "date": "2026-10-22",
   "title": "Review and approve a closed shift",
   "items": [
    "Every closed shift in Reports, Shifts now has a Review button (for accounts with the Shifts tab permission). When an order from that shift was voided after it closed, the shift shows NEEDS REVIEW, and the review window lists those voids with the sales and expected cash worked out without them. This is shown as an adjustment for the reviewer; the saved figures are not changed automatically.",
@@ -10,8 +10,8 @@
   "app": "pos"
  },
  {
-  "build": "2026-10-23.2",
-  "date": "2026-10-23",
+  "build": "2026-10-22.7",
+  "date": "2026-10-22",
   "title": "Request to void an order",
   "items": [
    "Staff who cannot void orders can now press Request to Void Order on a paid order. They choose a manager or owner from a dropdown (the window keeps its size however many there are) and that person types their password; if it is right, the normal void window opens (reason, restore stock or keep it) and the void is saved as approved by them. The order shows who requested and who approved it, and the log records both.",
