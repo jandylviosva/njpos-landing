@@ -1,11 +1,11 @@
 [
  {
-  "build": "2026-10-22.17",
+  "build": "2026-10-22.18",
   "date": "2026-10-22",
   "title": "Login page preview in Display settings",
   "items": [
    "Settings, Display now shows a large, landscape live preview of the login page next to the login page options, drawn like a desktop screen. It follows every change (background, blur, overlay, card, colours, buttons) before you press Save. On narrow screens the preview appears above the options.",
-   "The login background now shows just the picture's file name, with the Change and Remove buttons side by side, instead of a preview strip."
+   "The login background now shows just the picture's file name, with the Change and Remove buttons side by side, and the blur, overlay opacity and overlay colour sit to the right of it, so the options take less space."
   ],
   "app": "pos"
  },
