@@ -1,11 +1,19 @@
 [
  {
+  "build": "2026-10-22.3",
+  "date": "2026-10-22",
+  "title": "Shift sales stay with their shift",
+  "items": [
+   "A shift report lists only the sales recorded on that shift. A manager or owner whose role has no shift who sells while a cashier's shift is open on the device is recorded on that shift under their own name; with no shift open, the sale is not recorded on any shift and only appears in Orders."
+  ],
+  "app": "pos"
+ },
+ {
   "build": "2026-10-22.2",
   "date": "2026-10-22",
-  "title": "Shift report covers the whole shift",
+  "title": "Shift report flags mismatched totals",
   "items": [
-   "The shift report (PDF, email and screen) now lists and totals every sale made between the shift's start and end time, including sales by a manager whose role has no shift. Sales that belong to another cashier's shift are still kept out, so nothing is counted twice.",
-   "If the totals saved when a shift was closed do not match the orders listed, the report now says so instead of showing two different numbers without explanation."
+   "If the totals saved when a shift was closed do not match the orders listed in its report, the report now says so instead of showing two different numbers without explanation."
   ],
   "app": "pos"
  },
