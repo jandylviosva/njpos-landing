@@ -1,5 +1,14 @@
 [
  {
+  "build": "2026-10-22.9",
+  "date": "2026-10-22",
+  "title": "Approved shifts no longer show Review",
+  "items": [
+   "Once a shift has been approved, its Review button is hidden and only the APPROVED tag with the approver's name remains. The button comes back if an order from that shift is voided afterwards."
+  ],
+  "app": "pos"
+ },
+ {
   "build": "2026-10-22.8",
   "date": "2026-10-22",
   "title": "Review and approve a closed shift",
