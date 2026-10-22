@@ -1,5 +1,14 @@
 [
  {
+  "build": "2026-10-22.5",
+  "date": "2026-10-22",
+  "title": "Shift report: sales by seller",
+  "items": [
+   "When a manager or owner sells during a cashier's shift, the shift report now has a Sales by Seller section: the shift's cashier first, then each other seller with their own orders, cash and sales, and an All sellers line. The overall totals, payment breakdown and cash reconciliation stay exactly as before. Nothing changes when only the cashier sold."
+  ],
+  "app": "pos"
+ },
+ {
   "build": "2026-10-22.4",
   "date": "2026-10-22",
   "title": "Seller's role on every sale",
