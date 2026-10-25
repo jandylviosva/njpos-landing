@@ -4,7 +4,9 @@
   "date": "2026-10-25",
   "title": "Void details show what happened to the stock",
   "items": [
-   "When you open a voided order, it now says whether the items were returned to inventory or kept deducted, so a void can be checked later."
+   "When you open a voided order, it now says whether the items were returned to inventory or kept deducted, so a void can be checked later.",
+   "The reference number of a voided order is now locked, so it can't be edited after the void.",
+   "The Dashboard's Void Orders list shows the first 20 with a Show more link instead of listing every voided order at once."
   ],
   "app": "pos"
  },
