@@ -1,5 +1,15 @@
 [
  {
+  "build": "2026-10-25.6",
+  "date": "2026-10-25",
+  "title": "Order numbers per device, and orders remember their device",
+  "items": [
+   "New order number format \"Prefix + Device + Number\" (Settings > Orders), for example ORD001000123: the device number, then that device's own counter. For stores with more than one device, so two devices can never use the same order number. Other formats are unchanged.",
+   "New orders now record which device they were made on. This is the base for per-device sales and cash reports."
+  ],
+  "app": "pos"
+ },
+ {
   "build": "2026-10-25.5",
   "date": "2026-10-25",
   "title": "Expenses can be paid from GCash and other payment methods",
