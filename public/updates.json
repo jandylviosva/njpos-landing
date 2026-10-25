@@ -1,5 +1,14 @@
 [
  {
+  "build": "2026-10-25.9",
+  "date": "2026-10-25",
+  "title": "Only one POS window per computer",
+  "items": [
+   "If the POS is already open in another window or browser tab on the same computer, a second window now shows a notice instead of the app, with a \"Use this window\" button. Only one window can sell, void, close a shift or sync, so an out-of-date window can no longer close a shift on old orders or send old data back. If the other window is closed, the waiting one continues by itself after a few seconds."
+  ],
+  "app": "pos"
+ },
+ {
   "build": "2026-10-25.8",
   "date": "2026-10-25",
   "title": "Owners and managers selling while a cashier is on shift",
