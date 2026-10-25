@@ -1,5 +1,14 @@
 [
  {
+  "build": "2026-10-25.2",
+  "date": "2026-10-25",
+  "title": "Stopped re-sending repaired sales",
+  "items": [
+   "The automatic repair of repeated order numbers (previous update) is switched off, because it could send the same repaired sale to the cloud more than once. New sales still get unique order numbers."
+  ],
+  "app": "pos"
+ },
+ {
   "build": "2026-10-25.1",
   "date": "2026-10-25",
   "title": "Fix: sales that were not reaching the cloud",
