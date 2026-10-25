@@ -2,10 +2,10 @@
  {
   "build": "2026-10-25.8",
   "date": "2026-10-25",
-  "title": "A shift only holds its own cashier's sales",
+  "title": "Owners and managers selling while a cashier is on shift",
   "items": [
-   "Sales made by an owner or manager who works without a shift are no longer added to the shift of a cashier who happens to be on the same device. A shift's sales, expected cash and report now contain only that shift's own sales. Those no-shift sales show in Reports > Current Cash instead.",
-   "Past shifts are not changed."
+   "When an owner or manager who works without a shift clicks Charge on a device where a cashier is on shift, a box now says who is on shift and asks to confirm that the sale goes to their shift. After confirming (once per login), sales proceed normally, are added to that shift, and stay recorded under the seller's own name. They appear in the shift report and PDF under Sales by Seller, and the order shows \"Sold under <cashier>'s shift\".",
+   "If nobody is on shift on the device, nothing changes: the sale has no shift and shows in Reports > Current Cash as a no-shift sale."
   ],
   "app": "pos"
  },
