@@ -1,5 +1,23 @@
 [
  {
+  "build": "2026-10-25.11",
+  "date": "2026-10-25",
+  "title": "Opening the app again brings up the running window",
+  "items": [
+   "On Windows, Mac and Linux with Chrome or Edge, opening the installed POS app again now brings the window that is already running to the front instead of opening a second one. (The installed app may need to be updated or re-installed once for the browser to pick this up.)"
+  ],
+  "app": "pos"
+ },
+ {
+  "build": "2026-10-25.10",
+  "date": "2026-10-25",
+  "title": "Simpler notice when the POS is open twice",
+  "items": [
+   "A second POS window on the same computer now just says \"The POS is already running. Close this window and open the app window that is already running.\" The button to switch windows is gone; if the other window is closed, the waiting one continues by itself."
+  ],
+  "app": "pos"
+ },
+ {
   "build": "2026-10-25.9",
   "date": "2026-10-25",
   "title": "Only one POS window per computer",
