@@ -1,5 +1,15 @@
 [
  {
+  "build": "2026-10-25.8",
+  "date": "2026-10-25",
+  "title": "A shift only holds its own cashier's sales",
+  "items": [
+   "Sales made by an owner or manager who works without a shift are no longer added to the shift of a cashier who happens to be on the same device. A shift's sales, expected cash and report now contain only that shift's own sales. Those no-shift sales show in Reports > Current Cash instead.",
+   "Past shifts are not changed."
+  ],
+  "app": "pos"
+ },
+ {
   "build": "2026-10-25.7",
   "date": "2026-10-25",
   "title": "Reports: Current Cash tab and per-device sales",
