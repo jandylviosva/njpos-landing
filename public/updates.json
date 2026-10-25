@@ -1,5 +1,14 @@
 [
  {
+  "build": "2026-10-25.4",
+  "date": "2026-10-25",
+  "title": "Void details show what happened to the stock",
+  "items": [
+   "When you open a voided order, it now says whether the items were returned to inventory or kept deducted, so a void can be checked later."
+  ],
+  "app": "pos"
+ },
+ {
   "build": "2026-10-25.3",
   "date": "2026-10-25",
   "title": "Fix: voiding one order voided others",
