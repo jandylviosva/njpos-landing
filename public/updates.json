@@ -1,5 +1,49 @@
 [
  {
+  "build": "2026-10-25.7",
+  "date": "2026-10-25",
+  "title": "Reports: Current Cash tab and per-device sales",
+  "items": [
+   "New Reports tab \"Current Cash\": the balance of each drawer (cash is kept per device) and one balance each for GCash, Maya and the other active payment methods. Deposit and withdraw with several sources in one entry, each with its own note (and an optional invoice / purchase order number). Set or correct a balance with a note, and reverse a mistaken entry without deleting it.",
+   "The tab also lists every shift and the sales of people who work without a shift, so all money movements are in one place.",
+   "Sales report: pick a device, or see a By Device summary, when the store has more than one device.",
+   "New permissions: Reports — Current Cash (view) and Current Cash (deposit, withdraw & set balances). Owners get both."
+  ],
+  "app": "pos"
+ },
+ {
+  "build": "2026-10-25.6",
+  "date": "2026-10-25",
+  "title": "Order numbers per device, and orders remember their device",
+  "items": [
+   "New order number format \"Prefix + Device + Number\" (Settings > Orders), for example ORD001000123: the device number, then that device's own counter. For stores with more than one device, so two devices can never use the same order number. Other formats are unchanged.",
+   "New orders now record which device they were made on. This is the base for per-device sales and cash reports."
+  ],
+  "app": "pos"
+ },
+ {
+  "build": "2026-10-25.5",
+  "date": "2026-10-25",
+  "title": "Expenses can be paid from GCash and other payment methods",
+  "items": [
+   "When you add an expense at end of shift, you can now choose where it was paid from: Cash, or GCash/another method that took money during the shift. A non-cash expense can't be more than that method received in the shift.",
+   "Only cash expenses lower the expected cash in the drawer. Expenses paid from GCash etc. still count as expenses in the reports, and show a method tag.",
+   "Reports: Cash on Hand and Net Sales now take this into account; the shift review shows cash expenses and non-cash expenses separately."
+  ],
+  "app": "pos"
+ },
+ {
+  "build": "2026-10-25.4",
+  "date": "2026-10-25",
+  "title": "Void details show what happened to the stock",
+  "items": [
+   "When you open a voided order, it now says whether the items were returned to inventory or kept deducted, so a void can be checked later.",
+   "The reference number of a voided order is now locked, so it can't be edited after the void.",
+   "The Dashboard's Void Orders list shows the first 20 with a Show more link instead of listing every voided order at once."
+  ],
+  "app": "pos"
+ },
+ {
   "build": "2026-10-25.3",
   "date": "2026-10-25",
   "title": "Fix: voiding one order voided others",
