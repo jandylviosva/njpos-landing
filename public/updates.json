@@ -1,5 +1,15 @@
 [
  {
+  "build": "2026-10-25.1",
+  "date": "2026-10-25",
+  "title": "Fix: sales that were not reaching the cloud",
+  "items": [
+   "Order numbers used to start again from 1 every day, so a new sale could get the same number as an older one. The sync leaves duplicate numbers out, so those sales stayed on the cashier's computer and never reached the cloud (stock was still updated). Order numbers now always continue from the highest number in use and are never reused.",
+   "Sales already stuck on a computer with a repeated number are given a new number the next time the POS syncs, and are then sent to the cloud. The new number is shown in the order details as (was ORD…), and the Logs list what was changed."
+  ],
+  "app": "pos"
+ },
+ {
   "build": "2026-10-22.18",
   "date": "2026-10-22",
   "title": "Login page preview in Display settings",
