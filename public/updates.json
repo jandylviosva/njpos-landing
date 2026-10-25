@@ -1,5 +1,14 @@
 [
  {
+  "build": "2026-10-25.10",
+  "date": "2026-10-25",
+  "title": "Simpler notice when the POS is open twice",
+  "items": [
+   "A second POS window on the same computer now just says \"The POS is already running. Close this window and open the app window that is already running.\" The button to switch windows is gone; if the other window is closed, the waiting one continues by itself."
+  ],
+  "app": "pos"
+ },
+ {
   "build": "2026-10-25.9",
   "date": "2026-10-25",
   "title": "Only one POS window per computer",
