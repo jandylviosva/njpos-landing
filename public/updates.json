@@ -1,5 +1,17 @@
 [
  {
+  "build": "2026-10-25.7",
+  "date": "2026-10-25",
+  "title": "Reports: Current Cash tab and per-device sales",
+  "items": [
+   "New Reports tab \"Current Cash\": the balance of each drawer (cash is kept per device) and one balance each for GCash, Maya and the other active payment methods. Deposit and withdraw with several sources in one entry, each with its own note (and an optional invoice / purchase order number). Set or correct a balance with a note, and reverse a mistaken entry without deleting it.",
+   "The tab also lists every shift and the sales of people who work without a shift, so all money movements are in one place.",
+   "Sales report: pick a device, or see a By Device summary, when the store has more than one device.",
+   "New permissions: Reports — Current Cash (view) and Current Cash (deposit, withdraw & set balances). Owners get both."
+  ],
+  "app": "pos"
+ },
+ {
   "build": "2026-10-25.6",
   "date": "2026-10-25",
   "title": "Order numbers per device, and orders remember their device",
