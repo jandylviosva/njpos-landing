@@ -7,7 +7,7 @@
    "Current Cash now shows only balances that have been set, instead of a card for every old device and wallet. Until a balance is set, a short message explains how to start.",
    "Only the store's current devices get a drawer; old devices that only appear in past shifts are no longer listed.",
    "The list starts from when tracking began (a link shows the older history), and Deposit / Withdraw / Set balance now look the same instead of Deposit looking pressed.",
-   "In the Deposit / Withdraw box, the optional link to a purchase order or invoice is now hidden behind a small \"+ Link to a purchase order or invoice\" link, so the box is simpler. The Set balance list also shows only the store's current devices and active wallets."
+   "The Deposit / Withdraw box is now just source, amount and a note per line. The Set balance list shows only the store's current devices and active wallets."
   ],
   "app": "pos"
  },
