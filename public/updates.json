@@ -1,5 +1,14 @@
 [
  {
+  "build": "2026-10-25.11",
+  "date": "2026-10-25",
+  "title": "Opening the app again brings up the running window",
+  "items": [
+   "On Windows, Mac and Linux with Chrome or Edge, opening the installed POS app again now brings the window that is already running to the front instead of opening a second one. (The installed app may need to be updated or re-installed once for the browser to pick this up.)"
+  ],
+  "app": "pos"
+ },
+ {
   "build": "2026-10-25.10",
   "date": "2026-10-25",
   "title": "Simpler notice when the POS is open twice",
