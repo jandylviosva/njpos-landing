@@ -1,5 +1,14 @@
 [
  {
+  "build": "2026-10-25.13",
+  "date": "2026-10-25",
+  "title": "GCash and other wallet expenses can use the wallet balance",
+  "items": [
+   "When adding expenses at the end of a shift, a wallet (GCash, Maya...) can now pay out up to its balance in Reports > Current Cash, not only what it received during that shift. If no balance has been set for that wallet yet, it still works as before (only what it received in the shift). Only cash expenses lower the expected cash in the drawer."
+  ],
+  "app": "pos"
+ },
+ {
   "build": "2026-10-25.12",
   "date": "2026-10-25",
   "title": "Current Cash: cleaner page",
