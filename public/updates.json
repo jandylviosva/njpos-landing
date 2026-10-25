@@ -1,5 +1,14 @@
 [
  {
+  "build": "2026-10-25.3",
+  "date": "2026-10-25",
+  "title": "Fix: voiding one order voided others",
+  "items": [
+   "Voiding an order now changes only that order. Before, any other order that shared its order number was voided too; with the old numbering (restarting each day) a void could silently cancel sales from other days. New order numbers can no longer repeat, and this makes voiding exact."
+  ],
+  "app": "pos"
+ },
+ {
   "build": "2026-10-25.2",
   "date": "2026-10-25",
   "title": "Stopped re-sending repaired sales",
