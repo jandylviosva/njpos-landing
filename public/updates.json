@@ -1,5 +1,15 @@
 [
  {
+  "build": "2026-10-25.8",
+  "date": "2026-10-25",
+  "title": "Owners and managers selling while a cashier is on shift",
+  "items": [
+   "When an owner or manager who works without a shift clicks Charge on a device where a cashier is on shift, a box now says who is on shift and asks to confirm that the sale goes to their shift. After confirming (once per login), sales proceed normally, are added to that shift, and stay recorded under the seller's own name. They appear in the shift report and PDF under Sales by Seller, and the order shows \"Sold under <cashier>'s shift\".",
+   "If nobody is on shift on the device, nothing changes: the sale has no shift and shows in Reports > Current Cash as a no-shift sale."
+  ],
+  "app": "pos"
+ },
+ {
   "build": "2026-10-25.7",
   "date": "2026-10-25",
   "title": "Reports: Current Cash tab and per-device sales",
