@@ -2,9 +2,9 @@
  {
   "build": "2026-10-31.3",
   "date": "2026-10-31",
-  "title": "Daily report covers today's sales up to the send time",
+  "title": "Daily report: today's sales up to the send time",
   "items": [
-   "The scheduled daily report now covers today's sales from the start of the day up to the time you chose (for example a 9:00 PM report has the sales until 9:00 PM). At 12:00 AM, today has only just begun, so that report covers the whole day that just ended. The \"yesterday / today so far\" choice is removed."
+   "The scheduled daily report now covers today's sales from the start of the day up to the time you choose (a 9:00 PM report has the sales until 9:00 PM). The default send time is now 11:59 PM, which gives the whole day's sales (it is delivered a minute later, at midnight). The \"yesterday / today so far\" choice is removed. Turning the report on mid-day no longer sends the previous day's report right away."
   ],
   "app": "pos"
  },
