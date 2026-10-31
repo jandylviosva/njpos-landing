@@ -1,5 +1,14 @@
 [
  {
+  "build": "2026-10-31.2",
+  "date": "2026-10-31",
+  "title": "Daily report: choose yesterday's sales or today so far",
+  "items": [
+   "Settings > Order Settings > Scheduled Daily Report has a new choice, \"The report covers\": yesterday's sales or today's sales so far. Before, a report sent before 12:00 PM always covered the day before, which could be unexpected. Stores that don't choose keep the old behavior."
+  ],
+  "app": "pos"
+ },
+ {
   "build": "2026-10-31.1",
   "date": "2026-10-31",
   "title": "Choose when the daily report is sent",
