@@ -1,5 +1,16 @@
 [
  {
+  "build": "2026-10-31.1",
+  "date": "2026-10-31",
+  "title": "Choose when the daily report is sent",
+  "items": [
+   "Settings > Order Settings > Scheduled Daily Report now lets you choose the time of day (default 12:00 AM) and the days of the week: every day, weekdays, or the days you pick. A report sent before 12:00 PM covers the day that just ended; one sent from 12:00 PM on covers today so far, up to the send time.",
+   "New option: don't send a report on days with no sales.",
+   "The daily report email is also shorter: stock alerts, monitored products and expenses show the first 10 rows and point to the attached PDF for the full list, discounts are one line, and the duplicate Top Products list is gone."
+  ],
+  "app": "pos"
+ },
+ {
   "build": "2026-10-25.13",
   "date": "2026-10-25",
   "title": "GCash and other wallet expenses can use the wallet balance",
