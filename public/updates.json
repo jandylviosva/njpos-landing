@@ -1,5 +1,14 @@
 [
  {
+  "build": "2026-10-31.3",
+  "date": "2026-10-31",
+  "title": "Daily report covers today's sales up to the send time",
+  "items": [
+   "The scheduled daily report now covers today's sales from the start of the day up to the time you chose (for example a 9:00 PM report has the sales until 9:00 PM). At 12:00 AM, today has only just begun, so that report covers the whole day that just ended. The \"yesterday / today so far\" choice is removed."
+  ],
+  "app": "pos"
+ },
+ {
   "build": "2026-10-31.2",
   "date": "2026-10-31",
   "title": "Daily report: choose yesterday's sales or today so far",
