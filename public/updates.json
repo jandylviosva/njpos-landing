@@ -2,6 +2,15 @@
  {
   "build": "2026-11-01.1",
   "date": "2026-11-01",
+  "title": "Daily report: split payments shown by method",
+  "items": [
+   "In the daily report email and PDF, an order paid by split is now counted under the methods it used: the cash part goes to Cash (on hand) and the online part goes to GCash, Maya, etc. There is no separate \"Split\" line anymore. In the PDF order list, a split order shows its parts, for example \"Cash 150.00 + GCash 600.00\"."
+  ],
+  "app": "pos"
+ },
+ {
+  "build": "2026-11-01.1",
+  "date": "2026-11-01",
   "title": "Safer sync of users and roles",
   "items": [
    "A device that has no users loaded yet (for example after a reinstall or clearing its data) no longer uploads anything: it downloads the store from the cloud first. This protects users, roles, categories and settings from being replaced by defaults. Activating a device on an existing store now takes its users and roles from the cloud instead of creating a new owner account."
