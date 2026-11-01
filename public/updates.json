@@ -1,5 +1,14 @@
 [
  {
+  "build": "2026-11-01.1",
+  "date": "2026-11-01",
+  "title": "Safer sync of users and roles",
+  "items": [
+   "A device that has no users loaded yet (for example after a reinstall or clearing its data) can no longer upload \"no users, default roles\" over a store that has them. Activating a device on an existing store now takes the store's users and roles from the cloud instead of creating a new owner account."
+  ],
+  "app": "pos"
+ },
+ {
   "build": "2026-10-31.3",
   "date": "2026-10-31",
   "title": "Daily report: today's sales up to the send time",
