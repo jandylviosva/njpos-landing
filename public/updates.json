@@ -4,7 +4,7 @@
   "date": "2026-11-01",
   "title": "Daily report: split payments shown by method",
   "items": [
-   "In the daily report email and PDF, an order paid by split is now counted under the methods it used: the cash part goes to Cash (on hand) and the online part goes to GCash, Maya, etc. There is no separate \"Split\" line anymore. In the PDF order list, a split order shows its parts, for example \"Cash 150.00 + GCash 600.00\"."
+   "In the daily report email and PDF, an order paid by split is now counted under the methods it used: the cash part goes to Cash (on hand) and the online part goes to GCash, Maya, etc. There is no separate \"Split\" line anymore."
   ],
   "app": "pos"
  },
