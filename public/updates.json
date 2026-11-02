@@ -1,5 +1,14 @@
 [
  {
+  "build": "2026-11-02.1",
+  "date": "2026-11-02",
+  "title": "Developer support window on large stores",
+  "items": [
+   "When support opens a large store in a developer window, the browser's temporary storage could fill up and show a confusing \"device storage is nearly full\" warning. The window now keeps the extra data in memory for that session and shows a clear note instead. Your own devices are not affected."
+  ],
+  "app": "pos"
+ },
+ {
   "build": "2026-11-01.1",
   "date": "2026-11-01",
   "title": "Daily report: split payments shown by method",
