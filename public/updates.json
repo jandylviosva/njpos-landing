@@ -1,5 +1,14 @@
 [
  {
+  "build": "2026-11-06.1",
+  "date": "2026-11-06",
+  "title": "Stores can no longer overwrite each other",
+  "items": [
+   "Each device now remembers which store its saved data belongs to. If a device that switches between stores ever ends up holding one store's data under another store's login, it no longer uploads it: it clears that data and reloads the right store from the cloud. This protects a store's users, categories, settings and branding."
+  ],
+  "app": "pos"
+ },
+ {
   "build": "2026-11-02.1",
   "date": "2026-11-02",
   "title": "Developer support window on large stores",
