@@ -1,5 +1,14 @@
 [
  {
+  "build": "2026-11-08.1",
+  "date": "2026-11-08",
+  "title": "Switch Store can no longer wipe a store",
+  "items": [
+   "Switching to another store now downloads that store first. If the download fails (a slow connection, a very large store), the switch is cancelled with a message and nothing is changed or uploaded. Before, a failed download could leave the device empty, and the store's users, roles, categories and settings were replaced with defaults. A store whose data cannot be read is also no longer treated as a new store when a device is activated."
+  ],
+  "app": "pos"
+ },
+ {
   "build": "2026-11-06.1",
   "date": "2026-11-06",
   "title": "Stores can no longer overwrite each other",
