@@ -1,5 +1,14 @@
 [
  {
+  "build": "2026-11-09.1",
+  "date": "2026-11-09",
+  "title": "Receipt shows the right Device No.",
+  "items": [
+   "The Device No. on a receipt is now the device that made the sale, even when the receipt is reprinted from another device or viewed by support. Before, a reprint showed the number of the device doing the printing."
+  ],
+  "app": "pos"
+ },
+ {
   "build": "2026-11-08.1",
   "date": "2026-11-08",
   "title": "Switch Store can no longer wipe a store",
