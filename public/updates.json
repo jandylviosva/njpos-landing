@@ -1,5 +1,14 @@
 [
  {
+  "build": "2026-11-19.3",
+  "date": "2026-11-19",
+  "title": "More protection against lost data",
+  "items": [
+   "A device that has lost part of its own saved data can no longer replace the store's invoices, expenses, purchase orders, suppliers, activity logs, roles or users with a much smaller or empty copy. The device keeps the store's copy and downloads it again. Stores that do not sync products item by item are protected from an empty product list too."
+  ],
+  "app": "pos"
+ },
+ {
   "build": "2026-11-19.2",
   "date": "2026-11-19",
   "title": "Activity log shows role names",
