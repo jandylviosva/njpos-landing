@@ -1,5 +1,14 @@
 [
  {
+  "build": "2026-11-18.1",
+  "date": "2026-11-18",
+  "title": "Products can no longer be wiped by one device",
+  "items": [
+   "A device that lost its own product list (for example after its storage was cleared) could tell the store to delete every product. The app and the database now refuse a removal that large, and the device downloads the store's products again instead."
+  ],
+  "app": "pos"
+ },
+ {
   "build": "2026-11-09.1",
   "date": "2026-11-09",
   "title": "Receipt shows the right Device No.",
