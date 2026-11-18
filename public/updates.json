@@ -1,10 +1,10 @@
 [
  {
-  "build": "2026-11-19.1",
+  "build": "2026-11-19.2",
   "date": "2026-11-19",
   "title": "Activity log shows role names",
   "items": [
-   "In the Inventory activity log, the name next to each user is now their role's name (for example Cashier) instead of a code like role3l3ckv7j."
+   "In the Inventory activity log, the name next to each user is now their role's name (for example Cashier) instead of a code like role3l3ckv7j. A device that finds its own saved products or orders far fewer than the store has (for example after its storage was cleared) now downloads them again, so shift reports and stock are not built on an incomplete copy."
   ],
   "app": "pos"
  },
