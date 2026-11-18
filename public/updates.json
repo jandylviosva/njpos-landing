@@ -1,10 +1,10 @@
 [
  {
-  "build": "2026-11-18.1",
+  "build": "2026-11-18.2",
   "date": "2026-11-18",
   "title": "Products can no longer be wiped by one device",
   "items": [
-   "A device that lost its own product list (for example after its storage was cleared) could tell the store to delete every product. The app and the database now refuse a removal that large, and the device downloads the store's products again instead."
+   "A device that lost its own product list (for example after its storage was cleared) could tell the store to delete every product. The app and the database now refuse a removal that large, and the device downloads the store's products again instead. Products that were restored by support are also no longer deleted again from a device's screen by the old removal."
   ],
   "app": "pos"
  },
