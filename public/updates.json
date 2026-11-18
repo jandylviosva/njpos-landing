@@ -1,5 +1,14 @@
 [
  {
+  "build": "2026-11-19.1",
+  "date": "2026-11-19",
+  "title": "Activity log shows role names",
+  "items": [
+   "In the Inventory activity log, the name next to each user is now their role's name (for example Cashier) instead of a code like role3l3ckv7j."
+  ],
+  "app": "pos"
+ },
+ {
   "build": "2026-11-18.2",
   "date": "2026-11-18",
   "title": "Products can no longer be wiped by one device",
