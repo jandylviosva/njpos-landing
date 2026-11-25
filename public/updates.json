@@ -1,5 +1,14 @@
 [
  {
+  "build": "2026-11-25.2",
+  "date": "2026-11-25",
+  "title": "Clearer cash drawer setting",
+  "items": [
+   "In Printer settings, the cash drawer switch now reads \"Open cash drawer on receipt\" instead of \"after printing\", because the Before printing / After printing choice below it decides when the drawer opens."
+  ],
+  "app": "pos"
+ },
+ {
   "build": "2026-11-25.1",
   "date": "2026-11-25",
   "title": "New stores start with the right roles and colours",
