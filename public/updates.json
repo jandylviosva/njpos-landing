@@ -1,5 +1,14 @@
 [
  {
+  "build": "2026-11-25.1",
+  "date": "2026-11-25",
+  "title": "New stores start with the right roles and colours",
+  "items": [
+   "A store created from a device that was already using another store now gets the standard roles (Owner, Manager, Cashier...) and the default colour theme, so the Sign In role list is no longer empty and the colours no longer start blank. Stores already affected are repaired the next time they open the app."
+  ],
+  "app": "pos"
+ },
+ {
   "build": "2026-11-19.3",
   "date": "2026-11-19",
   "title": "More protection against lost data",
