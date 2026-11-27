@@ -1,5 +1,14 @@
 [
  {
+  "build": "2026-11-27.1",
+  "date": "2026-11-27",
+  "title": "New branches now get the item-by-item sync lock",
+  "items": [
+   "A new store opened on a device that was already using item-by-item sync now turns the store's sync lock on by itself, so it gets the same protection against lost products and orders as the other stores."
+  ],
+  "app": "pos"
+ },
+ {
   "build": "2026-11-25.2",
   "date": "2026-11-25",
   "title": "Clearer cash drawer setting",
